@@ -23,7 +23,7 @@ def calcPoisson(self):
    A2  = 0.5 * self.DX2/(self.DX2+self.DY2)
    A3  = 0.25 * self.DX2 * self.DY2 / (self.DX2 + self.DY2)
 
-   #Navie-Stokes方程式による速度更新
+   #Navier-Stokes方程式による速度更新
    self.VelX,self.VelXgx,self.VelXgy = methodCIP(self,self.VelX,self.VelXgx,self.VelXgy)
    self.VelY,self.VelYgx,self.VelYgy = methodCIP(self,self.VelY,self.VelYgx,self.VelYgy)
 
