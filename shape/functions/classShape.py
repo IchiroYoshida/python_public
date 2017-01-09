@@ -70,7 +70,6 @@ class Rect(object):
       self.VelYgy = np.zeros((self.NX+1,self.NY+1)) #y方向速度微分
 
    def MapData(self):
-      #coins = cv2.imread('./data/images/prius.jpg')
       shape = cv2.imread(self.img)
       shape_gray = cv2.cvtColor(shape, cv2.COLOR_BGR2GRAY)
       shape_gauss = cv2.GaussianBlur(shape_gray, (5,5), 0)
