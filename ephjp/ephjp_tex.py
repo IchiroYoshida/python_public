@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 """
-月と太陽の暦(TEX版)
+月と太陽の暦(TEX版)  Ichiro Yoshida
 2017/12/12
 """
 import datetime
@@ -15,8 +15,8 @@ sun = ephem.Sun()
 
 location = ephem.Observer()
 
-location.name = '福岡'
-location.lon, location.lat = '130.4000', '33.5833'
+location.name = '東京'
+location.lon, location.lat = '139.7414', '35.6581'
 
 location.elevation = 0.0
 
@@ -33,9 +33,7 @@ for month in range(1, 13):
 
     days = ephf.month_days(year, month)
 
-    for d in range(0, days):
-
-        day = d+1
+    for day in range(1, days+1):
 
         date0 = str(year)+str('/%02d' % month)+str('/%02d' % day)
         location.date = str(date0+' 9:00') #UT+9hr =JST
@@ -62,8 +60,7 @@ for month in range(1, 13):
     print("\\multicolumn{3}{c|}{月出　―　月没}\\\\")
     print("\\hline")
 
-    for d in range(0, days):
-        day = d + 1
+    for day in range(1, days+1):
         date0 = str(year)+str('/%02d' % month)+str('/%02d' % day)
         location.date = str(date0+' 9:00')
 
@@ -73,7 +70,6 @@ for month in range(1, 13):
         date2 = eval(date1)
         date_str = date2.strftime('%Y%m%d')
         mm = int(date2.strftime('%m'))
-        dd = int(date2.strftime('%d'))
 
         #--- 日出の時刻 -----
         today = ephf.Sun(location)
@@ -106,7 +102,7 @@ for month in range(1, 13):
             set_str = set.hhmm
 
         print(' %2d & %s & %s &-& %s & %4.1f & %s & %s &-& %s \\\\' \
-                %(dd, weekday, sun_rise, sun_set, moon_age, tide_name, rise_str, set_str))
+                %(day, weekday, sun_rise, sun_set, moon_age, tide_name, rise_str, set_str))
 
     # tex ----------
     print("\\hline")
