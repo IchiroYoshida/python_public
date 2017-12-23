@@ -17,7 +17,7 @@ position.elevation = 0.0
 
 sun = ephem.Sun()
 
-time0 = '2018-01-01 6:47:54'    #Inubousaki JST 
+time0 = '2018-01-01 6:49:26'    #Inubousaki JST 
 
 trise = ephem.Date(time0)- 9.  * ephem.hour               #UT = JST -9hr
 
@@ -27,7 +27,7 @@ def sun_alt(lon, lat, t):
     sun.compute(position)
 
     sun_size_rad = DegRad * float(sun.size) / 3600.  # Sun apparent diameter in radians.
-    sun_apparent0 = float(sun.alt) + sun_size_rad    # Add Sun apparent diameter.
+    sun_apparent0 = float(sun.alt) + (sun_size_rad / 2.) # Add Sun apparent diameter.
 
     return (sun_apparent0)
 
