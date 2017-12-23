@@ -2,15 +2,12 @@
 # Inverse of the sunrise equation - finding locations with a given sunrise time on a given day.
 
 from datetime import datetime
-# from time import strptime
-
-# JAPAN Area. E:120 - 135  N: 20 - 46
-
 import ephem
 import numpy as np
 import scipy.optimize as spo
-
 from myjavas import PrnJavaScript
+
+DegRad = ephem.pi / 180.
 
 position = ephem.Observer()
 
@@ -20,16 +17,19 @@ position.elevation = 0.0
 
 sun = ephem.Sun()
 
-time0 = '2018-01-01 6:50:57'    #Inubousaki JST 
+time0 = '2018-01-01 6:47:54'    #Inubousaki JST 
 
-trise = ephem.Date(time0)- 9 * ephem.hour               #UT = JST -9hr
+trise = ephem.Date(time0)- 9.  * ephem.hour               #UT = JST -9hr
 
 def sun_alt(lon, lat, t):
     position.lon, position.lat = str(lon), str(lat)
     position.date = t
     sun.compute(position)
 
-    return (sun.alt)
+    sun_size_rad = DegRad * float(sun.size) / 3600.  # Sun apparent diameter in radians.
+    sun_apparent0 = float(sun.alt) + sun_size_rad    # Add Sun apparent diameter.
+
+    return (sun_apparent0)
 
 # Find position where sunrise.
 
