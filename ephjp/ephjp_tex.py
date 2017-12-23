@@ -15,8 +15,8 @@ sun = ephem.Sun()
 
 location = ephem.Observer()
 
-location.name = '東京'
-location.lon, location.lat = '139.7414', '35.6581'
+#location.name = '東京'
+#location.lon, location.lat = '139.7414', '35.6581'
 
 location.pressure = 0
 location.horizon = '-0:34'

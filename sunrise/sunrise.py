@@ -13,10 +13,14 @@ import scipy.optimize as spo
 from myjavas import PrnJavaScript
 
 position = ephem.Observer()
+
+position.pressure = 0
+position.horizon = '-0:34'
+position.elevation = 0.0
+
 sun = ephem.Sun()
 
-time0 = '2018-01-01 6:47:49'    #JST 
-
+time0 = '2018-01-01 6:50:57'    #Inubousaki JST 
 
 trise = ephem.Date(time0)- 9 * ephem.hour               #UT = JST -9hr
 
@@ -26,7 +30,6 @@ def sun_alt(lon, lat, t):
     sun.compute(position)
 
     return (sun.alt)
-
 
 # Find position where sunrise.
 
@@ -41,11 +44,8 @@ for lat in lats:
        answer, info = spo.brentq(sun_alt, lon0-90, lon0+90,
                                  args=(lat, trise),
                                  full_output = True )
-
        if info.converged:
            lons.append(answer)
-           #print(lat,answer)
-
        else:
            lons.append(None)
 
