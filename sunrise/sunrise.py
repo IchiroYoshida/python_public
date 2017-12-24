@@ -17,8 +17,7 @@ position.elevation = 0.0
 
 sun = ephem.Sun()
 
-#time0 = '2018-01-01 6:51:00'    #Inubousaki JST 
-time0 = '2018-01-01 7:30:41.5'  #Shiraho
+time0 = '2018-01-01 6:51:00'    #Inubousaki JST 
 
 trise = ephem.Date(time0)- 9.  * ephem.hour               #UT = JST -9hr
 
