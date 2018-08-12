@@ -1,0 +1,16 @@
+1. How to draw planisphere
+
+~/python planis.py
+
+2. Files
+
+stars.py --------- Draw stars with Hipparcos catalogue.
+constlines.py ---- Draw constellation lines.
+ecliequ.py ------- Draw celestial equator and ecliptic.
+planisfunc.py ---- Basic functions to draw planisphere.
+moon.py ---------- Draw moon.
+nameJ ------------ Most popular stars in Japanese.
+constJ ----------- Constellation names in Japanese.
+planets.py ------- Draw planets (Mercury, Venus, Mars, Saturn, Jupiter).
+milkyway.py ------ Draw milky way.
+sky.py ----------- Draw background sky.
