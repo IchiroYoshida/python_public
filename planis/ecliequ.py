@@ -13,7 +13,7 @@ class ecliEqu:
 
         side = float(observe.sidereal_time()) #Sidereal Time (Radians)
         the = observe.lat  # 観測地緯度
-        lim = np.pi / 72.
+        lim = np.pi / 36.
 
         # -------- 赤道を描く
 
