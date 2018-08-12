@@ -5,8 +5,8 @@ import ephem
 import sky
 import planisfunc as plf
 
-Planet  = ['Sun','Mercury','Venus','Mars','Jupiter','Saturn']
-PlanetJ = {'Sun':'太陽','Mercury':'水星','Venus':'金星','Mars':'火星','Jupiter':'木星','Saturn':'土星'}
+Planet  = ['Mercury','Venus','Mars','Jupiter','Saturn']
+PlanetJ = {'Mercury':'水星','Venus':'金星','Mars':'火星','Jupiter':'木星','Saturn':'土星'}
 
 offset = np.pi /50.
 
