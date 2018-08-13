@@ -1,3 +1,4 @@
+import sys
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import ephem
@@ -45,8 +46,8 @@ class skyfield:
                ax.text(-np.pi/2 - offset, + np.pi/2 - 2*offset, Lat, color='k',
                    fontsize=10, alpha=1.0, zorder=zo)
        else:
-           print('Sun.alt > -15')
-           exit 
+           print('Sun.alt > -10')
+           sys.exit(1)
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt

@@ -63,7 +63,7 @@ class Moon:
                 az = np.array(moon.az).reshape(1,)
                 alt = np.array(moon.alt).reshape(1,)
 
-                txt_x, txt_y, ret = plf.polarXY(az, alt, lim=0)
+                txt_x, txt_y = plf.polarXY(az, alt, lim=0)
                 txt_x -= text_offset * 2.5 
                 txt_y -= text_offset * 2
 
