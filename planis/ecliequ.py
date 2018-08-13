@@ -32,7 +32,7 @@ class ecliEqu:
 
         AZ, ALT = plf.equatoHori(the, RA, DEC)
 
-        X, Y, ret = plf.polarXY(AZ, ALT, lim)
+        X, Y = plf.polarXY(AZ, ALT, lim)
 
         ax.plot(X, Y, c='white', linestyle='dashed',alpha=0.3, zorder=zo)
 
@@ -59,7 +59,7 @@ class ecliEqu:
 
         AZ, ALT = plf.equatoHori(the, RA, DEC)
 
-        X, Y, ret  = plf.polarXY(AZ, ALT, lim)
+        X, Y  = plf.polarXY(AZ, ALT, lim)
 
         ax.plot(X, Y, c='yellow', linestyle='dashed',alpha=0.5, zorder=zo)
 

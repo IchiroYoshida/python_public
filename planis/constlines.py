@@ -721,8 +721,8 @@ class const_line:
         AZ4  = AZ2[np.where((ALT1 > lim) & (ALT2 > lim))]
         ALT4 = ALT2[np.where((ALT1 > lim) & (ALT2 > lim))]
 
-        X1, Y1, ret = plf.polarXY(AZ3, ALT3, lim)
-        X2, Y2, ret = plf.polarXY(AZ4, ALT4, lim)
+        X1, Y1 = plf.polarXY(AZ3, ALT3, lim)
+        X2, Y2 = plf.polarXY(AZ4, ALT4, lim)
 
         for i in range(len(X1)):
             plt.plot([X1[i], X2[i]],[Y1[i], Y2[i]], 'w--', alpha = 0.2)

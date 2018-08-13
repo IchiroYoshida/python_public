@@ -28,10 +28,13 @@ def polarXY(AZ, ALT, lim,  **kwargs):
      R = np.pi /2. - ALT
      X = - R * np.sin(AZ)
      Y =   R * np.cos(AZ)
-   
-     ret = {}
 
-     if ('size' in kwargs): ret = {'size': SIZE}
-     if ('name' in kwargs): ret.update({'name':NAME})
+     if (kwargs):
+         ret = {}
+         if ('size' in kwargs): ret = {'size': SIZE}
+         if ('name' in kwargs): ret.update({'name':NAME})
 
-     return X, Y, ret
+         return X, Y, ret
+
+     else:
+         return X, Y

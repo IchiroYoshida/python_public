@@ -47,7 +47,7 @@ class Moon:
 
             Pol_AZ, Pol_ALT = plf.equatoHori(observe.lat, Pol_X, Pol_Y)
 
-            Pol_XX, Pol_YY, ret = plf.polarXY(Pol_AZ, Pol_ALT, lim=0)
+            Pol_XX, Pol_YY = plf.polarXY(Pol_AZ, Pol_ALT, lim=0)
             
             Pol_XY = np.array([Pol_XX,Pol_YY]).T
 

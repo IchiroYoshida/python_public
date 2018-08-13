@@ -2226,7 +2226,7 @@ class milkyway:
 
         lim = 0. # 表示限界高度
         
-        X, Y, ret = plf.polarXY(AZ, ALT, lim)
+        X, Y = plf.polarXY(AZ, ALT, lim)
 
         ax.scatter(X, Y, c='white', alpha=0.1, zorder=zo)
 
