@@ -12,7 +12,7 @@ import constlines
 import moon
 import ecliequ
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(10,10),dpi=100)
 
 ax.set_aspect('equal')
 sf = sky.skyfield(obs, ax, zo=0, legend=True)

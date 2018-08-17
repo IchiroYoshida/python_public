@@ -15,7 +15,9 @@ class skyfield:
        sun = ephem.Sun()
        sun.compute(observer)
 
-       if (math.degrees(sun.alt) < -10.0):
+       #if (math.degrees(sun.alt) < -0.0):
+       if (math.degrees(sun.alt)):
+
            circle = plt.Circle(xy=(0, 0),
                    radius=np.pi/2.,fc="#191970",alpha=1.0,zorder=zo)
            ax.add_patch(circle)

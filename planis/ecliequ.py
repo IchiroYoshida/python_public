@@ -11,28 +11,33 @@ class ecliEqu:
     
     def __init__(self, observe, ax, zo, legend):
 
-        side = float(observe.sidereal_time()) #Sidereal Time (Radians)
-        the = observe.lat  # 観測地緯度
-        lim = np.pi / 36.
+        lim = 0
 
         # -------- 赤道を描く
 
-        Ra = []
-        Dec = []
+        alt = []
+        az = []
         for alpha in range(0, 360, 5):
-            al = math.radians(alpha) 
-            equ = ephem.Equatorial(al, 0.) # 赤道算出
-            Ra.append(equ.ra)
-            Dec.append(equ.dec)
+            al = math.radians(alpha)
+            equ0 = ephem.Equatorial(al, 0., epoch='2000')
+            equ = ephem.FixedBody()
+            equ._ra = equ0.ra
+            equ._dec = equ0.dec
+            equ.compute(observe)
+            alt.append(equ.alt)
+            az.append(equ.az)
 
-        RA  = np.array(Ra)
-        DEC = np.array(Dec)
-
-        RA = side - RA  # 赤経を時角に変換
-
-        AZ, ALT = plf.equatoHori(the, RA, DEC)
+        ALT = np.array(alt)
+        AZ  = np.array(az)
 
         X, Y = plf.polarXY(AZ, ALT, lim)
+
+        for i in range(1,len(X)):
+            dx = math.fabs(X[i]-X[i-1])
+            dy = math.fabs(Y[i]-Y[i-1])
+            if(dx > math.pi/4 or dy > math.pi/4):
+                X = np.roll(X, -i)
+                Y = np.roll(Y, -i)
 
         ax.plot(X, Y, c='white', linestyle='dashed',alpha=0.3, zorder=zo)
 
@@ -43,23 +48,30 @@ class ecliEqu:
 
         # -------- 黄道を描く
 
-        Ra = []
-        Dec = []
+        alt = []
+        az = []
         for rambda in range(0, 360, 5):
             ram = str(rambda)
             ecl = ephem.Ecliptic(ram, '0')  # 黄道算出
-            equ = ephem.Equatorial(ecl)     # 黄道座標を赤道座標に変換
-            Ra.append(equ.ra)
-            Dec.append(equ.dec)
+            equ0 = ephem.Equatorial(ecl, epoch='2000')     # 黄道座標を赤道座標に変換
+            equ = ephem.FixedBody()
+            equ._ra = equ0.ra
+            equ._dec = equ0.dec
+            equ.compute(observe)
+            alt.append(equ.alt)
+            az.append(equ.az)
 
-        RA  = np.array(Ra)
-        DEC = np.array(Dec)
+        ALT = np.array(alt)
+        AZ  = np.array(az)
 
-        RA = side - RA     # 赤経を時角に変換
+        X, Y = plf.polarXY(AZ, ALT, lim)
 
-        AZ, ALT = plf.equatoHori(the, RA, DEC)
-
-        X, Y  = plf.polarXY(AZ, ALT, lim)
+        for i in range(1,len(X)):
+            dx = math.fabs(X[i]-X[i-1])
+            dy = math.fabs(Y[i]-Y[i-1])
+            if(dx > math.pi/4 or dy > math.pi/4):
+                X = np.roll(X, -i)
+                Y = np.roll(Y, -i)
 
         ax.plot(X, Y, c='yellow', linestyle='dashed',alpha=0.5, zorder=zo)
 
