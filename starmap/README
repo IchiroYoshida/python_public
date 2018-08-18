@@ -1,0 +1,15 @@
+1. How to draw planisphere
+
+~/python map.py
+
+2. Files
+
+map2.py ---------- Draw animation for 600,000 years. 
+observe.py ------- Position of observation. 
+stars.py --------- Draw stars with Hipparcos catalogue.
+constlines.py ---- Draw constellation lines.
+mathf.py --------- Basic functions to draw planisphere.
+nameJ ------------ Most popular stars in Japanese.
+constJ ----------- Constellation names in Japanese.
+milkyway.py ------ Draw milkyway.
+sky.py ----------- Draw background sky.
