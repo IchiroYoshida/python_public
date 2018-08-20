@@ -2203,6 +2203,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 import ephem
+import mathf as mf
 
 class milkyway:
     def __init__(self, observe, ax, zo, legend):
@@ -2225,8 +2226,10 @@ class milkyway:
 
         X = np.degrees(RA)
         Y = np.degrees(DEC)
+        X = mf.rnd36(X)
+        Y = mf.rnd99(Y)
 
-        ax.scatter(X, Y, c='white', alpha=0.1, zorder=zo)
+        ax.scatter(X, Y, c='white', alpha=0.5, zorder=zo)
 
         if (legend):
             Xtxt = np.mean(X)
