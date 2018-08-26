@@ -688,7 +688,7 @@ import constJ as cj
 
 class const_line:
     def __init__(self, observe, ax, zo, legend):
-        
+        #print('const lines %s' % observe.date)    
         Name1 = []
         Name2 = []
         for line in lines.split('\n'):

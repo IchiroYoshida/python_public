@@ -1,17 +1,24 @@
 1. How to draw planisphere
 
-~/python planis.py
+
+~/python planis.py         # Draw at the moment as indicated in observe.py
+
+~/python planis_month.py   # Draw monthly planisphere.
 
 2. Files
 
-observe.py ------- Position of observation. 
-stars.py --------- Draw stars with Hipparcos catalogue.
+constJ ----------- Constellation names in Japanese.
 constlines.py ---- Draw constellation lines.
 ecliequ.py ------- Draw celestial equator and ecliptic.
-planisfunc.py ---- Basic functions to draw planisphere.
-moon.py ---------- Draw moon.
-nameJ ------------ Most popular stars in Japanese.
-constJ ----------- Constellation names in Japanese.
-planets.py ------- Draw planets (Mercury, Venus, Mars, Saturn, Jupiter).
+constlines.py ---- Draw constellation lines.
 milkyway.py ------ Draw milkyway.
+moon.py ---------- Draw moon.
+moon_month.py----- Draw moon of the month.
+nameJ ------------ Most popular stars in Japanese.
+observe.py ------- Position of observation. 
+planets.py ------- Draw planets (Mercury, Venus, Mars, Saturn, Jupiter).
+planets_month.py-- Draw planets of the month.
+planisfunc.py ---- Basic functions to draw planisphere.
+season.py -------- Draw seasonaly events of the sky.
 sky.py ----------- Draw background sky.
+stars.py --------- Draw stars with Hipparcos catalogue.

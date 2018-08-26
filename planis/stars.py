@@ -1052,7 +1052,7 @@ class hip_stars:
         X, Y, ret = plf.polarXY(AZ, ALT, lim=0, size = SIZE)
         SIZE = ret['size']
 
-        ax.scatter(X,Y,SIZE,c='yellow',alpha=0.8,zorder=zo)
+        ax.scatter(X,Y,SIZE,c='yellow',alpha=1, zorder=zo)
 
         if (legend == True):
             import nameJ 
