@@ -12,13 +12,10 @@ offset = np.pi /50.
 
 class planets:
     def __init__(self,observe,ax, zo,legend):
-        s = []
-        for body in Planet:
-            s.append(eval('ephem.'+body+'()'))
-    
-        for i in range(len(s)):
-            s[i].compute(observe)
-   
+
+        s = [eval('ephem.'+body+'()') for body in Planet]
+        [s[i].compute(observe) for i in range(len(s))]
+
         NAME = np.array(Planet)
         ALT = np.array([float(body.alt) for body in s])
         AZ  = np.array([float(body.az) for body in s])

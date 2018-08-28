@@ -150,8 +150,7 @@ class const_namesJ:
             except:
                 None
 
-        for i in range(len(const)):
-            const[i].compute(observe)
+        [const[i].compute(observe) for i in range(len(const))]
 
         NAME = np.array([str(body.name) for body in const])
         AZ   = np.array([float(body.az) for body in const])

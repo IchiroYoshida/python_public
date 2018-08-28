@@ -3,9 +3,6 @@ import math
 
 np.seterr(divide='ignore', invalid='ignore')
 
-def rnd2pi(x):
-    return (x - np.floor(x /2*np.pi) * 2*np.pi)
-
 def equatoHori(th, RA, DEC):
      h = math.sin(th)*np.sin(DEC) + math.cos(th)*np.cos(RA)*np.cos(DEC)
      ALT = np.arcsin(h)

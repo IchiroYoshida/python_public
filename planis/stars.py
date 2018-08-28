@@ -1030,6 +1030,7 @@ import planisfunc as plf
 
 class hip_stars:
     def __init__(self, observe, ax, zo, legend):
+       
         
         s = []
         for line in db.split('\n'):
@@ -1041,8 +1042,7 @@ class hip_stars:
             except:
                 None
 
-        for i in range(len(s)):
-            s[i].compute(observe)
+        [s[i].compute(observe) for i in range(len(s))]
 
         ALT  = np.array([float(body.alt) for body in s])
         AZ   = np.array([float(body.az) for body in s])

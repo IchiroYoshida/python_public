@@ -2218,8 +2218,7 @@ class milkyway:
             except:
                 None
 
-        for i in range(len(c)):
-            c[i].compute(observe)
+        [c[i].compute(observe) for i in range(len(c))]
 
         ALT = np.array([float(body.alt) for body in c])
         AZ  = np.array([float(body.az) for body in c])

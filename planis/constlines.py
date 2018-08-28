@@ -703,11 +703,8 @@ class const_line:
             except:
                 None
 
-        for i in range(len(Name1)):
-            Name1[i].compute(observe)
-
-        for i in range(len(Name2)):
-            Name2[i].compute(observe)
+        [Name1[i].compute(observe) for i in range(len(Name1))]
+        [Name2[i].compute(observe) for i in range(len(Name2))]
 
         AZ1  = np.array([float(body.az) for body in Name1])
         ALT1 = np.array([float(body.alt) for body in Name1])

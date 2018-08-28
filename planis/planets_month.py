@@ -14,47 +14,41 @@ offset = np.pi /50.
 class planets:
     def __init__(self,observe,ax, zo,legend):
 
-        # Planets position at the middle of the month. (15)
         d = observe.date
         year = d.datetime().year
         month = d.datetime().month
-        date0 = str('%4d/%02d/15 12:00:00' % (year,month))
-        observe.date = date0
-
-        s = []
-        for body in Planet:
-            s.append(eval('ephem.'+body+'()'))
-    
-        for i in range(len(s)):
-            s[i].compute(observe)
-   
-        NAME = np.array(Planet)
-        ALT = np.array([float(body.alt) for body in s])
-        AZ  = np.array([float(body.az) for body in s])
-        MAG = np.array([body.mag for body in s])
-        SIZE = (5 - MAG) ** 1.5 * 4
-
-        X, Y, ret = plf.polarXY(AZ, ALT, lim=0, name=NAME, size=SIZE)
-        NAME = ret['name']
-        SIZE = ret['size']
+        date0 = str('%4d/%02d/01 12:00:00' % (year, month))
+        date_star = str('%4d/%02d/07 12:00:00' % (year, month))
+        observe.date = date_star
+        side = float(observe.sidereal_time()) # Sidereal Time (Radians)
 
         if (legend):
-            X -= offset
-            Y += offset
+            observe.date = date0
+            observe.date += 30  #Planets position at the end of the month.(30)
+
+            s = [eval('ephem.'+body+'()') for body in Planet]
+            [s[i].compute(observe) for i in range(len(s))]
+
+            NAME = np.array(Planet)
+            RA = np.array([float(body.ra) for body in s])
+            DEC = np.array([float(body.dec) for body in s])
+
+            RA = side - RA
+
+            lat = float(observe.lat)
+            AZ, ALT = plf.equatoHori(lat, RA, DEC)
+            X, Y, ret = plf.polarXY(AZ, ALT, lim=0, name=NAME)
+            NAME = ret['name']
+
+            Y -= offset
+
             for n in range(len(NAME)):
                 nameJ = PlanetJ[NAME[n]]
                 ax.text(X[n], Y[n], nameJ, color='white',
                         fontsize=12, alpha=0.9, zorder=zo)
 
         # Monthly  movement of the planets.
-        date_star = str('%4d/%02d/07 12:00:00' % (year,month))
-        observe.date = date_star
-        side = float(observe.sidereal_time()) # Sidereal Time (Radians)
-
         date0 = str('%4d/%02d/01 12:00:00' % (year,month))
-        s = []
-        for body in Planet:
-            s.append(eval('ephem.'+body+'()'))
 
         for i in range(len(s)):
             if (s[i].name == 'Mercury' or s[i].name == 'Venus'):
@@ -85,7 +79,6 @@ class planets:
                     ax.plot(X, Y, '-', lw=2, color='red', alpha=1, zorder=zo)
 
                 # quiver (arrow head)
-
                 Ra = []
                 Dec = []
                 for day in range(26, 32, 5):

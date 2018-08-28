@@ -46,9 +46,7 @@ class hip20_nameJ:
 
             except:
                 None
-
-        for i in range(len(s)):
-            s[i].compute(observe)
+        [s[i].compute(observe) for i in range(len(s))]
 
         NAME = np.array([body.name for body in s])
         ALT  = np.array([float(body.alt) for body in s])

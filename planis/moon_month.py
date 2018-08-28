@@ -73,7 +73,6 @@ class Moon:
                 if (legend):
                     text_offset = np.pi/ 50.
 
-                    #MA = str('%2d' % (m_day))
                     d = observe.date
                     MA  = str('%2d' % d.datetime().day)
                     az = np.array(moon.az).reshape(1,)

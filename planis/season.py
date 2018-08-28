@@ -2,7 +2,7 @@
 Seasonaly events of the stars.
 """
 
-events="""\
+events="""
 春の大曲線,67301,69673,65474
 春の大三角,69673,65474,57632,69673
 夏の大三角,102098,97649,91262,102098
@@ -41,11 +41,8 @@ class season_line:
             except:
                 None
 
-        for i in range(len(Event1)):
-            Event1[i].compute(observe)
-
-        for i in range(len(Event2)):
-            Event2[i].compute(observe)
+        [Event1[i].compute(observe) for i in range(len(Event1))]
+        [Event2[i].compute(observe) for i in range(len(Event2))]
 
         AZ1  = np.array([float(body.az) for body in Event1])
         ALT1 = np.array([float(body.alt) for body in Event1])
@@ -69,7 +66,6 @@ class season_line:
             
             Name= []
             Events= []
-
             for event in events.split('\n'):
                 try:
                     if (event):
@@ -83,20 +79,8 @@ class season_line:
                     None
 
             for i in range(len(Name)):
-                Event = []
-                for j in Events:
-                    for k in j:
-                        starz = hip.star(k)
-                        Event.append(starz)
-            
-            for i in range(len(Name)):
-                Event = []
-                for j in range(len(Events[i])):
-                    starz = hip.star(Events[i][j])
-                    Event.append(starz)
-
-                for j in range(len(Event)):
-                    Event[j].compute(observe)
+                Event = [hip.star(Events[i][j]) for j in range(len(Events[i]))]
+                [Event[j].compute(observe) for j in range(len(Event))]
 
                 AZ  = np.array([float(body.az) for body in Event])
                 ALT = np.array([float(body.alt) for body in Event])
