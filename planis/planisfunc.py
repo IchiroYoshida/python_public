@@ -13,6 +13,12 @@ def equatoHori(th, RA, DEC):
  
      return AZ, ALT
 
+def polar(az, alt):
+     r = np.pi /2. - alt
+     x = - r * np.sin(az)
+     y =   r * np.cos(az)
+     return x, y
+
 def polarXY(AZ, ALT, lim,  **kwargs):
      if ('size' in kwargs): SIZE = kwargs['size']
      if ('name' in kwargs): NAME = kwargs['name']
