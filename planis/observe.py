@@ -2,8 +2,8 @@ import ephem
 
 obs = ephem.Observer()
 
-obs.name = '福岡'
-obs.lon = '130.390'
-obs.lat = '33.593'
-obs.date = '2018/09/18 4:50:00'
+obs.name = '石垣'
+obs.lon = '124.1640'
+obs.lat = '24.3321'
+obs.date = '2018/09/20 19:44:00'
 obs.date -= 9*ephem.hour
