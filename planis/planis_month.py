@@ -18,8 +18,11 @@ d = obs.date
 
 year = d.datetime().year
 month = d.datetime().month
+hour = d.datetime().hour   
+minute = d.datetime().minute
 
-date0 = str('%4d/%02d/07 12:00:00' % (year,month))   #UTC -> JST 21:00:00
+date0 = str('%4d/%02d/07 %02d:%02d:00' % (year,month,hour,minute))
+
 obs.date = date0
 
 fig, ax = plt.subplots(figsize=(10,10),dpi=100)
