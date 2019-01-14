@@ -12,9 +12,11 @@ class Moon:
         d = observe.date
         year = d.datetime().year
         month = d.datetime().month
+        hour = d.datetime().hour
+        minute = d.datetime().minute
 
-        date0 = str('%4d/%02d/01 12:00:00' % (year, month)) # UTC -> JST 21:00:00
-        date_star = str('%4d/%02d/07 12:00:00' % (year, month))
+        date0 = str('%4d/%02d/01 %02d:%02d:00' % (year, month, hour, minute))
+        date_star = str('%4d/%02d/07 %02d:%02d:00' % (year, month, hour, minute))
         observe.date = date_star
         side = float(observe.sidereal_time()) # Sidereal Time (Radians)
        

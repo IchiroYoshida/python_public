@@ -12,13 +12,16 @@ PlanetJ = {'Mercury':'水星','Venus':'金星','Mars':'火星','Jupiter':'木星
 offset = np.pi /50.
 
 class planets:
-    def __init__(self,observe,ax, zo,legend):
+    def __init__(self, observe, ax, zo, legend):
 
         d = observe.date
         year = d.datetime().year
         month = d.datetime().month
-        date0 = str('%4d/%02d/01 12:00:00' % (year, month))
-        date_star = str('%4d/%02d/07 12:00:00' % (year, month))
+        hour = d.datetime().hour
+        minute = d.datetime().minute
+
+        date0 = str('%4d/%02d/01 %02d:%02d:00' % (year, month, hour, minute))
+        date_star = str('%4d/%02d/07 %02d:%02d:00' % (year, month, hour, minute))
         observe.date = date_star
         side = float(observe.sidereal_time()) # Sidereal Time (Radians)
 
@@ -48,7 +51,7 @@ class planets:
                         fontsize=12, alpha=0.9, zorder=zo)
 
         # Monthly  movement of the planets.
-        date0 = str('%4d/%02d/01 12:00:00' % (year,month))
+        date0 = str('%4d/%02d/01 %02d:%02d:00' % (year, month, hour, minute))
 
         for i in range(len(s)):
             if (s[i].name == 'Mercury' or s[i].name == 'Venus'):
