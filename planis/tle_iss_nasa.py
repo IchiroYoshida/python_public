@@ -69,9 +69,9 @@ class TleIssNasa:
                 tle = new
                 item_utc = re.split(" +", tle[0])[3]
                 y = 2000 + int(item_utc[0:2])
-                d = float(item_utc[2:])
+                d = float(item_utc[2:])-1
                 utc_tle = datetime(y, 1, 1) + timedelta(days=d)
-                if utc_tle <= self.utc:
+                if utc_tle <= self.utc + timedelta(days=1):
                     break
             print("\n".join(tle))
             print(utc_tle.strftime("(%Y-%m-%d %H:%M:%S.%f UTC)"))
