@@ -7,14 +7,14 @@
 
 2. Files
 
-constJ ----------- Constellation names in Japanese.
+constE ----------- Constellation names in English.
 constlines.py ---- Draw constellation lines.
 ecliequ.py ------- Draw celestial equator and ecliptic.
 constlines.py ---- Draw constellation lines.
 milkyway.py ------ Draw milkyway.
 moon.py ---------- Draw moon.
 moon_month.py----- Draw moon of the month.
-nameJ ------------ Most popular stars in Japanese.
+nameE ------------ Most popular stars in English.
 observe.py ------- Position of observation. 
 planets.py ------- Draw planets (Mercury, Venus, Mars, Saturn, Jupiter).
 planets_month.py-- Draw planets of the month.
