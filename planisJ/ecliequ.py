@@ -13,7 +13,7 @@ class ecliEqu:
 
         lim = 0
 
-        # -------- Draw equator
+        # -------- 赤道を描く
 
         alt = []
         az = []
@@ -44,16 +44,16 @@ class ecliEqu:
         if(legend):
             txtn = int(len(X)/2)
             ax.text(X[txtn] ,Y[txtn]
-                    ,'Equator',fontsize=10, color = 'white',alpha = 0.3, zorder= zo)
+                    ,'赤道',fontsize=10, color = 'white',alpha = 0.3, zorder= zo)
 
-        # -------- Draw ecliptic
+        # -------- 黄道を描く
 
         alt = []
         az = []
         for rambda in range(0, 360, 5):
             ram = str(rambda)
-            ecl = ephem.Ecliptic(ram, '0')
-            equ0 = ephem.Equatorial(ecl, epoch='2000')  
+            ecl = ephem.Ecliptic(ram, '0')  # 黄道算出
+            equ0 = ephem.Equatorial(ecl, epoch='2000')     # 黄道座標を赤道座標に変換
             equ = ephem.FixedBody()
             equ._ra = equ0.ra
             equ._dec = equ0.dec
@@ -78,7 +78,7 @@ class ecliEqu:
         if(legend):
             txtn = int(len(X)/2)
             ax.text(X[txtn] ,Y[txtn]
-                    ,'Ecliptic',fontsize=10, color = 'yellow', alpha = 0.3, zorder= zo)
+                    ,'黄道',fontsize=10, color = 'yellow', alpha = 0.3, zorder= zo)
 
 
 if __name__ == '__main__':

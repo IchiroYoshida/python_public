@@ -3,11 +3,11 @@ Seasonaly events of the stars.
 """
 
 events="""
-Spring triangle,67301,69673,65474
-Large triangle of spring,69673,65474,57632,69673
-Summer Triangle,102098,97649,91262,102098
-Great Square of Pegasus,113963,113881,677,1067,113963
-Winter Triangle,32349,37279,27989,32349
+春の大曲線,67301,69673,65474
+春の大三角,69673,65474,57632,69673
+夏の大三角,102098,97649,91262,102098
+秋の四辺形,113963,113881,677,1067,113963
+冬の大三角,32349,37279,27989,32349
 """
 import math
 import numpy as np

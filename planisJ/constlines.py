@@ -684,7 +684,7 @@ import matplotlib.pyplot as plt
 import ephem
 import stars as hip
 import planisfunc as plf
-import constE as cj
+import constJ as cj
 
 class const_line:
     def __init__(self, observe, ax, zo, legend):
@@ -725,7 +725,7 @@ class const_line:
             plt.plot([X1[i], X2[i]],[Y1[i], Y2[i]], 'w--', alpha = 0.2)
 
         if(legend):
-            cn = cj.const_namesE(observe, ax, zo)
+            cn = cj.const_namesJ(observe, ax, zo)
 
 if __name__=='__main__':
     import matplotlib.pyplot as plt

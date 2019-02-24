@@ -1055,8 +1055,8 @@ class hip_stars:
         ax.scatter(X,Y,SIZE,c='yellow',alpha=1, zorder=zo)
 
         if (legend == True):
-            import nameE 
-            na = nameE.hip20_nameE(observe, ax, zo, legend)
+            import nameJ 
+            na = nameJ.hip20_nameJ(observe, ax, zo, legend)
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt

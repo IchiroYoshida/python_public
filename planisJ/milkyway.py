@@ -2232,7 +2232,7 @@ class milkyway:
         if (legend):
             Xtxt = np.mean(X)
             Ytxt = np.mean(Y)
-            ax.text(Xtxt, Ytxt, 'Milkyway', fontsize = 15, color = 'white', alpha = 0.5, zorder=zo)
+            ax.text(Xtxt, Ytxt, '天の川', fontsize = 15, color = 'white', alpha = 0.5, zorder=zo)
 
 if __name__ == '__main__': 
      import matplotlib.pyplot as plt 

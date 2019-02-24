@@ -24,19 +24,19 @@ class skyfield:
             
            if (legend):
                Location = observer.name
-               Lon = str('Lon.: %7.4f' % (math.degrees(observer.lon)))
-               Lat = str('Lat.: %7.4f' % (math.degrees(observer.lat)))
-
-               time = observer.date     # UTC
+               Lon  = '経度：'+str(math.degrees(observer.lon))
+               Lat  = '緯度：'+str(math.degrees(observer.lat))
+               time = observer.date + 9*ephem.hour #UTC -> JST
+               #time = observer.date     # UTC
                ti = ephem.Date(time)
 
-               ax.text(0 - offset, np.pi/2.+offset,'N', color='k',
+               ax.text(0 - offset, np.pi/2.+offset,'北', color='k',
                    fontsize=15, alpha = 1.0, zorder=zo)
-               ax.text(np.pi/2.+offset, 0 - offset,'W', color='k',
+               ax.text(np.pi/2.+offset, 0 - offset,'西', color='k',
                    fontsize=15, alpha = 1.0, zorder=zo)
-               ax.text(0 - offset, - np.pi/2. -offset,'S', color='k',
+               ax.text(0 - offset, - np.pi/2. -offset,'南', color='k',
                    fontsize=15, alpha = 1.0, zorder=zo)
-               ax.text(-np.pi/2. -2*offset, 0 - offset,'E', color='k',
+               ax.text(-np.pi/2. -2*offset, 0 - offset,'東', color='k',
                    fontsize=15, alpha = 1.0, zorder=zo)
 
                ax.text(-np.pi/2 - offset, + np.pi/2 + offset,Location, color='k',

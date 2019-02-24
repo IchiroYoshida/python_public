@@ -32,7 +32,8 @@ class planets:
             X += offset
             Y += offset
             for n in range(len(NAME)):
-                ax.text(X[n], Y[n], NAME[n], color='white',
+                nameJ = PlanetJ[NAME[n]]
+                ax.text(X[n], Y[n], nameJ, color='white',
                         fontsize=12, alpha=0.9, zorder=zo)
 
 
