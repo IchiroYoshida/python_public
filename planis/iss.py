@@ -41,11 +41,11 @@ class iss:
                             Alt.append(iss_alt)
                             if ( sec == 0 and legend ):
                                 if(math.degrees(iss.alt) > 10):
-                                    jst = observe.date + 9. * ephem.hour +ephem.second
-                                    jst = ephem.date(jst)
+                                    utc = observe.date + ephem.second
+                                    utc = ephem.date(utc)
 
-                                    hour_str = jst.datetime().hour
-                                    min_str = jst.datetime().minute
+                                    hour_str = utc.datetime().hour
+                                    min_str = utc.datetime().minute
 
                                     time = str('%02d:%02d:00' % (hour_str,min_str))
 
