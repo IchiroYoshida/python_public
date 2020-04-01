@@ -3,12 +3,12 @@
 
     2020-04-01 Ichiro Yoshida
 '''
-Mesh = 20    # Mesh x Mesh grid
+Mesh = 50    # Mesh x Mesh grid
 T  = 100      # Observation period days.
-N  = 1000     # Population
-I0 = 10      # Initial number of infected person
+N  = 10000     # Population
+I0 = 1      # Initial number of infected person
 
-It = 14      # Infectious period of days
+It = 7      # Infectious period of days
 R0 = 2.208   # Reproduction number 
 alpha = R0 /It
 
