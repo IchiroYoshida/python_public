@@ -18,7 +18,7 @@ data = [dat.text for dat in table('td')]
 csvRow = []
 
 while len(data):
-    row = data[:11]
+    row = data[:10]
     country = row[0]
     tot_Case = float(row[1].replace(',',''))
     if (len(row[3])>1):
@@ -27,7 +27,7 @@ while len(data):
             case_Mil = float(row[8].replace(',',''))
             death_Mil = '{:.3f}'.format(tot_Death * case_Mil /tot_Case)
             csvRow.append([country, death_Mil])
-    del data[:11]
+    del data[:10]
 
 csvRow.sort(key=lambda x: float(x[1]), reverse=True )
 print(now_utc)

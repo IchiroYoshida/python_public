@@ -18,9 +18,9 @@ data = [dat.text for dat in table('td')]
 csvRow = []
 
 while len(data):
-    row = data[:11]
+    row = data[:10]
     csvRow.append(row)
-    del data[:11]
+    del data[:10]
 
 print(now_utc)
 with open(filename,'w',encoding='utf-8') as file:
