@@ -9,7 +9,7 @@ N  = 10000     # Population
 I0 = 1      # Initial number of infected person
 
 It = 7      # Infectious period of days
-R0 = 2.208   # Reproduction number 
+R0 = 2.73   # Reproduction number 
 alpha = R0 /It
 
 Limit = Mesh -1
@@ -73,7 +73,7 @@ class Infection(object):
         for n in range(N):
             dy = self.person[n].days
             if (dy > (It - 3)):
-                if(random.random() > ( 1 - .2 )):
+                if(random.random() > ( .794 )):  # 0.5**(1/3)
                     self.person[n].condition = 2   # R: Recoved
             
             

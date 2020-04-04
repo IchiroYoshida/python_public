@@ -14,9 +14,9 @@ t_max = 300
 tspan = np.linspace(0.0, t_max, t_max + 1)
 
 # parameters to fit
-r0 = 2.208  #Reproduction number
-beta = 0.371 # infection force
-I0 = 792            # Init Infected patients
+r0 = 2.73  #Reproduction number
+beta = 0.297 # infection force
+I0 = 1287            # Init Infected patients
 gamma = 0.154 # average rate or death (Hubei)
 sigma = 1/7 # incubation average (7.0 days)
 fatalityrate = 0.03

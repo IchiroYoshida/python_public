@@ -9,7 +9,7 @@ N  = 10000     # Population
 I0 = 1      # Initial number of infected person
 
 It = 7      # Infectious period of days
-R0 = 2.208   # Reproduction number 
+R0 = 2.73   # Reproduction number 
 alpha = R0 /It
 
 Limit = Mesh -1

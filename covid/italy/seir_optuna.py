@@ -17,7 +17,7 @@ import csv
 import datetime
 
 read_csv = './data/Italy.csv'
-filename = './data/seir_optuna.res'
+#filename = './data/seir_optuna.res'
 
 csvRow = []
 data = {}
