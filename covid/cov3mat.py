@@ -8,7 +8,7 @@ import csv
 import math
 
 path = './td7/'
-file = 'Mil20200401.csv'
+file = 'Mil20200405.csv'
 
 data = []
 
@@ -40,7 +40,7 @@ while len(day_data):
     Y.append(float(dat[3]))
     del day_data[:1]
 
-plt.title("[1/Td / deaths/Mil.Pop. 2020/04/01]")
+plt.title("[1/Td / deaths/Mil.Pop. 2020/04/05]")
 plt.xlabel("1/Td(Doubling time days)")
 plt.ylabel("deaths/Mil.Pop.")
 plt.yscale('log')
