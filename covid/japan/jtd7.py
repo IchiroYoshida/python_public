@@ -76,6 +76,6 @@ print(now_jst)
 with open(filename,'w',encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow([now_jst])
-    writer.writerow(['都道府県','day0','day1','Td'])
+    writer.writerow(['都道府県',day0,day1,'Td'])
     writer.writerows(csvRow)
 
