@@ -12,7 +12,8 @@ now_utc = now.strftime('%Y/%m/%d %H:%M:%S UTC')
 
 res = requests.get(url)
 soup = BeautifulSoup(res.text, 'html.parser')
-table = soup.find('table')
+#table = soup.find('table')
+table = soup.find('All')
 
 data = [dat.text for dat in table('td')]
 csvRow = []
