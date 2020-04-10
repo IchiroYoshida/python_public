@@ -4,6 +4,7 @@ from pytz import timezone
 import requests
 from bs4 import BeautifulSoup
 
+col = 13
 url="https://www.worldometers.info/coronavirus/"
 
 now = datetime.datetime.now(timezone('UTC'))
@@ -12,16 +13,16 @@ now_utc = now.strftime('%Y/%m/%d %H:%M:%S UTC')
 
 res = requests.get(url)
 soup = BeautifulSoup(res.text, 'html.parser')
-#table = soup.find('table')
-table = soup.find('All')
+table = soup.find('table')
 
 data = [dat.text for dat in table('td')]
 csvRow = []
 
+
 while len(data):
-    row = data[:12]
+    row = data[:col]
     csvRow.append(row)
-    del data[:12]
+    del data[:col]
 
 print(now_utc)
 with open(filename,'w',encoding='utf-8') as file:

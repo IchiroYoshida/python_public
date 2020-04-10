@@ -8,7 +8,7 @@ import csv
 import math
 
 path = './td7/'
-file = 'Mil20200408.csv'
+file = 'Mil20200410.csv'
 
 data = []
 
