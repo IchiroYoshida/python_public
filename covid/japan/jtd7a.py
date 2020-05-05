@@ -1,7 +1,7 @@
 '''
-  Td(Doubling time for 7 days) of Japan
+  Td(Doubling time for the average of 7 days) of Japan
 
-  2020-03-26 Ichiro Yoshida
+  2020-05-03 Ichiro Yoshida
 '''
 import math
 import csv
@@ -16,7 +16,7 @@ days = []
 
 now = datetime.datetime.now()
 before7 = now - datetime.timedelta(days=7.)
-filename = './td7/td7'+now.strftime('%Y%m%d_%H%M%S')+'.csv'
+filename = './td7/td7a'+now.strftime('%Y%m%d_%H%M%S')+'.csv'
 now_jst = now.strftime('%Y%m%d %H:%M:%S JST')
 
 path = './jdata/'
@@ -74,6 +74,7 @@ total_d7 = '{:.3f}'.format(td7(total0, total1))
 csvRow.append(['全国',total0, total1,total_d7])
 csvRow.sort(key=lambda x:float(x[3]))
 print(now_jst)
+
 with open(filename,'w',encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow([now_jst])

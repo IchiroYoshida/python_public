@@ -39,7 +39,6 @@ for lin in csvRow:
 
 days = list(data.keys())
 
-
 TdRows=[]
 
 for dd in days:
@@ -65,12 +64,12 @@ for dd in days:
         Td_str = '{:.3f}'.format(Td)
         death_Mil_str = '{:.3f}'.format(death_Mil)
 
-        TdRows.append([date0_str,deaths,Td_str,death_Mil_str])
+        TdRows.append([date0_str,n0,deaths,Td_str,death_Mil_str])
 
     except KeyError:
         exit
 
 with open(filename,'w',encoding='utf-8') as file:
     writer = csv.writer(file)
-    writer.writerow(['Date','deaths','Td','Deaths/Mil.'])
+    writer.writerow(['Date','cases','deaths','Td','Deaths/Mil.'])
     writer.writerows(TdRows)

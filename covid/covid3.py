@@ -68,14 +68,13 @@ csvRow = []
 for country in countries:
     country0 = dic_data0.get(country)
     country1 = dic_data1.get(country)
-    print(country0,country1)
-
     tot_Cases0 = float(country0[1].replace(',',''))
-
     try:
         tot_Cases1 = float(country1[1].replace(',',''))
+
     except TypeError:
-        break
+        print('tot_Cases1 TypeError!')
+        #pass 
 
     if(country1[3]):
         death_str = country1[3].replace(' ','')
@@ -88,24 +87,18 @@ for country in countries:
     if(country1[8]):
         case_Mil_str = country1[8].replace(' ','')
         case_Mil_str2 = case_Mil_str.replace(',','')
-        print(case_Mil_str2)
-
         try:
             case_Mil = float(case_Mil_str2)
         except ValueError:
             case_Mil = 0.
 
-    print('case_Mil',case_Mil)
-
-    if(case_Mil):
-        if(tot_Cases1 > tot_Cases0):
-            if(tot_Death > 1.):
-                Td = Td7(tot_Cases0, tot_Cases1)
-                print(tot_Cases0, tot_Cases1, case_Mil)
-
-                Mil_pop = tot_Cases1 / case_Mil
-                death_Mil = tot_Death / Mil_pop
-                csvRow.append([country,'{:d}'.format(int(tot_Death)), '{:5.3f}'.format(Td),'{:5.3f}'.format(death_Mil)])
+        if(case_Mil):
+            if(tot_Cases1 > tot_Cases0):
+                if(tot_Death > 1.):
+                    Td = Td7(tot_Cases0, tot_Cases1)
+                    Mil_pop = tot_Cases1 / case_Mil
+                    death_Mil = tot_Death / Mil_pop
+                    csvRow.append([country,'{:d}'.format(int(tot_Death)), '{:5.3f}'.format(Td),'{:5.3f}'.format(death_Mil)])
 
 csvRow.sort(key=lambda x: float(x[2]), reverse=True )
 print(now_utc)
