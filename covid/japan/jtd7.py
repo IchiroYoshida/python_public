@@ -29,6 +29,9 @@ day1 = now.strftime('%Y/%m/%d')
 def td7(n0,n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
 
+def kval(n0,n1):   #Takashi Nakano Osaka.Univ.
+    return(1-n0/n1)
+
 for file in files:
     with open(path+file) as f:
         reader = csv.reader(f)
@@ -64,19 +67,26 @@ for pref in prefs:
     cases1 = float(pref1[1])
     total1 += cases1
 
-    if(cases0<cases1):
-        d7 = '{:.3f}'.format(td7(cases0, cases1))
-        csvRow.append([pref,cases0,cases1,d7])
+    if(cases0):
+        if(cases0<cases1):
+            d7 = '{:.3f}'.format(td7(cases0, cases1))
+            k  = '{:.3f}'.format(kval(cases0, cases1))
+            csvRow.append([pref,cases0,cases1,d7,k])
+        else:
+            k  = '{:.3f}'.format(kval(cases0, cases1))
+            csvRow.append([pref,cases0,cases1,1000,k])
     else:
-        csvRow.append([pref,cases0,cases1,1000])
+        csvRow.append([pref,cases0,cases1,1000,0])
 
 total_d7 = '{:.3f}'.format(td7(total0, total1))
-csvRow.append(['全国',total0, total1,total_d7])
+total_k  = '{:.3f}'.format(kval(total0, total1))
+
+csvRow.append(['全国',total0, total1,total_d7,total_k])
 csvRow.sort(key=lambda x:float(x[3]))
 print(now_jst)
 with open(filename,'w',encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow([now_jst])
-    writer.writerow(['都道府県',day0,day1,'Td'])
+    writer.writerow(['都道府県',day0,day1,'Td','K'])
     writer.writerows(csvRow)
 
