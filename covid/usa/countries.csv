@@ -1,3 +1,10 @@
+'''
+Countries, Latitude, Longitude
+
+2020-05-13
+
+'''
+
 'Afghanistan',33.0, 65.0
 'Albania',41.15,20.17
 'Algeria',28.03,1.70
@@ -162,50 +169,49 @@
 'Saint Martin',18.07,-63.10
 'Saint Pierre Miquelon',47.01,-56.38
 'San Marino',43.94,12.46
-'Sao Tome and Principe',
+'Sao Tome and Principe',0.92,5.84
 'Saudi Arabia',24.0,45.0
 'Senegal',14.50,-14.45
 'Serbia',44.02,21.01
 'Seychelles',-4.68,55.49
-'Sierra Leone',
+'Sierra Leone',8.42,-12.99
 'Singapore',1.28,103.83
-'Sint Maarten',
+'Sint Maarten',18.04,-63.09
 'Slovakia',48.67,19.70
 'Slovenia',46.15,15.0
 'Somalia',5.15,46.20
 'South Africa',-30.56,22.94
-'South Sudan',
+'South Sudan',4.86,31.51
 'Spain',40.0 -4.0
 'Sri Lanka',7.0 81.0
-'St. Barth',
-'St. Vincent Grenadines',
-Sudan  12.8628 30.2176
-Suriname  3.9193 -56.0278
-Sweden  63.0 16.0
-Switzerland  46.8182 8.2275
-Syria
-Taiwan  23.7 121.0
-Tajikistan  38.861034 71.276093
-Tanzania  -6.369 34.8888
-Thailand  15.0 101.0
-Timor-Leste
-Togo  8.6195 0.8248
-Trinidad and Tobago  10.6918 -61.2225
-Tunisia  34.0 9.0
-Turkey  38.9637 35.2433
-Turks and Caicos
-UAE
-Uganda  1.0 32.0
-Ukraine  48.3794 31.1656
-UAE 24.0 54.0
-UK 55.3781 -3.436
-Uruguay  -32.5228 -55.7658
-USA  37.0902 -95.7129
-Uzbekistan  41.3775 64.5853
-Vatican City
-Venezuela  6.4238 -66.5897
-Vietnam  16.0 108.0
-Western Sahara  24.2155 -12.8858
-Yemen  15.553 48.516388
-Zambia  -15.4167 28.2833
-Zimbabwe  -20.0 30.0
+'St. Barth',17.91,-62.88
+'St. Vincent Grenadines',12.97,-61.85
+'Sudan',12.86,30.22
+'Suriname',3.92,-56.03
+'Sweden',63.0 16.0
+'Switzerland',46.82,8.23
+'Syria',34.58,34.08
+'Taiwan',23.7 121.0
+'Tajikistan',38.86,71.28
+'Tanzania',-6.37,34.89
+'Thailand',15.0,101.0
+'Timor-Leste',-8.78,124.6
+'Togo',8.62,0.82
+'Trinidad and Tobago',10.69,-61.22
+'Tunisia',34.0 9.0
+'Turkey',38.96,35.24
+'Turks and Caicos',21.57,-72.35
+'Uganda',1.0 32.0
+'Ukraine',48.38,31.17
+'UAE',24.0,54.0
+'UK',55.38,-3.44
+'Uruguay',-32.52,-55.77
+'USA',37.09,-95.71
+'Uzbekistan',41.38,64.59
+'Vatican City',41.90,12.45
+'Venezuela',6.42,-66.59
+'Vietnam',16.0 108.0
+'Western Sahara',24.22,-12.89
+'Yemen',15.55,48.52
+'Zambia',-15.42,28.28
+'Zimbabwe',-20.0 30.0
