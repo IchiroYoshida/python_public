@@ -4,7 +4,7 @@ from pytz import timezone
 import requests
 from bs4 import BeautifulSoup
 
-col = 13
+col = 15 
 url="https://www.worldometers.info/coronavirus/"
 
 now = datetime.datetime.now(timezone('UTC'))
@@ -21,6 +21,7 @@ csvRow = []
 
 while len(data):
     row = data[:col]
+    del row[:1]
     csvRow.append(row)
     del data[:col]
 
