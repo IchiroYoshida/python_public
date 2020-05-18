@@ -37,7 +37,6 @@ for file in files:
     with open(path+file) as f:
         reader = csv.reader(f)
         for row in reader:
-            print(row)
             data.append(row)
         day_data = []
         while len(data):
