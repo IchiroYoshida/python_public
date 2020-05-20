@@ -85,6 +85,7 @@ for country in countries:
             tot_Death = 0.
 
     if(country1[8]):
+        section = country1[13]
         case_Mil_str = country1[8].replace(' ','')
         case_Mil_str2 = case_Mil_str.replace(',','')
         try:
@@ -98,7 +99,7 @@ for country in countries:
                     Td = Td7(tot_Cases0, tot_Cases1)
                     Mil_pop = tot_Cases1 / case_Mil
                     death_Mil = tot_Death / Mil_pop
-                    csvRow.append([country,'{:d}'.format(int(tot_Death)), '{:5.3f}'.format(Td),'{:5.3f}'.format(death_Mil)])
+                    csvRow.append([section,country,'{:d}'.format(int(tot_Death)), '{:5.3f}'.format(Td),'{:5.3f}'.format(death_Mil)])
 
 csvRow.sort(key=lambda x: float(x[2]), reverse=True )
 print(now_utc)
