@@ -5,7 +5,8 @@ import cartopy.crs as ccrs
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import matplotlib.ticker as mticker
 
-data_file_path = '/Users/ichiro3/nasa/Level3/'
+#data_file_path = '/Users/ichiro3/nasa/Level3/'
+data_file_path = './nasa/Level3/'
 
 f = h5py.File(data_file_path+'OMI-Aura_L3-OMUVBd_2020m0501_v003-2020m0505t093001.he5','r')
 
