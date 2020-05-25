@@ -112,7 +112,7 @@ Japan,36.0,138.0
 Jordan,31.24,36.51
 Kazakhstan,48.02,66.92
 Kenya,-0.02,37.91
-S.Korea,36.0,128.0
+S. Korea,36.0,128.0
 Kuwait,29.5,47.75
 Kyrgyzstan,41.20,74.77
 Latvia,56.88,24.60

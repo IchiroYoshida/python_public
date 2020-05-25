@@ -3,6 +3,9 @@
  
   2020-05-06 Ichiro Yoshida
 '''
+import pomberCountry as pc
+import worldPop as wp
+
 import math
 import csv
 import os
@@ -11,10 +14,17 @@ def td7(n0,n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
 
 path = './data/csv/'
+
 files = os.listdir(path)
 files.sort()
 
 for file in files:
+    country0 = file.split('.')[0]
+    try:
+        country1 = pc.countries[country0][0]
+    except KeyError:
+        continue
+
     csv_data = []
     with open(path+file) as f:
         reader = csv.reader(f)
@@ -28,7 +38,6 @@ for file in files:
         date_str = date[0]+'{0:02d}'.format(int(date[1]))+'{0:02d}'.format(int(date[2]))
         cases  = int(dat[1])
         deaths = int(dat[2])
-
         data[date_str]=[cases,deaths]
 
     days = list(data.keys())
@@ -103,9 +112,15 @@ for file in files:
                 Td7 = 'NG'
         else:
             Td7 = 'NG'
+        
+        try:
+            pop = int(wp.countries[country1][0])
+        except KeyError:
+            continue
 
-        data3[day0]=[Td7,dat0[0],dat0[1],dat0[2],dat0[3],dat0[4],dat0[5],dat0[6],dat0[7]]
-
+        popM = pop/1000000
+        deathM = float(dat0[5])/popM
+        data3[day0]=[Td7,dat0[0],dat0[1],dat0[2],dat0[3],dat0[4],dat0[5],dat0[6],dat0[7],deathM]
     #--------------- Format and Write --------
     days = list(data3.keys())
 
@@ -129,9 +144,11 @@ for file in files:
 
         csvRow.append(line)
 
-    filename = './data/csv2/'+file
+    filename = './data/csv2/'+country1+'.csv'
     with open(filename,'w',encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(['Date','Td','Cases(Tot.)','Cases(7Ave.)','Cases(Day)','Cases(7Ave.Day)',\
-                                 'Deaths(Tot.)','Death(7Ave.)','Death(Day)','Death(7Ave.Day)'])
+                                 'Deaths(Tot.)','Death(7Ave.)','Death(Day)','Death(7Ave.Day)','Death/Mil.pop(7Ave.Day)'])
         writer.writerows(csvRow)
+
+
