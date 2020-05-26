@@ -5,14 +5,14 @@ from matplotlib.pylab import rcParams
 plt.style.use('seaborn-colorblind')
 
 #Parameters
-N=3711
+N=1000
 t_max = 100
 tspan =np.linspace(0.0, t_max,t_max+1)
 
-alpha = 0.099
-I0 =302.3
-beta = 4.676e-5
-gamma = 0.148
+I0 = 1  
+R0 = 2.73
+gamma = 1/7. 
+beta  = R0*gamma /N
 
 def sir(v,t):
     global alpha,beta,gamma
@@ -27,10 +27,11 @@ ini_state = [N-I0,I0,0]
 
 rcParams['figure.figsize']=12,7
 ode_int = odeint(sir, ini_state, tspan)
-plt.plot(ode_int)
-plt.legend(['Susceptible','Infected','Recovered'])
+
+ode_I = ode_int[:,1]
+
+plt.plot(ode_I)
+plt.legend(['Infected'])
 plt.xlabel('Days')
-plt.ylabel('Number of S/I/R patients')
+plt.ylabel('Number of Infected patients')
 plt.show()
-
-
