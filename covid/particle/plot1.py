@@ -3,7 +3,6 @@
 
     2020-05-26 Ichiro Yoshida
 '''
-Repeat =  100    #1000 
 Mesh = 25    # Mesh x Mesh grid 20
 T  = 100      # Observation period days.100
 N  = 1000     # Population 1000
@@ -18,13 +17,27 @@ Ycenter = int(Mesh/2)
 
 Limit = Mesh -1
 
-#from numba import jit
-
 import numpy as np
 import random
 import matplotlib.pylab as plt
-from matplotlib.pylab import rcParams
-plt.style.use('seaborn-colorblind')
+
+def plotPerson(self, ax, x, y, col):
+    Size = 10
+    Rad = 3 
+    xx = x * Size + random.randrange(Rad)
+    yy = y * Size + random.randrange(Rad)
+    ax.plot(xx, yy, color=col, marker='o',markersize=Size)
+
+def plotCell(self,ax):
+    for x in range(Mesh):
+        for y in range(Mesh):
+            cell = inf.SIRinCell(x,y)
+            for s in range(len(cell[0])):    #S: Susceptible
+                plotPerson(self,ax, x, y, 'blue')
+            for r in range(len(cell[2])):    #R: Removed
+                plotPerson(self,ax, x, y, 'green')
+            for i in range(len(cell[1])):    #I: Infected
+                plotPerson(self,ax, x, y, 'red')
 
 class Person:
     def __init__(self):
@@ -34,7 +47,6 @@ class Person:
         self.condition = 0 #[S, I, R]
         self.days = 0 #Duration from infection.
 
-#@jit
 class Infection(object):
     def __init__(self,object, Mesh,N,IO,It,alpha):
         self.person = (N+1)*[]
@@ -73,6 +85,7 @@ class Infection(object):
 
         for inf in infected:
             id = inf.id
+            self.cellRemove(self.person[id])
             self.person[id].condition = 1
             self.person[id].days = It
             self.person[id].x = Xcenter
@@ -155,54 +168,22 @@ class Infection(object):
 
 #main
 
-Inf0 = np.array((T),dtype=float)
-Inf1 = np.array((T),dtype=float)
-
-# Step 0
-
 person = (N+1)*[]
 
-inf  = Infection(person, Mesh, N, I0, It, alpha)
+inf = Infection(person, Mesh, N, I0, It, alpha)
 inf.initPerson()
 inf.initInfection()
 
-x = np.arange(0, T, 1)
-
-i = []
 for t in range(T):
-    member = inf.dailyReport()
-    i.append(len(member[1]))
+    fig, ax = plt.subplots()
+    ax.set_aspect('equal')
+
+    print('No %d'%(t))
+    plotCell(inf,ax)
+    fname = ('./out/SIR%04d.png'%(t))
+    plt.savefig(fname)
+    plt.close()
     inf.exposeInfection()
     inf.movePerson()
+    inf.dailyReport()
 
-Inf0  = np.array(i)
-
-# Step 1...Repeat
-for rep in range(1,Repeat):
-    print('No. %d'%(rep))
-    person = (N+1)*[]
-    
-    inf = Infection(person, Mesh, N, I0, It, alpha)
-    inf.initPerson()
-    inf.initInfection()
-
-    x = np.arange(0, T, 1)
-
-    i = []
-    for t in range(T):
-        member = inf.dailyReport()
-        i.append(len(member[1]))
-        inf.exposeInfection()
-        inf.movePerson()
-    Inf1 = np.array(i)
-    Inf0 = (Inf0+Inf1)/2.
-
-    plt.plot(Inf1)
-
-plt.plot(Inf0,color='red',linewidth =5.)
-
-plt.legend(['Infected'])
-plt.xlabel('Days')
-plt.ylabel('Number of Infected Total. patients')
-plt.show()
-#plt.close()

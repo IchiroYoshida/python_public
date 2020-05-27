@@ -3,7 +3,6 @@
 
     2020-05-26 Ichiro Yoshida
 '''
-Repeat =  100    #1000 
 Mesh = 25    # Mesh x Mesh grid 20
 T  = 100      # Observation period days.100
 N  = 1000     # Population 1000
@@ -61,10 +60,8 @@ class Infection(object):
         self.person[i].days = 0
 
     def initPerson(self):
-        for i in range(0,N):
+        for i in range(N):
             self.resetPerson(i)
-            xx = self.person[i].x
-            yy = self.person[i].y
             self.cellAppend(self.person[i])
 
     def initInfection(self):
@@ -73,11 +70,13 @@ class Infection(object):
 
         for inf in infected:
             id = inf.id
+            self.cellRemove(self.person[id])
             self.person[id].condition = 1
             self.person[id].days = It
             self.person[id].x = Xcenter
             self.person[id].y = Ycenter
             self.cellAppend(self.person[id])
+
 
     def movePerson(self):
         for i in range(N):
@@ -155,54 +154,23 @@ class Infection(object):
 
 #main
 
-Inf0 = np.array((T),dtype=float)
-Inf1 = np.array((T),dtype=float)
-
-# Step 0
-
 person = (N+1)*[]
-
-inf  = Infection(person, Mesh, N, I0, It, alpha)
+    
+inf = Infection(person, Mesh, N, I0, It, alpha)
 inf.initPerson()
 inf.initInfection()
 
-x = np.arange(0, T, 1)
-
-i = []
 for t in range(T):
-    member = inf.dailyReport()
-    i.append(len(member[1]))
+    print('No %d'%(t))
+    for x in range(Mesh):
+        for y in range(Mesh):
+            cell = inf.SIRinCell(x,y)
+            s = len(cell[0])
+            i = len(cell[1])
+            r = len(cell[2])
+            print(' %2d:%2d | %3d,%3d,%d'%(x,y,s,i,r))
+
     inf.exposeInfection()
     inf.movePerson()
+    inf.dailyReport()
 
-Inf0  = np.array(i)
-
-# Step 1...Repeat
-for rep in range(1,Repeat):
-    print('No. %d'%(rep))
-    person = (N+1)*[]
-    
-    inf = Infection(person, Mesh, N, I0, It, alpha)
-    inf.initPerson()
-    inf.initInfection()
-
-    x = np.arange(0, T, 1)
-
-    i = []
-    for t in range(T):
-        member = inf.dailyReport()
-        i.append(len(member[1]))
-        inf.exposeInfection()
-        inf.movePerson()
-    Inf1 = np.array(i)
-    Inf0 = (Inf0+Inf1)/2.
-
-    plt.plot(Inf1)
-
-plt.plot(Inf0,color='red',linewidth =5.)
-
-plt.legend(['Infected'])
-plt.xlabel('Days')
-plt.ylabel('Number of Infected Total. patients')
-plt.show()
-#plt.close()
