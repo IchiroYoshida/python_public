@@ -23,10 +23,10 @@ import matplotlib.pylab as plt
 
 def plotPerson(self, ax, x, y, col):
     Size = 10
-    Rad = 3 
+    Rad = 5 
     xx = x * Size + random.randrange(Rad)
     yy = y * Size + random.randrange(Rad)
-    ax.plot(xx, yy, color=col, marker='o',markersize=Size)
+    ax.plot(xx, yy, color=col, marker='o',markersize=Rad)
 
 def plotCell(self,ax):
     for x in range(Mesh):

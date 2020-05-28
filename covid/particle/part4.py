@@ -73,6 +73,7 @@ class Infection(object):
 
         for inf in infected:
             id = inf.id
+            self.cellRemove(self.person[id])
             self.person[id].condition = 1
             self.person[id].days = It
             self.person[id].x = Xcenter
@@ -170,10 +171,10 @@ x = np.arange(0, T, 1)
 
 i = []
 for t in range(T):
-    member = inf.dailyReport()
-    i.append(len(member[1]))
     inf.exposeInfection()
     inf.movePerson()
+    member = inf.dailyReport()
+    i.append(len(member[1]))
 
 Inf0  = np.array(i)
 
@@ -182,18 +183,12 @@ for rep in range(1,Repeat):
     print('No. %d'%(rep))
     person = (N+1)*[]
     
-    inf = Infection(person, Mesh, N, I0, It, alpha)
-    inf.initPerson()
-    inf.initInfection()
-
-    x = np.arange(0, T, 1)
-
     i = []
     for t in range(T):
-        member = inf.dailyReport()
-        i.append(len(member[1]))
         inf.exposeInfection()
         inf.movePerson()
+        member = inf.dailyReport()
+        i.append(len(member[1]))
     Inf1 = np.array(i)
     Inf0 = (Inf0+Inf1)/2.
 
