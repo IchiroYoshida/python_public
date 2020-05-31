@@ -30,10 +30,10 @@ for file in files:
 
     for dat in csvRow:
         date =   dat[0]
-        cases1 = dat[4]
-        cases2 = dat[5]
-        death1 = dat[8]
-        death2 = dat[9]
+        cases1 = dat[5]
+        cases2 = dat[6]
+        death1 = dat[9]
+        death2 = dat[10]
 
         C1.append(int(cases1))
         C2.append(float(cases2))

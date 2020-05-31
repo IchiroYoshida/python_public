@@ -32,6 +32,11 @@ def td7(n0,n1):
 def kval(n0,n1):   #Takashi Nakano Osaka.Univ.
     return(1-n0/n1)
 
+def rep(td7):
+    k = math.log(2)/td7
+    r = math.exp(k * 7.0) #infectious period = 7.0 days1/gamma
+    return(r)
+
 for file in files:
     with open(path+file) as f:
         reader = csv.reader(f)
@@ -71,22 +76,24 @@ for pref in prefs:
         if(cases0<cases1):
             d7 = '{:.3f}'.format(td7(cases0, cases1))
             k  = '{:.3f}'.format(kval(cases0, cases1))
-            csvRow.append([pref,cases0,cases1,d7,k])
+            r0 = '{:.3f}'.format(rep(float(d7)))
+            csvRow.append([pref,cases0,cases1,d7,k,r0])
         else:
             k  = '{:.3f}'.format(kval(cases0, cases1))
-            csvRow.append([pref,cases0,cases1,1000,k])
+            csvRow.append([pref,cases0,cases1,5000,k,1])
     else:
-        csvRow.append([pref,cases0,cases1,1000,0])
+        csvRow.append([pref,cases0,cases1,5000,0,1])
 
 total_d7 = '{:.3f}'.format(td7(total0, total1))
 total_k  = '{:.3f}'.format(kval(total0, total1))
+total_r0 = '{:.3f}'.format(rep(float(total_d7)))
 
-csvRow.append(['全国',total0, total1,total_d7,total_k])
+csvRow.append(['全国',total0, total1,total_d7,total_k,total_r0])
 csvRow.sort(key=lambda x:float(x[3]))
 print(now_jst)
 with open(filename,'w',encoding='utf-8') as file:
     writer = csv.writer(file)
     writer.writerow([now_jst])
-    writer.writerow(['都道府県',day0,day1,'Td','K'])
+    writer.writerow(['都道府県',day0,day1,'Td','K','R0'])
     writer.writerows(csvRow)
 

@@ -13,6 +13,11 @@ import os
 def td7(n0,n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
 
+def rep(td7):
+    k = math.log(2)/td7
+    r = math.exp(k * 7.0) #infctious period of time 7.0 days!
+    return(r)
+
 path = './data/csv/'
 path_wm = './data/worldmeters/'
 
@@ -109,11 +114,13 @@ for file in files:
         if(case0):
             if(case0 < case1):
                 Td7 = '{:.2f}'.format(td7(case0, case1))
+                r0  = '{:.2f}'.format(rep(float(Td7)))
             else:
                 Td7 = 'NG'
+                r0 = 'NG'
         else:
             Td7 = 'NG'
-        
+            r0 = 'NG'
         try:
             pop = int(wp.countries[country1][0])
         except KeyError:
@@ -121,7 +128,7 @@ for file in files:
 
         popM = pop/1000000
         deathM = float(dat0[5])/popM
-        data3[day0]=[Td7,dat0[0],dat0[1],dat0[2],dat0[3],dat0[4],dat0[5],dat0[6],dat0[7],deathM]
+        data3[day0]=[Td7,r0,dat0[0],dat0[1],dat0[2],dat0[3],dat0[4],dat0[5],dat0[6],dat0[7],deathM]
     #--------------- Format and Write --------
     days = list(data3.keys())
 
@@ -148,7 +155,7 @@ for file in files:
     filename = './data/csv2/'+file
     with open(filename,'w',encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['Date','Td','Cases(Tot.)','Cases(7Ave.)','Cases(Day)','Cases(7Ave.Day)',\
+        writer.writerow(['Date','Td','R0','Cases(Tot.)','Cases(7Ave.)','Cases(Day)','Cases(7Ave.Day)',\
                                  'Deaths(Tot.)','Death(7Ave.)','Death(Day)','Death(7Ave.Day)','Death/Mil.pop(7Ave.Day)'])
         writer.writerows(csvRow)
 
