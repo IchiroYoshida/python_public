@@ -15,10 +15,11 @@ def td7(n0,n1):
 
 def rep(td7):
     k = math.log(2)/td7
-    r = math.exp(k * 7.0)   # infectious period of time 7.0 days!
-    return (r)
+    r = math.exp(k * 7.0) #infctious period of time 7.0 days!
+    return(r)
 
 path = './data/csv/'
+path_wm = './data/worldmeters/'
 
 files = os.listdir(path)
 files.sort()
@@ -113,14 +114,13 @@ for file in files:
         if(case0):
             if(case0 < case1):
                 Td7 = '{:.2f}'.format(td7(case0, case1))
-                r0  = '{:.2f}'.format( rep(float(Td7)))
+                r0  = '{:.2f}'.format(rep(float(Td7)))
             else:
                 Td7 = 'NG'
                 r0 = 'NG'
         else:
             Td7 = 'NG'
             r0 = 'NG'
-        
         try:
             pop = int(wp.countries[country1][0])
         except KeyError:
@@ -151,12 +151,13 @@ for file in files:
             line.append(d)
 
         csvRow.append(line)
-
-    filename = './data/csv2/'+country1+'.csv'
-    with open(filename,'w',encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Date','Td','R0','Cases(Tot.)','Cases(7Ave.)','Cases(Day)','Cases(7Ave.Day)',\
+    
+    if(country1):
+        filename = './data/csv2/'+country1+'.csv'
+        with open(filename,'w',encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Date','Td','R0','Cases(Tot.)','Cases(7Ave.)','Cases(Day)','Cases(7Ave.Day)',\
                                  'Deaths(Tot.)','Death(7Ave.)','Death(Day)','Death(7Ave.Day)','Death/Mil.pop(7Ave.Day)'])
-        writer.writerows(csvRow)
+            writer.writerows(csvRow)
 
 
