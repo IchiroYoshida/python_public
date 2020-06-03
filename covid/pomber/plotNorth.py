@@ -13,17 +13,8 @@ from matplotlib.pylab import rcParams
 plt.style.use('seaborn-colorblind')
 
 import numpy as np
-import continent as co
 
-continent_colors = {
-'Europe':'blueviolet',
-'North America':'deepskyblue',
-'South America':'royalblue',
-'Asia':'springgreen',
-'Australia/Oceania':'gold',
-'Africa':'chocolate'}
-
-path ='./data/csv2/'
+path ='./data/North/'
 files = os.listdir(path)
 files.sort()
 
@@ -37,8 +28,6 @@ for file in files:
     del csvRow[:2]
 
     country = file.split('.csv')[0]
-    continent = co.continents[country][0]
-    co_col = continent_colors[continent]
 
     D = [] #Death
     
@@ -48,12 +37,11 @@ for file in files:
         if (death > .1):
             D.append(float(death))
     if(len(D)):
-        if(continent == 'Australia/Oceania'):
-            X = range(len(D))
-            plt.plot(X,D,color=co_col)
-            xx = len(D)
-            yy = D[-1]
-            plt.text(xx,yy,country)
+        X = range(len(D))
+        plt.plot(X,D)
+        xx = len(D)
+        yy = D[-1]
+        plt.text(xx,yy,country)
 plt.ylim(.1,500)
 plt.xlim(0,90)
 plt.yscale('log')
