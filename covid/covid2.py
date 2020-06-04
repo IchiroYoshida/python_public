@@ -4,7 +4,7 @@ from pytz import timezone
 import requests
 from bs4 import BeautifulSoup
 
-col = 15
+col = 19 
 url="https://www.worldometers.info/coronavirus/"
 
 now = datetime.datetime.now(timezone('UTC'))
