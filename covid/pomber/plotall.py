@@ -22,7 +22,7 @@ for file in files:
             csvRow.append([row][0])
     del csvRow[:2]
 
-    country = file.split('.')[0]
+    country = file.split('.csv')[0]
     C1 = []  #Case (Day) bar -- green
     C2 = []  #Case (Day Ave7.) line -- blue
     D1 = []  #Death (Day) bar -- red
@@ -49,7 +49,7 @@ for file in files:
     plt.plot(X,C2,linestyle="solid",linewidth=2,color="blue")
     plt.plot(X,D2,linestyle="solid",linewidth=2,color="black")
 
-    plt.legend(['Cases and Deaths in'+country])
+    plt.legend(['Cases and Deaths in '+country])
     plt.xlabel('Days')
     plt.ylabel('Number')
     #plt.yscale('log')

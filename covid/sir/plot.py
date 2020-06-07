@@ -28,10 +28,10 @@ ini_state = [N-I0,I0,0]
 rcParams['figure.figsize']=12,7
 ode_int = odeint(sir, ini_state, tspan)
 
-ode_I = ode_int[:,1]
+ode = ode_int[:]
 
-plt.plot(ode_I)
-plt.legend(['Infected'])
+plt.plot(ode)
+plt.legend(['S:Susceptible I:Infected R:Recovered'])
 plt.xlabel('Days')
-plt.ylabel('Number of Infected patients')
+plt.ylabel('Number of populations')
 plt.show()
