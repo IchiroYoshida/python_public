@@ -1,0 +1,159 @@
+2020/06/08 00:09:23 UTC
+Continent,Country,Total deaths,Td,Deaths/Mil.
+Europe,San Marino,42,364.166,1237.950
+Europe,Belgium,9595,337.647,828.177
+Europe,Andorra,51,44.506,660.127
+Europe,UK,40542,119.025,597.377
+Europe,Spain,27136,657.845,580.364
+Europe,Italy,33899,567.394,560.564
+Europe,Sweden,4659,27.697,461.525
+Europe,Netherlands,6013,201.478,350.992
+Europe,Ireland,1679,577.078,340.251
+North America,USA,112469,54.806,339.889
+Europe,Channel Islands,46,908.136,264.725
+Europe,Switzerland,1921,1456.244,222.095
+North America,Canada,7800,95.267,206.780
+South America,Ecuador,3621,49.553,205.487
+Europe,Luxembourg,110,930.779,175.907
+South America,Brazil,36499,16.426,171.797
+South America,Peru,5465,27.263,165.912
+Europe,Portugal,1479,74.306,145.031
+North America,Bermuda,9,681.707,144.511
+South America,Chile,2190,16.342,114.618
+North America,Mexico,13511,21.499,104.883
+Europe,Germany,8776,377.292,104.772
+Europe,Denmark,589,205.350,101.700
+Asia,Iran,8281,38.537,98.675
+Africa,Mayotte,25,24.038,91.799
+North America,Panama,386,28.064,89.554
+Europe,Moldova,341,29.989,84.512
+Europe,Austria,672,477.155,74.627
+Europe,North Macedonia,153,15.820,73.440
+Europe,Romania,1333,78.862,69.257
+Asia,Armenia,200,13.990,67.494
+Asia,Kuwait,264,29.668,61.880
+Europe,Finland,323,275.206,58.298
+Europe,Hungary,546,144.886,56.534
+Asia,Turkey,4692,130.917,55.681
+Africa,Sao Tome and Principe,12,80.519,54.830
+Europe,Slovenia,109,598.009,52.408
+Europe,Estonia,69,131.960,52.026
+All,World,405074,39.740,51.996
+All,Total:,405074,39.740,51.967
+North America,Dominican Republic,538,38.603,49.628
+Europe,Bosnia and Herzegovina,159,129.271,48.444
+Europe,Norway,238,385.142,43.913
+Europe,Russia,5859,34.217,40.152
+South America,Bolivia,454,16.655,38.915
+North America,Martinique,14,487.625,37.287
+North America,Guadeloupe,14,395.436,35.000
+Asia,Israel,298,112.050,32.397
+Europe,Poland,1157,43.971,30.579
+Europe,Czechia,327,127.323,30.533
+Europe,Iceland,10,8765.192,29.319
+Europe,Serbia,249,137.135,28.495
+Europe,Belarus,269,36.367,28.465
+Africa,Djibouti,28,21.413,28.366
+North America,Bahamas,11,497.329,27.981
+Asia,UAE,276,41.822,27.929
+Europe,Lithuania,71,210.805,26.055
+Europe,Croatia,104,10900.086,25.317
+North America,Honduras,250,28.843,25.264
+South America,Colombia,1259,16.779,24.772
+Europe,Bulgaria,160,61.155,23.000
+Asia,Saudi Arabia,712,27.196,20.477
+Europe,Malta,9,275.015,20.390
+Asia,Qatar,54,25.593,19.232
+Europe,Ukraine,788,36.896,18.008
+Europe,Greece,180,179.332,17.237
+Africa,South Africa,998,12.433,16.845
+Africa,Algeria,707,62.368,16.154
+Asia,Bahrain,26,18.756,15.322
+South America,Guyana,12,744.784,15.273
+Asia,Cyprus,18,231.433,14.919
+Asia,Maldives,8,68.572,14.819
+Asia,Oman,75,12.460,14.714
+South America,Argentina,664,16.062,14.711
+Europe,Latvia,25,237.521,13.235
+North America,Guatemala,230,16.786,12.868
+Africa,Egypt,1237,15.631,12.087
+Africa,Mauritania,55,7.107,11.849
+Europe,Albania,34,53.001,11.815
+Africa,Gabon,21,31.247,9.454
+Asia,Afghanistan,357,16.670,9.179
+Asia,Philippines,1003,25.387,9.162
+Asia,Pakistan,2002,15.576,9.085
+Africa,Cabo Verde,5,20.065,8.998
+Asia,Azerbaijan,88,15.244,8.680
+Asia,Iraq,346,7.435,8.618
+Africa,Sudan,359,25.464,8.206
+North America,El Salvador,53,26.876,8.174
+Africa,Cameroon,212,16.603,7.989
+Africa,Mauritius,10,815.139,7.864
+North America,Cuba,83,70.360,7.311
+Asia,Japan,916,284.356,7.268
+North America,Nicaragua,46,12.528,6.953
+Asia,Indonesia,1851,29.614,6.766
+South America,Uruguay,23,183.925,6.614
+Africa,Guinea-Bissau,12,56.804,6.105
+Africa,Sierra Leone,48,41.060,6.043
+Africa,Liberia,30,22.018,5.933
+Africa,Morocco,208,93.244,5.640
+Asia,Bangladesh,888,14.582,5.401
+Asia,S. Korea,273,206.859,5.332
+Asia,India,7207,16.181,5.234
+Africa,Somalia,83,29.140,5.228
+Europe,Slovakia,28,1056.701,5.131
+North America,Belize,2,89.741,5.053
+Asia,Tajikistan,48,34.203,5.045
+Africa,Mali,90,25.251,4.462
+North America,Haiti,50,13.148,4.395
+Asia,Lebanon,30,55.719,4.395
+Asia,Singapore,25,58.327,4.275
+Africa,Chad,69,66.377,4.204
+Africa,Tunisia,49,524.986,4.147
+Australia/Oceania,Australia,102,604.911,4.004
+Africa,Congo,22,43.556,3.994
+Asia,Yemen,112,11.997,3.702
+Asia,Malaysia,117,77.824,3.613
+Asia,Kyrgyzstan,22,48.787,3.376
+North America,Jamaica,10,286.748,3.372
+Asia,Georgia,13,259.253,3.262
+Asia,China,4634,21202.478,3.237
+Africa,Senegal,49,28.251,2.932
+Asia,Kazakhstan,53,41.966,2.827
+Africa,Niger,65,312.303,2.672
+Africa,Eswatini,3,31.172,2.586
+Africa,Burkina Faso,53,100.256,2.564
+Africa,Comoros,2,17.006,2.298
+North America,Costa Rica,10,21.893,1.965
+Africa,Guinea,23,46.134,1.754
+Africa,Nigeria,354,23.559,1.729
+Africa,Kenya,84,14.113,1.579
+Africa,Togo,13,42.844,1.576
+South America,Paraguay,11,34.477,1.541
+Africa,Ghana,44,27.326,1.420
+Africa,Ivory Coast,36,17.486,1.367
+Africa,South Sudan,14,17.244,1.254
+Africa,CAR,5,10.106,1.037
+Africa,DRC,85,18.064,0.952
+Asia,Jordan,9,54.356,0.880
+Asia,Thailand,58,500.887,0.839
+South America,Venezuela,22,10.694,0.777
+Africa,Libya,5,9.796,0.723
+Asia,Palestine,3,92.976,0.591
+Asia,Hong Kong,4,241.711,0.535
+Asia,Sri Lanka,11,41.603,0.516
+Asia,Uzbekistan,17,28.917,0.510
+Asia,Nepal,13,6.177,0.445
+Africa,Zambia,7,162.683,0.379
+Asia,Syria,6,33.523,0.340
+Africa,Madagascar,9,15.613,0.325
+Africa,Zimbabwe,4,10.545,0.270
+Africa,Benin,3,41.195,0.253
+Africa,Ethiopia,27,8.913,0.241
+Africa,Malawi,4,11.199,0.210
+Africa,Rwanda,2,28.375,0.155
+Africa,Angola,4,85.858,0.132
+Asia,Myanmar,6,81.421,0.099
+Africa,Mozambique,2,9.469,0.066
