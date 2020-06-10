@@ -1,0 +1,34 @@
+import pandas as pd
+#import numpy as np
+import matplotlib.pyplot as plt
+import geopandas as gpd
+
+pop = pd.read_csv('worldPop.csv')
+iso3 = pd.read_csv('wm_iso3.csv')
+deathMil = pd.read_csv('DeathMil.csv',header=1)
+
+merged1 = pd.merge(pop, iso3, how='outer',
+        left_on='Country', right_on='Country')
+
+merged2 = pd.merge(merged1, deathMil, how='outer',
+        left_on='Country', right_on='Country')
+
+world  = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+for_plotting = world.merge(merged2, left_on = 'iso_a3', right_on = 'iso3')
+
+#for_plotting.info()
+
+ax = for_plotting.dropna().plot(column='Deaths/Mil.',
+        cmap = 'YlGnBu', figsize=(15,9),
+        scheme='quantiles', k=3,
+        legend= True);
+
+ax.set_title('COVID-19 2020/6/10 Deaths/Mil. pop.',fontdict={'fontsize':25})
+
+ax.set_axis_off()
+
+ax.get_legend().set_bbox_to_anchor((.12,.12))
+ax.get_figure()
+
+plt.show()
