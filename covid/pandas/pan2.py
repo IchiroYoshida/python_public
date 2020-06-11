@@ -41,7 +41,4 @@ ax.set_title('Africa COVID-19 2020/6/10 Deaths/Mil. pop. ',fontdict={'fontsize':
 
 ax.set_axis_off()
 
-#ax.get_legend().set_bbox_to_anchor((.12,.12))
-#ax.get_figure()
-
 plt.show()

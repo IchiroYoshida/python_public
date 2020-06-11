@@ -7,7 +7,7 @@ YR = '2018'
 
 tbc = pd.read_csv(WB_CSV,header=4, usecols=['Country Code',YR])
 world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-world = world[(world.pop_est>0) & (world.continent == "Africa")]
+world = world[(world.pop_est>0) & (world.continent == "Asia")]
  
 world.loc[world['name'] == 'France','iso_a3'] = 'FRA'
 world.loc[world['name'] == 'Norway','iso_a3'] = 'NOR'
