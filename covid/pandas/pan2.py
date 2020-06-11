@@ -26,16 +26,22 @@ for_plotting = world.merge(merged2, left_on = 'iso_a3', right_on = 'iso3')
 ax = for_plotting.dropna().plot(column='Deaths/Mil.',
         cmap = 'YlGnBu', figsize=(15,9),
         scheme='quantiles', k=3,
-        legend = True,
+        legend = False,
         edgecolor = 'blue' );
 
 fig = ax.get_figure()
+cbax = fig.add_axes([0.95, 0.3, 0.03, 0.39])
+
+sm = plt.cm.ScalarMappable(cmap = 'YlGnBu', \
+    norm = plt.Normalize(vmin=0.0, vmax=40.0))
+
+fig.colorbar(sm, cax=cbax, format="%d")
 
 ax.set_title('Africa COVID-19 2020/6/10 Deaths/Mil. pop. ',fontdict={'fontsize':25})
 
 ax.set_axis_off()
 
-ax.get_legend().set_bbox_to_anchor((.12,.12))
-ax.get_figure()
+#ax.get_legend().set_bbox_to_anchor((.12,.12))
+#ax.get_figure()
 
 plt.show()
