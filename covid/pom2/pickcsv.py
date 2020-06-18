@@ -11,7 +11,7 @@ Index=['date', 'confirmed', 'deaths', 'recovered',
        'Cases Total(Ave7)', 'Cases Day', 'Cases Day(Ave7)',
        'Deaths Total(Ave7)', 'Deaths Day', 'Deaths Day(Ave7)',
        'Deaths Weekly(Ave7)/1M pop', 'Deaths /1M pop (Ave7)',
-       'Td7', 'R0','K']
+       'Td7', 'R0','K','CFR']
 
 def str2date(d):
    tmp = datetime.datetime.strptime(d,'%Y-%m-%d')

@@ -206,6 +206,8 @@ for country in countries:
 #--------------Td7,R0,K value--------
         cases = df['Cases Total(Ave7)']
         case = cases.values.tolist()
+        deaths = df['Deaths Total(Ave7)']
+        death = deaths.values.tolist()
 
         data_list = np.zeros(7)
         data_list[:] = np.nan
@@ -215,33 +217,45 @@ for country in countries:
         R0_list[:] = np.nan
         K_list = np.zeros(7)
         K_list[:]=np.nan
+        CFR_list = np.zeros(7)
+        CFR_list[:] = np.nan
 
         while(len(case)-7):
             dat=case[:7]
+            dea=death[:7]
+
             n0 = dat[0]
             n1 = dat[6]
+            d0 = dea[0]
+
             if(n0):
                 if(n0<n1):
                    Td7 = td7(n0, n1)
                    R0  = ReproductionN(Td7)
                    K   = Kval(n0, n1)
+                   CFR = d0/n0
                 else:
                    Td7 = np.nan 
                    R0  = np.nan
                    K   = np.nan
+                   CFR = np.nan
             else:
                Td7 = np.nan
                R0  = np.nan
                K   = np.nan
+               CFR = np.nan
 
             Td7_list = np.append(Td7_list, Td7)
             R0_list = np.append(R0_list, R0)
             K_list = np.append(K_list, K)
+            CFR_list = np.append(CFR_list, CFR)
+
             del case[:1]
 
         df['Td7']=Td7_list
         df['R0']=R0_list
         df['K']=K_list
+        df['CFR'] = CFR_list
 
     csv_file = csv2_path+country_wm+'.csv'
     print(csv_file)

@@ -1,5 +1,5 @@
 '''
-JSON Data -> countries.csv (Pandas)
+JSON Data -> pickle file(.zip) (Pandas)
 
 2020-06-12 Ichiro Yoshida
 '''
@@ -11,6 +11,8 @@ from pytz import timezone
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+
+df_col = 17
 
 csv2_path = './data/csv2/'
 
@@ -94,7 +96,7 @@ pom_country_list = pom_countries.values.tolist()
 wm_country_list = wm_countries.values.tolist()
 wm_pop_list = wm_pop.values.tolist()
 
-dd = np.zeros(16)
+dd = np.zeros(df_col)
 dd[:] =  np.nan
 
 for i in range(len(countries)):
@@ -211,6 +213,8 @@ for i in range(len(countries)):
 #--------------Td7,R0,K value--------
         cases = df['Cases Total(Ave7)']
         case = cases.values.tolist()
+        deaths = df['Deaths Total(Ave7)']
+        dead = deaths.values.tolist()
 
         data_list = np.zeros(7)
         data_list[:] = np.nan
@@ -225,6 +229,7 @@ for i in range(len(countries)):
             dat=case[:7]
             n0 = dat[0]
             n1 = dat[6]
+
             if(n0):
                 if(n0<n1):
                    Td7 = td7(n0, n1)
@@ -247,6 +252,7 @@ for i in range(len(countries)):
         df['Td7']=Td7_list
         df['R0']=R0_list
         df['K']=K_list
+        df['CFR'] = deaths/cases 
 
     a_df = df.values
     dd = np.vstack([dd,a_df])
@@ -257,7 +263,7 @@ Index=['Country', 'date', 'confirmed', 'deaths', 'recovered',
        'Cases Total(Ave7)', 'Cases Day', 'Cases Day(Ave7)',
        'Deaths Total(Ave7)', 'Deaths Day', 'Deaths Day(Ave7)',
        'Deaths Weekly(Ave7)/1M pop', 'Deaths /1M pop (Ave7)',
-       'Td7', 'R0','K']
+       'Td7', 'R0','K','CFR']
 
 new_df = pd.DataFrame(dd,columns=Index)
 pic_file = './data/dst/'+now_utc+'.zip'
