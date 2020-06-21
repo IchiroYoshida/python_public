@@ -28,15 +28,15 @@ for file in files:
     x  = len(c1.values.tolist())
     X  = np.arange(x)
 
-    C1 = c1.values.tolist()
-    C2 = c2.values.tolist()
-    D1 = d1.values.tolist()
-    D2 = d2.values.tolist()
+    C1 = c1.values.tolist()  # green
+    C2 = c2.values.tolist()  # blue
+    D1 = d1.values.tolist()  # red
+    D2 = d2.values.tolist()  # black
 
-    plt.bar(X,C1,linewidth=4)
-    plt.bar(X,D1,linewidth=4)
-    plt.plot(X,C2,linestyle="solid",linewidth=2)
-    plt.plot(X,D2,linestyle="solid",linewidth=2)
+    plt.bar(X,C1,linewidth=4,color="green")
+    plt.bar(X,D1,linewidth=4,color="red")
+    plt.plot(X,C2,linestyle="solid",linewidth=2,color="blue")
+    plt.plot(X,D2,linestyle="solid",linewidth=2,color="black")
 
     plt.legend(['Cases and Deaths in '+country])
     plt.xlabel('Days')
