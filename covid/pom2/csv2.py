@@ -1,20 +1,23 @@
 '''
-JSON Data -> pickle file(.zip) (Pandas)
+pickle file(.zip) -> csv (Pandas)
 
-2020-06-12 Ichiro Yoshida
+2020-06-23 Ichiro Yoshida
 '''
+import os
 import math
 import numpy as np
-import json
+import pandas as pd
 import datetime
 from pytz import timezone
-import requests
-import pandas as pd
-from bs4 import BeautifulSoup
 
-df_col = 17
+data_col = 17
 
-csv2_path = './data/csv2/'
+dst_path = './data/dst/'
+pic_path = './data/pomber/'
+wm_path = './data/wmp/'
+
+now = datetime.datetime.now(timezone('UTC'))
+now_utc = now.strftime('%Y%m%d_%H%M%S')
 
 def td7(n0, n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
@@ -33,228 +36,189 @@ def conv7(data):
 
 iso3 = pd.read_csv('./data/code/country_iso3.csv')
 
-url='https://pomber.github.io/covid19/timeseries.json'
-wmc='https://www.worldometers.info/coronavirus/'
+files = os.listdir(pic_path)
+files.sort()
 
-now= datetime.datetime.now(timezone('UTC'))
-now_utc = now.strftime('%Y%m%d_%H%M%S')
+file = files[-1]
 
-#----- get pomber(GitHub) countries data ----------
-s = requests.Session()
-r = s.get(url)
+df = pd.read_pickle(pic_path+file)
+countries = df.index.levels[0].tolist()
 
-json_data = json.loads(r.text)
-countries = list(json_data.keys())
+files = os.listdir(wm_path)
+files.sort()
+file = files[-1]
 
-#----- get worldmeter coronavirus countries data ---
-# HTML table -> CSV
+wm = pd.read_pickle(wm_path+file)
 
-wm_res = requests.get(wmc)
-wm_soup = BeautifulSoup(wm_res.text, 'html.parser')
-wm_table = wm_soup.find('table')
-wm_data = [dat.text for dat in wm_table('td')]
-wm_col = 19   #colums of the worldmeters HTML table
 
-csvRow = []
+wm_iso3 = pd.merge(wm, iso3, left_on = 'Country', right_on='worldmeters country name')
 
-while len(wm_data):
-    row = wm_data[:wm_col]
-    del row[:1]
-    del row[6]
-    del row[-3:]
-    csvRow.append(row)
-    del wm_data[:wm_col]
+del wm_iso3['worldmeters country name']
 
-del csvRow[:8]   # Delete Head.
-del csvRow[-8:]  # Delete Tail.
-
-new_col = 12
-newlist = []
-while len(csvRow):
-    newRow = []
-    row = csvRow[:wm_col][0]
-    del row[2]
-    del row[3]
-    newRow.append(row[0])
-    del csvRow[:1]
-    for dd in range(1,new_col-1):
-        new_dat = row[dd].replace(',','').replace(' ','')
-        newRow.append(new_dat)
-    newlist.append(newRow)
-
-wmp = pd.DataFrame(newlist, columns=['Country','Total Cases','Total Deaths',\
-    'Total Recovered','Active Cases','Serious Critical','Tot Cases/1M pop',\
-    'Deaths/1M pop','Total Tests','Tests/1M pop','Population'])
-
-wmp_iso = pd.merge(wmp, iso3, how='outer',
-        left_on = 'Country', right_on='worldmeters country name')
-
-pom_countries = wmp_iso['pomber(GitHub) country name']
-wm_countries  = wmp_iso['worldmeters country name']
-wm_pop = wmp_iso['Population']
-pom_country_list = pom_countries.values.tolist()
-wm_country_list = wm_countries.values.tolist()
+pom_countries = wm_iso3['pomber(GitHub) country name']
+pom_countries_list = pom_countries.values.tolist()
+wm_countries = wm_iso3['Country']
+wm_countries_list = wm_countries.values.tolist()
+wm_pop = wm_iso3['Population']
 wm_pop_list = wm_pop.values.tolist()
 
-dd = np.zeros(df_col)
-dd[:] =  np.nan
+dd = np.zeros(data_col)
+dd[:] = np.nan
 
-for i in range(len(countries)):
-    country = countries[i]
-
+for country in countries:
     try:
-        idx = pom_country_list.index(country)
-        country_wm = wm_country_list[idx]
+        idx = pom_countries_list.index(country)
+        wm_country = wm_countries_list[idx]
         popMil = float(wm_pop_list[idx])/1000000
 
     except ValueError:
         pass
 
-    if(country_wm is np.nan):
-        continue
-    else:
-        df = pd.json_normalize(json_data, record_path=country)
-        df.insert(0,'Country',country_wm)
-#---------------Cases Total(7Ave)-----
-        confirmed = df['confirmed']
-        conf = confirmed.values.tolist()
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        while (len(conf)-7):
-           dat = conf[:7]
-           ave7 = conv7(dat)
-           data_list=np.append(data_list, ave7)
-           del conf[:1]
+    data0 = df.loc[(country)].copy()
+    data1 =data0.reset_index()
+    data1.insert(0,'Country',wm_country)
 
-        df['Cases Total(Ave7)']= data_list
+    data = data1.copy()
+    
+#---------------Cases Total(7Ave)-----
+    confirmed = data['confirmed']
+    conf = confirmed.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    while (len(conf)-7):
+       dat = conf[:7]
+       ave7 = conv7(dat)
+       data_list=np.append(data_list, ave7)
+       del conf[:1]
+
+    data['Cases Total(Ave7)']= data_list
 #----------------Cases Day----------
-        confirmed = df['confirmed']
-        conf = confirmed.values.tolist()
-        diff_list = np.zeros(1)
-        diff_list[:] = np.nan
-        while (len(conf)-1):
+    confirmed = data['confirmed']
+    conf = confirmed.values.tolist()
+    diff_list = np.zeros(1)
+    diff_list[:] = np.nan
+    while (len(conf)-1):
             con = conf[:2]
             diff = int(con[1])-int(con[0])
             diff_list = np.append(diff_list, diff)
             del conf[:1]
 
-        df['Cases Day'] = diff_list
+    data['Cases Day'] = diff_list
 #---------------Cases Day(7Ave)-----
-        cases = df['Cases Day']
-        case = cases.values.tolist()
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        while (len(case)-7):
-           dat = case[:7]
-           ave7 = conv7(dat)
-           data_list=np.append(data_list, ave7)
-           del case[:1]
+    cases = data['Cases Day']
+    case = cases.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    while (len(case)-7):
+       dat = case[:7]
+       ave7 = conv7(dat)
+       data_list=np.append(data_list, ave7)
+       del case[:1]
 
-        df['Cases Day(Ave7)']= data_list
+    data['Cases Day(Ave7)']= data_list
 #---------------Deaths Total(7Ave)-----
-        deaths = df['deaths']
-        dead = deaths.values.tolist()
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        while (len(dead)-7):
-            dat = dead[:7]
-            ave7 = conv7(dat)
-            data_list = np.append(data_list, ave7)
-            del dead[:1]
+    deaths = data['deaths']
+    dead = deaths.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    while (len(dead)-7):
+        dat = dead[:7]
+        ave7 = conv7(dat)
+        data_list = np.append(data_list, ave7)
+        del dead[:1]
 
-        df['Deaths Total(Ave7)']=data_list
+    data['Deaths Total(Ave7)']=data_list
 #--------------Deaths Day ---
-        deaths = df['deaths']
-        dead = deaths.values.tolist()
-        diff_list = np.zeros(1)
-        diff_list[:] = np.nan
-        while (len(dead)-1):
-            dea = dead[:2]
-            diff = int(dea[1])-int(dea[0])
-            diff_list = np.append(diff_list, diff)
-            del dead[:1]
+    deaths = data['deaths']
+    dead = deaths.values.tolist()
+    diff_list = np.zeros(1)
+    diff_list[:] = np.nan
+    while (len(dead)-1):
+        dea = dead[:2]
+        diff = int(dea[1])-int(dea[0])
+        diff_list = np.append(diff_list, diff)
+        del dead[:1]
 
-        df['Deaths Day'] = diff_list
+    data['Deaths Day'] = diff_list
 #--------------Deaths Day(7Ave)---
-        death = df['Deaths Day']
-        dead = death.values.tolist()
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        while (len(dead)-7):
-            dat = dead[:7]
-            ave7 = conv7(dat)
-            data_list=np.append(data_list, ave7)
-            del dead[:1]
+    death = data['Deaths Day']
+    dead = death.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    while (len(dead)-7):
+        dat = dead[:7]
+        ave7 = conv7(dat)
+        data_list=np.append(data_list, ave7)
+        del dead[:1]
 
-        df['Deaths Day(Ave7)'] = data_list
+    data['Deaths Day(Ave7)'] = data_list
 #--------------Deaths Weekly/1M pop(7Ave)--
-        death = df['Deaths Total(Ave7)']
-        dead = deaths.values.tolist()
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        while(len(dead)-7):
-            dat = dead[:7]
-            day0 =dat[0]
-            day1 =dat[6]
-            dif = day1 - day0
-            data_list=np.append(data_list, dif)
-            del dead[:1]
-        df['Deaths Weekly(Ave7)/1M pop']=data_list/popMil
+    death = data['Deaths Total(Ave7)']
+    dead = deaths.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    while(len(dead)-7):
+        dat = dead[:7]
+        day0 =dat[0]
+        day1 =dat[6]
+        dif = day1 - day0
+        data_list=np.append(data_list, dif)
+        del dead[:1]
+    data['Deaths Weekly(Ave7)/1M pop']=data_list/popMil
 #--------------Deaths /1M pop----
-        death = df['Deaths Total(Ave7)']
-        dead = deaths.values.tolist()
-        num = len(dead)
-        dead2 = np.zeros(num)
-        dead2[:] = np.nan
-        dead2 = np.array(dead)
-        dead2 = dead2 / popMil
-        df['Deaths /1M pop (Ave7)']=dead2
+    death = data['Deaths Total(Ave7)']
+    dead = deaths.values.tolist()
+    num = len(dead)
+    dead2 = np.zeros(num)
+    dead2[:] = np.nan
+    dead2 = np.array(dead)
+    dead2 = dead2 / popMil
+    data['Deaths /1M pop (Ave7)']=dead2
+#--------------Td7,R0,K value,CFR--------
+    cases = data['Cases Total(Ave7)']
+    case = cases.values.tolist()
+    deaths = data['Deaths Total(Ave7)']
+    dead = deaths.values.tolist()
 
-#--------------Td7,R0,K value--------
-        cases = df['Cases Total(Ave7)']
-        case = cases.values.tolist()
-        deaths = df['Deaths Total(Ave7)']
-        dead = deaths.values.tolist()
+    data_list = np.zeros(7)
+    data_list[:] = np.nan
+    Td7_list = np.zeros(7)
+    Td7_list[:] = np.nan
+    R0_list = np.zeros(7)
+    R0_list[:] = np.nan
+    K_list = np.zeros(7)
+    K_list[:]=np.nan
 
-        data_list = np.zeros(7)
-        data_list[:] = np.nan
-        Td7_list = np.zeros(7)
-        Td7_list[:] = np.nan
-        R0_list = np.zeros(7)
-        R0_list[:] = np.nan
-        K_list = np.zeros(7)
-        K_list[:]=np.nan
+    while(len(case)-7):
+        dat=case[:7]
+        n0 = dat[0]
+        n1 = dat[6]
 
-        while(len(case)-7):
-            dat=case[:7]
-            n0 = dat[0]
-            n1 = dat[6]
-
-            if(n0):
-                if(n0<n1):
-                   Td7 = td7(n0, n1)
-                   R0  = ReproductionN(Td7)
-                   K   = Kval(n0, n1)
-                else:
-                   Td7 = np.nan 
-                   R0  = np.nan
-                   K   = np.nan
+        if(n0):
+            if(n0<n1):
+               Td7 = td7(n0, n1)
+               R0  = ReproductionN(Td7)
+               K   = Kval(n0, n1)
             else:
-               Td7 = np.nan
+               Td7 = np.nan 
                R0  = np.nan
                K   = np.nan
+        else:
+           Td7 = np.nan
+           R0  = np.nan
+           K   = np.nan
 
-            Td7_list = np.append(Td7_list, Td7)
-            R0_list = np.append(R0_list, R0)
-            K_list = np.append(K_list, K)
-            del case[:1]
+        Td7_list = np.append(Td7_list, Td7)
+        R0_list = np.append(R0_list, R0)
+        K_list = np.append(K_list, K)
+        del case[:1]
 
-        df['Td7']=Td7_list
-        df['R0']=R0_list
-        df['K']=K_list
-        df['CFR'] = deaths/cases 
+    data['Td7']=Td7_list
+    data['R0']=R0_list
+    data['K']=K_list
+    data['CFR'] = deaths/cases 
 
-    a_df = df.values
+    a_df  = data.values
     dd = np.vstack([dd,a_df])
 
 dd = np.delete(dd,0,0)
