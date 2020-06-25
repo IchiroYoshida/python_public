@@ -72,7 +72,7 @@ for country in countries:
         popMil = float(wm_pop_list[idx])/1000000
 
     except ValueError:
-        pass
+        continue 
 
     data0 = df.loc[(country)].copy()
     data1 =data0.reset_index()

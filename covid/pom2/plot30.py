@@ -40,7 +40,7 @@ for file in files:
     x = len(D)
 
     if(x>30):
-        xx = D[29]
+        xx = D[6]
         yy = D[-1]
         #print(country,xx,yy)
 
@@ -55,9 +55,9 @@ for file in files:
             plt.text(xx,yy,country,fontsize=10)
 
 plt.title('COVID-19 2020 Pandemic Deaths/1M pop.')
-plt.xlabel('Days after 30 days since Deaths 1.0> 10M pop.')
+plt.xlabel('Days after 7 days since Deaths 1.0> 10M pop.')
 plt.ylabel('Deaths/1M pop.')
-plt.xlim(0.1,2000)
+plt.xlim(0.1,100)
 plt.ylim(0.1,2000)
 plt.yscale('log')
 plt.xscale('log')
