@@ -22,11 +22,14 @@ import random
 import matplotlib.pylab as plt
 
 def plotPerson(self, ax, x, y, col):
-    Size = 10
-    Rad = 5 
+    Size = 20
+    Rad = 10 
     xx = x * Size + random.randrange(Rad)
     yy = y * Size + random.randrange(Rad)
-    ax.plot(xx, yy, color=col, marker='o',markersize=Rad)
+    if (col=='red'):
+        ax.plot(xx, yy, color=col, marker='o',markersize=Rad,zorder=1)
+    else:
+        ax.plot(xx, yy, color=col, marker='o',markersize=Rad,zorder=0)
 
 def plotCell(self,ax):
     for x in range(Mesh):

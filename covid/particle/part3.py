@@ -4,14 +4,17 @@
     2020-05-26 Ichiro Yoshida
 '''
 Repeat =  10 
-Mesh = 50    # Mesh x Mesh grid
+Mesh = 25    # Mesh x Mesh grid
 T  = 100      # Observation period days.
-N  = 10000     # Population
+N  = 1000     # Population
 I0 = 1      # Initial number of infected person
 
 It = 7      # Infectious period of days
 R0 = 2.73   # Reproduction number 
 alpha = R0 /It
+
+Xcenter = int(Mesh/2)
+Ycenter = int(Mesh/2)
 
 Limit = Mesh -1
 
@@ -67,8 +70,12 @@ class Infection(object):
 
         for inf in infected:
             id = inf.id
+            self.cellRemove(self.person[id])
             self.person[id].condition = 1
             self.person[id].days = It
+            self.person[id].x = Xcenter
+            self.person[id].y = Ycenter
+            self.cellAppend(self.person[id])
 
     def movePerson(self):
         for i in range(N):
@@ -158,18 +165,20 @@ for t in range(Repeat):
 
     s, i, r = [], [], []
     for t in range(T):
+        inf.exposeInfection()
+        inf.movePerson()
         member = inf.dailyReport()
         s.append(len(member[0]))
         i.append(len(member[1]))
         r.append(len(member[2]))
-        inf.exposeInfection()
-        inf.movePerson()
 
     I = np.array(i)
-    plt.plot(I)
+    max = I.max()
+    if (max > 100):
+        plt.plot(I)
 
 plt.legend(['Infected'])
 plt.xlabel('Days')
 plt.ylabel('Number of Infected Total. patients')
 plt.show()
-#plt.close()
+plt.close()

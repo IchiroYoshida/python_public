@@ -156,8 +156,8 @@ class Infection(object):
 
 #main
 
-Inf0 = np.array((T),dtype=float)
-Inf1 = np.array((T),dtype=float)
+#Inf0 = np.array((T),dtype=float)
+#Inf1 = np.array((T),dtype=float)
 
 # Step 0
 
@@ -178,23 +178,36 @@ for t in range(T):
 
 Inf0  = np.array(i)
 
+print(0,Inf0)
+
 # Step 1...Repeat
 for rep in range(1,Repeat):
     print('No. %d'%(rep))
     person = (N+1)*[]
-    
+
+    inf  = Infection(person, Mesh, N, I0, It, alpha)
+    inf.initPerson()
+    inf.initInfection()
+
     i = []
     for t in range(T):
         inf.exposeInfection()
         inf.movePerson()
         member = inf.dailyReport()
         i.append(len(member[1]))
+
     Inf1 = np.array(i)
-    Inf0 = (Inf0+Inf1)/2.
+    max = Inf1.max()
+    if (max >100):
+        Inf0 = (Inf0+Inf1)/2.
+    else:
+        continue
 
-    plt.plot(Inf1)
+    print(rep,Inf1)
 
-plt.plot(Inf0,color='red',linewidth =5.)
+    plt.plot(Inf1,zorder=0)
+
+plt.plot(Inf0,color='red',linewidth =5. ,zorder=1)
 
 plt.legend(['Infected'])
 plt.xlabel('Days')

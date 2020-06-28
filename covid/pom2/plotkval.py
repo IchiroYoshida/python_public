@@ -39,13 +39,14 @@ for file in files:
     y = demil['K']
     x = len(y)
 
-    X = np.arange(x)
-    Y = y.values.tolist()
+    if(x>30):
+        X = np.arange(x)
+        Y = y.values.tolist()
 
-    plt.plot(X,Y,color=co_col)
-    xx = X[-1]
-    yy = Y[-1]
-    plt.text(xx,yy,country)
+        plt.plot(X,Y,color=co_col)
+        xx = X[-1]
+        yy = Y[-1]
+        plt.text(xx,yy,country)
 
 #plt.xscale('log')
 #plt.yscale('log')
