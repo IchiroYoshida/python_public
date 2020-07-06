@@ -29,8 +29,6 @@ files.sort()
 
 continents = list(continent_colors.keys())
 
-print(continents)
-'''
 for file in files:
     country = file.split('.csv')[0]
     continent = co.continents[country][0]
@@ -65,5 +63,3 @@ plt.xscale('log')
 plt.yscale('log')
 plt.grid(which='both')
 plt.show()
-'''
-

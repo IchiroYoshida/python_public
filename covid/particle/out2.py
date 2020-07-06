@@ -4,7 +4,7 @@
     2020-07-04 Ichiro Yoshida
 '''
 Mesh = 25    # Mesh x Mesh grid 20
-T  = 100      # Observation period days.100
+T  = 120      # Observation period days.100
 N  = 1000     # Population 1000
 I0 = 1      # Initial number of infected person
 

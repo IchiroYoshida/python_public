@@ -14,7 +14,7 @@ merged2 = pd.merge(merged1, deathMil, how='outer',
         left_on='Country', right_on='Country')
 
 world  = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-world = world[(world.pop_est>0) & (world.continent == "Africa")]
+#world = world[(world.pop_est>0) & (world.continent == "Africa")]
 
 world.loc[world['name'] == 'France','iso_a3'] = 'FRA'
 world.loc[world['name'] == 'Norway','iso_a3'] = 'NOR'
@@ -23,6 +23,8 @@ world.loc[world['name'] == 'Kosovo','iso_a3'] = 'RKS'
 
 for_plotting = world.merge(merged2, left_on = 'iso_a3', right_on = 'iso3')
 
+print(for_plotting.head())
+'''
 ax = for_plotting.dropna().plot(column='Deaths/Mil.',
         cmap = 'YlGnBu', figsize=(15,9),
         scheme='quantiles', k=3,
@@ -33,7 +35,7 @@ fig = ax.get_figure()
 cbax = fig.add_axes([0.95, 0.3, 0.03, 0.39])
 
 sm = plt.cm.ScalarMappable(cmap = 'YlGnBu', \
-    norm = plt.Normalize(vmin=0.0, vmax=40.0))
+    norm = plt.Normalize(vmin=0.0, vmax=800.0))
 
 fig.colorbar(sm, cax=cbax, format="%d")
 
@@ -42,3 +44,5 @@ ax.set_title('Africa COVID-19 2020/6/10 Deaths/Mil. pop. ',fontdict={'fontsize':
 ax.set_axis_off()
 
 plt.show()
+'''
+

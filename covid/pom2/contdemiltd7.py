@@ -51,7 +51,10 @@ for continent in continents:
                 X = x.values.tolist()
                 Y = y.values.tolist()
 
-                plt.plot(X,Y,color=co_col)
+                if (country == 'Japan'):
+                    plt.plot(X, Y, color='red', linewidth='3',zorder=1)
+                else:
+                    plt.plot(X,Y,color=co_col,zorder=0)
 
             try:
                 xx = X[-1]
@@ -59,7 +62,10 @@ for continent in continents:
             except IndexError:
                 print(xx,yy,country)
 
-            plt.text(xx,yy,country)
+            if(country == 'Japan'):
+                plt.text(xx, yy, country, fontsize=20)
+            else:
+                plt.text(xx, yy, country, fontsize=10)
     
     con=continent.replace('/','_')
     save_name = './data/con/'+con+'.png'
@@ -68,7 +74,7 @@ for continent in continents:
     plt.title(title)
     plt.xlabel('Doubling Time(days)')
     plt.xlim(1,20000)
-    plt.ylim(0.1,2000)
+    plt.ylim(0.1,200)
     plt.ylabel('Deaths/1M pop.')
     plt.xscale('log')
     plt.yscale('log')

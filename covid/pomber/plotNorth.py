@@ -43,7 +43,7 @@ for file in files:
         yy = D[-1]
         plt.text(xx,yy,country)
 plt.ylim(.1,500)
-plt.xlim(0,90)
+plt.xlim(0,80)
 plt.yscale('log')
 plt.grid(which='both')
 plt.show()

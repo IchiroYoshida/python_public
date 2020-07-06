@@ -40,10 +40,10 @@ class Person:
         self.days = 0 #Duration from infection.
 
 class Infection(object):
-    def __init__(self,object, Mesh,N,IO,It,alpha,unsus,Xcenter,Ycenter):
+    def __init__(self,object, Mesh, N, I0, It,alpha,unsus,Xcenter,Ycenter):
         self.N = N
         self.Mesh = Mesh
-        self.IO = IO
+        self.I0 = I0
         self.It = It
         self.alpha = alpha
         self.unsus = unsus     #(%)
@@ -89,7 +89,7 @@ class Infection(object):
 
     def initInfection(self):
         members = self.person
-        infected = random.sample(members,self.IO)
+        infected = random.sample(members,self.I0)
 
         for inf in infected:
             id = inf.id

@@ -92,14 +92,14 @@ for count in range(len(COUNTRY)):
         plt.scatter(x1,y1,color=co_col,s=20, zorder=1)
         plt.text(x1,y1,country,fontsize=10, zorder=1)
 
-date ='2020/06/28'
+date ='2020/07/05'
 
 title = 'COVID-19 pandemic '+date+'(UTC)'
 plt.title(title)
 plt.xlabel('Age >65 %')
 plt.ylabel('Case Fatality Rate(CFR) %')
 plt.xlim(0,30)
-plt.ylim(0.25)
+plt.ylim(0,20)
 plt.grid(which='both',zorder=0)
 plt.show()
 plt.close()
