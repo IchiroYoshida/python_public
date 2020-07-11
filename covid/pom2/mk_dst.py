@@ -10,7 +10,7 @@ import pandas as pd
 import datetime
 from pytz import timezone
 
-data_col = 17
+data_col = 18
 
 dst_path = './data/dst/'
 pic_path = './data/pomber/'
@@ -64,6 +64,8 @@ wm_pop_list = wm_pop.values.tolist()
 
 dd = np.zeros(data_col)
 dd[:] = np.nan
+
+#countries0 = ['Japan']
 
 for country in countries:
     try:
@@ -140,7 +142,7 @@ for country in countries:
         del dead[:1]
 
     data['Deaths Day'] = diff_list
-#--------------Deaths Day(7Ave)---
+#--------------Deaths Day(Ave7)---
     death = data['Deaths Day']
     dead = death.values.tolist()
     data_list = np.zeros(7)
@@ -152,6 +154,24 @@ for country in countries:
         del dead[:1]
 
     data['Deaths Day(Ave7)'] = data_list
+#--------------Death rate 2Weeks-----------
+    cases = data['Cases Day(Ave7)']
+    case0 = cases.values.tolist()
+    death = data['Deaths Day(Ave7)']
+    dead  = death.values.tolist()
+    rate_list = np.zeros(9)
+    rate_list[:] = np.nan
+    while(len(dead)-9):
+        de = dead[9]
+        ca = case0[0]
+        try:
+           ra = de/ca
+        except ZeroDivisionError:
+           ra = np.nan
+        rate_list = np.append(rate_list, ra)
+        del dead[:1]
+        del case0[:1]
+    data['Death rate 2Weeks']=rate_list
 #--------------Deaths Weekly/1M pop(7Ave)--
     death = data['Deaths Total(Ave7)']
     dead = deaths.values.tolist()
@@ -226,6 +246,7 @@ dd = np.delete(dd,0,0)
 Index=['Country', 'date', 'confirmed', 'deaths', 'recovered',
        'Cases Total(Ave7)', 'Cases Day', 'Cases Day(Ave7)',
        'Deaths Total(Ave7)', 'Deaths Day', 'Deaths Day(Ave7)',
+       'Death rate 2Weeks',
        'Deaths Weekly(Ave7)/1M pop', 'Deaths /1M pop (Ave7)',
        'Td7', 'R0','K','CFR']
 

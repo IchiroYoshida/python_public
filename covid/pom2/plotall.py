@@ -15,6 +15,8 @@ plot_path = './data/plot/'
 files = os.listdir(csv2_path)
 files.sort()
 
+#files = ['Japan.csv']
+
 for file in files:
     country = file.split('.csv')[0]
     read_csv = csv2_path+file
