@@ -11,6 +11,7 @@ import datetime
 from pytz import timezone
 
 data_col = 18
+delay = 14 
 
 dst_path = './data/dst/'
 pic_path = './data/pomber/'
@@ -159,10 +160,10 @@ for country in countries:
     case0 = cases.values.tolist()
     death = data['Deaths Day(Ave7)']
     dead  = death.values.tolist()
-    rate_list = np.zeros(9)
+    rate_list = np.zeros(delay)
     rate_list[:] = np.nan
-    while(len(dead)-9):
-        de = dead[9]
+    while(len(dead)-delay):
+        de = dead[delay-1]
         ca = case0[0]
         try:
            ra = de/ca
