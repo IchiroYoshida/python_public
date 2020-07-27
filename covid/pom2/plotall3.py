@@ -1,69 +1,74 @@
 '''
     plot World countries (csv2 -> Pandas -> plot)
     
-    2020-06-24
+    2020-07-25
 '''
 import os
 import math
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import continent as co
+import datetime
+import matplotlib.dates as mdates
 
-continent_colors = {
-'Europe':'blueviolet',
-'North America':'deepskyblue',
-'South America':'royalblue',
-'Asia':'springgreen',
-'Australia/Oceania':'gold',
-'Africa':'chocolate'}
+csv2_path = './data/csv2/'
+plot_path = './data/plot3/'
 
-csv_path = './data/csv0/'
-plot_path = './data/plot/'
-
-files = os.listdir(csv_path)
+files = os.listdir(csv2_path)
 files.sort()
+
+#files = ['USA.csv']
 
 for file in files:
     country = file.split('.csv')[0]
-    cont = co.continents[country][0]
-    co_col = continent_colors[cont]
-
-    read_csv = csv_path+file
+    read_csv = csv2_path+file
     csv = pd.read_csv(read_csv)
 
     demil = csv[csv['Deaths /1M pop (Ave7)'] > .1]
-    
-    deaths = demil['Deaths /1M pop (Ave7)']
+    if(len(demil)>10):
+        date0 = demil['date']
+        date = date0.values.tolist()
+        date_str = date[0].split('-')
+        base = datetime.datetime(int(date_str[0]),
+                int(date_str[1]),
+                int(date_str[2]))
+        fig, ax = plt.subplots(constrained_layout=True, figsize=(10, 7))
 
-    D = deaths.values.tolist()
-    x = len(D)
+        demil0 = demil['Deaths /1M pop (Ave7)']
+        d0 = demil['Deaths Total(Ave7)']
 
-    if(x):
-        X  = np.arange(x)
-       
-        if(country == 'Japan'):
-            plt.plot(X,D,color='red',linewidth='3',zorder=1)
-        else:
-            plt.plot(X,D,color=co_col,zorder=0)
+        Mpop0 = d0 /demil0
+        Mpop1 = Mpop0.values.tolist()
 
-        try:
-            xx = X[-1]
-            yy = D[-1]
-        except IndexError:
-            print(xx,yy, country)
+        Mpop = Mpop1[-1:]
 
-        if (country == 'Japan'):
-            plt.text(xx,yy,country,fontsize=20)
-        else:
-            plt.text(xx,yy,country,fontsize=10)
+        if(Mpop):
+           d1 = demil['Deaths Day'] /Mpop
+           d2 = demil['Deaths Day(Ave7)'] /Mpop 
 
-plt.title('COVID-19 2020 Pandemic Deaths/1M pop.')
-plt.xlabel('Days since Deaths 1.0> 10M pop.')
-plt.ylabel('Deaths/1M pop.')
-plt.xlim(0,120)
-plt.ylim(0.1,1000)
-plt.yscale('log')
-plt.grid(which='both')
-plt.show()
-plt.close()
+           Days  = len(d1.values.tolist())
+
+           dates = np.array([base + datetime.timedelta(days=i) for i in range(Days)])
+           locator = mdates.AutoDateLocator(maxticks=30)
+           formatter = mdates.ConciseDateFormatter(locator)
+           ax.xaxis.set_major_locator(locator)
+           ax.xaxis.set_major_formatter(formatter)
+
+           D1 = d1.values.tolist() 
+           D2 = d2.values.tolist() 
+
+           ax.bar(dates, D1,color='red',linewidth=4)
+           ax.plot(dates,D2,color='black',linestyle="solid",linewidth=2)
+
+           title = '2020 COVID-19 Pandemic deaths/1M pop. in '+country
+           plt.title(title,fontsize=20)
+           plt.legend('Deaths')
+           plt.ylabel('Number/1M pop.')
+           #plt.yscale('log')
+           plt.grid(which="both")
+           #plt.show()
+           save_name = plot_path+country+'.png'
+           print(save_name)
+           plt.savefig(save_name)
+           plt.close()
+

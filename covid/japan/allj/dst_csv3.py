@@ -14,10 +14,13 @@ csv_path = './data/csv2/'
 def td7(n0, n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
 
-def ReproductionN(td7):
-    k = math.log(2)/td7
-    r = math.exp(k * 7.0)
-    return(r)
+#def ReproductionN(td7):
+#    k = math.log(2)/td7
+#    r = math.exp(k * 7.0)
+#    return(r)
+
+def ReproductionN(n0, n1):
+    return((n1/n0) ** (5/7))
 
 def Kval(n0, n1): #Takashi Nakano Osaka. Univ.
     return(1-(n0/n1))
@@ -140,7 +143,7 @@ for area in areas:
         if(n0):
             if(n0<n1):
                Td7 = td7(n0, n1)
-               R0  = ReproductionN(Td7)
+               R0  = ReproductionN(n0, n1)
                K   = Kval(n0, n1)
             else:
                Td7 = np.nan 
