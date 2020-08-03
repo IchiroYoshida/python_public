@@ -1,0 +1,178 @@
+2020/08/02 01:36:08 UTC
+Continent,Country,Total deaths,Td,Deaths/Mil.
+Europe,Belgium,9841,91.466,848.819
+Europe,UK,46193,277.359,680.087
+Europe,Andorra,52,157.852,672.908
+Europe,Spain,28445,98.688,608.394
+South America,Peru,19217,55.279,582.161
+Europe,Italy,35146,608.591,581.437
+Europe,Sweden,5743,271.398,568.359
+South America,Chile,9533,120.931,498.322
+North America,USA,157898,49.064,476.778
+Europe,France,30265,120.922,463.512
+South America,Brazil,93616,39.592,440.143
+North America,Mexico,47472,40.382,367.908
+Europe,Netherlands,6148,130.340,358.779
+Europe,Ireland,1763,525.410,356.733
+North America,Sint Maarten,15,15.190,349.570
+North America,Panama,1449,40.363,335.385
+South America,Ecuador,5736,65.071,324.675
+Europe,Channel Islands,47,946.953,270.150
+South America,Bolivia,2977,41.319,254.748
+Asia,Armenia,749,99.699,252.713
+North America,Canada,8941,183.479,236.716
+Europe,North Macedonia,493,52.755,236.654
+Europe,Switzerland,1981,152.354,228.745
+Asia,Kyrgyzstan,1397,39.710,213.828
+South America,Colombia,10330,20.197,202.834
+Asia,Iran,16982,80.638,201.956
+Europe,Moldova,788,50.861,195.392
+Europe,Luxembourg,116,52.106,185.057
+Europe,Portugal,1737,181.296,170.382
+North America,Bermuda,9,249.872,144.577
+South America,French Guiana,43,70.160,143.678
+Africa,Mayotte,39,141.277,142.688
+Africa,South Africa,8153,32.859,137.322
+North America,Honduras,1337,43.287,134.801
+Europe,Romania,2379,27.485,123.718
+Asia,Iraq,4805,29.643,119.268
+Europe,Germany,9226,213.403,110.103
+North America,Guatemala,1959,35.649,109.173
+North America,Dominican Republic,1170,30.451,107.768
+Europe,Denmark,615,188.175,106.150
+Asia,Kuwait,453,76.616,105.943
+Europe,Bosnia and Herzegovina,339,24.817,103.390
+Europe,Monaco,4,143.121,101.867
+Europe,Russia,14058,103.490,96.326
+All,Total:,688596,45.801,88.341
+All,World,688596,45.801,88.322
+Asia,Bahrain,147,79.357,86.173
+Asia,Saudi Arabia,2887,105.219,82.819
+Asia,Oman,421,86.852,82.281
+Europe,Austria,718,115.316,79.680
+Europe,Montenegro,50,31.918,79.612
+South America,Argentina,3596,22.445,79.497
+North America,Saint Martin,3,61.832,77.491
+North America,El Salvador,459,26.743,70.721
+Africa,Sao Tome and Principe,15,350.958,68.341
+Asia,Turkey,5710,165.578,67.648
+Europe,Serbia,582,45.481,66.628
+Asia,Qatar,174,284.577,61.970
+Europe,Hungary,597,212.862,61.863
+Europe,Belarus,563,346.801,59.585
+Europe,Finland,329,654.183,59.364
+Africa,Equatorial Guinea,83,10.759,59.018
+Africa,Djibouti,58,545.742,58.639
+Europe,Slovenia,119,97.875,57.225
+Asia,Israel,526,27.868,57.190
+Europe,Albania,161,32.008,55.944
+Europe,Bulgaria,385,35.201,55.460
+Europe,Estonia,69,255.346,52.016
+North America,Turks and Caicos,2,22.630,51.596
+Africa,Egypt,4834,165.006,47.153
+Europe,Norway,255,313.736,47.015
+Europe,Poland,1721,57.925,45.489
+Asia,Azerbaijan,454,59.358,44.741
+South America,Suriname,26,20.008,44.289
+Africa,Cabo Verde,24,51.739,43.123
+Asia,Kazakhstan,793,40.763,42.192
+Europe,Ukraine,1709,45.906,39.108
+Africa,Eswatini,43,20.759,37.025
+Europe,Czechia,383,52.025,35.756
+North America,Bahamas,14,7.976,35.573
+Asia,UAE,351,131.685,35.452
+Europe,Croatia,145,56.213,35.334
+North America,Guadeloupe,14,18.205,34.974
+Africa,Mauritania,157,180.063,33.691
+Asia,Afghanistan,1283,261.837,32.888
+Asia,Maldives,17,24.986,31.404
+North America,Antigua and Barbuda,3,46.591,30.626
+North America,Costa Rica,154,22.086,30.204
+Europe,Lithuania,80,107.939,29.431
+Europe,Iceland,10,181.261,29.287
+North America,Aruba,3,291.115,28.091
+Africa,Algeria,1223,33.390,27.858
+Asia,India,37403,20.677,27.071
+Asia,Pakistan,5951,257.598,26.900
+South America,Guyana,20,27.308,25.395
+North America,Barbados,7,264.428,24.373
+Africa,Gabon,50,64.345,22.421
+Europe,Malta,9,23.276,20.375
+Europe,Greece,206,50.400,19.760
+Asia,Bangladesh,3132,59.837,18.999
+Asia,Indonesia,5193,39.692,18.989
+Asia,Philippines,2039,21.531,18.578
+North America,Nicaragua,116,74.014,17.501
+Africa,Sudan,752,158.902,17.105
+Europe,Latvia,32,185.276,16.982
+Asia,Yemen,494,147.454,16.562
+Asia,Palestine,83,29.331,16.238
+Asia,Cyprus,19,74.360,15.721
+Africa,Liberia,75,167.241,14.823
+Africa,Cameroon,391,150.617,14.706
+North America,Haiti,161,217.208,14.096
+Africa,Guinea-Bissau,27,353.564,13.698
+Africa,Senegal,209,65.711,12.458
+Africa,CAR,59,1396.777,12.199
+Africa,Libya,80,13.079,11.639
+South America,Uruguay,35,57.164,10.078
+Africa,Morocco,367,20.079,9.932
+Africa,Congo,54,93.396,9.771
+Africa,Zambia,165,13.332,8.955
+Asia,Lebanon,61,17.453,8.937
+Africa,Sierra Leone,67,158.384,8.380
+Africa,Comoros,7,38.238,8.034
+Asia,Japan,1011,22.149,7.984
+Australia/Oceania,Australia,201,26.505,7.880
+North America,Cuba,87,79.971,7.666
+South America,Paraguay,52,20.480,7.281
+Africa,Kenya,364,19.434,6.764
+Africa,Lesotho,14,9.402,6.521
+Asia,Tajikistan,60,117.665,6.281
+Africa,Malawi,120,25.205,6.249
+Africa,Mali,124,381.941,6.114
+South America,Venezuela,169,18.366,5.945
+Asia,S. Korea,301,371.540,5.879
+Africa,Somalia,93,455.944,5.849
+Africa,Ghana,182,32.298,5.846
+North America,Trinidad and Tobago,8,29.793,5.734
+Europe,Slovakia,29,55.392,5.311
+Africa,Zimbabwe,69,11.902,4.639
+Asia,Singapore,27,94.653,4.612
+Africa,Chad,75,213.827,4.567
+Africa,Réunion,4,457.819,4.464
+Australia/Oceania,New Zealand,22,841.286,4.400
+Asia,Hong Kong,33,15.934,4.399
+Asia,Uzbekistan,147,22.377,4.389
+Africa,Namibia,11,17.557,4.323
+Africa,Tunisia,51,66.630,4.305
+Africa,Nigeria,883,56.877,4.279
+Asia,Georgia,17,102.772,4.268
+Africa,South Sudan,46,118.961,4.107
+Africa,Ivory Coast,102,124.650,3.862
+Asia,Malaysia,125,429.208,3.854
+Africa,Madagascar,107,20.201,3.854
+Africa,Gambia,9,8.272,3.723
+Africa,Guinea,46,90.620,3.493
+North America,Jamaica,10,101.459,3.371
+Asia,China,4634,735.298,3.240
+Africa,Benin,36,76.448,2.972
+Africa,Niger,69,456.895,2.855
+Africa,Burkina Faso,53,94.849,2.550
+Africa,Ethiopia,284,15.832,2.461
+Asia,Syria,43,22.222,2.426
+Africa,DRC,215,153.306,2.390
+Africa,Togo,19,41.796,2.301
+Asia,Nepal,56,58.338,1.918
+Africa,Angola,54,20.250,1.624
+Asia,Jordan,11,106.097,1.075
+Africa,Botswana,2,30.569,0.848
+Asia,Thailand,58,533.234,0.823
+Asia,Sri Lanka,11,301.089,0.512
+Africa,Mozambique,12,33.985,0.386
+Africa,Rwanda,5,31.677,0.384
+Asia,Taiwan,7,141.301,0.295
+Australia/Oceania,Papua New Guinea,2,5.726,0.220
+Asia,Myanmar,6,340.122,0.102
+Africa,Uganda,4,75.712,0.088
+Asia,Vietnam,3,13.981,0.031
