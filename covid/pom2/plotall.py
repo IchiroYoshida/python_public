@@ -52,7 +52,7 @@ for file in files:
 
     title ='2020 COVID-19 Pandemic Cases and Deaths in '+country
     plt.title(title,fontsize=20)
-    plt.legend('Cases and Deaths')
+    #plt.legend('Cases and Deaths')
     plt.ylabel('Number')
     plt.grid(which="both")
     save_name = './data/plot/'+country+'.png'

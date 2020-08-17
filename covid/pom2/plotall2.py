@@ -68,7 +68,7 @@ for file in files:
 
             title = '2020 COVID-19 Pandemic Cases and Deahts/1M pop. in '+country
             plt.title(title,fontsize=20)
-            plt.legend('Cases and Deaths')
+            #plt.legend('Cases and Deaths')
             plt.ylabel('Number/1M pop')
             #plt.yscale('log')
             plt.grid(which="both")
