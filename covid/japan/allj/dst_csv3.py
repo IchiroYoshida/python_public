@@ -14,11 +14,6 @@ csv_path = './data/csv2/'
 def td7(n0, n1):
     return(7.0*math.log(2)/(math.log(n1/n0)))
 
-#def ReproductionN(td7):
-#    k = math.log(2)/td7
-#    r = math.exp(k * 7.0)
-#    return(r)
-
 def ReproductionN(n0, n1):
     return((n1/n0) ** (5/7))
 
@@ -39,6 +34,7 @@ df2 = df.swaplevel('date','name')
 df3 = df2.droplevel('name_jp').sort_index()
 
 areas = df3.index.levels[0].tolist()
+#areas =['Tokyo']
 
 for area in areas:
     df4 = df3.loc[(area)]
@@ -122,7 +118,9 @@ for area in areas:
     data['Deaths Day(Ave7)'] = data_list
 #--------------Td7,R0,K value,CFR--------
     cases = data['Cases Total(Ave7)']
+    cases2 = data['Cases Day(Ave7)']
     case = cases.values.tolist()
+    case2 = cases2.values.tolist()
     deaths = data['Deaths Total(Ave7)']
     dead = deaths.values.tolist()
 
@@ -137,27 +135,36 @@ for area in areas:
 
     while(len(case)-7):
         dat=case[:7]
+        dat2 = case2[:7]
         n0 = dat[0]
         n1 = dat[6]
+        nn0 = dat2[0]
+        nn1 = dat2[6]
+ 
+        if(nn0>0):
+           R0 = ReproductionN(nn0, nn1)
+        else:
+           R0 = np.nan
 
         if(n0):
             if(n0<n1):
                Td7 = td7(n0, n1)
-               R0  = ReproductionN(n0, n1)
+               #R0  = ReproductionN(n0, n1)
                K   = Kval(n0, n1)
             else:
                Td7 = np.nan 
-               R0  = np.nan
+               #R0  = np.nan
                K   = np.nan
         else:
            Td7 = np.nan
-           R0  = np.nan
+           #R0  = np.nan
            K   = np.nan
 
         Td7_list = np.append(Td7_list, Td7)
         R0_list = np.append(R0_list, R0)
         K_list = np.append(K_list, K)
         del case[:1]
+        del case2[:1]
 
     data['Td7']=Td7_list
     data['R0']=R0_list

@@ -24,8 +24,6 @@ for file in files:
 
     country = file.split('.csv')[0]
     read_csv = csv2_path+file
-    country = file.split('.csv')[0]
-    read_csv = csv2_path+file
     csv = pd.read_csv(read_csv)
     c1 = csv['Cases Day'] 
     c2 = csv['Cases Day(Ave7)']   

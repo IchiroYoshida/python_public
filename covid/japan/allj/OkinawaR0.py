@@ -32,32 +32,17 @@ for file in files:
 
     if (country == 'Tokyo'):
         ax.plot(dates,R0v,color='red', linewidth ='3', zorder=1)
-    if (country == 'Osaka'):
+    if (country == 'Okinawa'):
         ax.plot(dates,R0v,color='blue', linewidth ='2',zorder=0)
-    #if (country == 'Aichi'):
-    #    ax.plot(dates,R0v,color='green', linewidth ='2',zorder=0)
-    if (country == 'Fukuoka'):
-        ax.plot(dates,R0v,color='yellow', linewidth ='2',zorder=0)
-    if (country == 'Hokkaido'):
-        ax.plot(dates,R0v,color='cyan',linewidth ='2',zorder=0)
     if (country == 'Zenkoku'):
         ax.plot(dates,R0v,color='black',linewidth ='4',linestyle = 'dashed',zorder=0)
-
-    #else:
-    #    plt.plot(dates,R0v,zorder=0)
 
     xx = dates[-1]
     yy = R0v[-1]
     
     if (country == 'Tokyo'):
         ax.text(xx,yy,country,fontsize=20)
-    if (country == 'Osaka'):
-        ax.text(xx,yy,country,fontsize=20)
-    if (country == 'Fukuoka'):
-        ax.text(xx,yy,country,fontsize=20)
-    #if (country == 'Aichi'):
-    #    ax.text(xx,yy,country,fontsize=20)
-    if (country == 'Hokkaido'):
+    if (country == 'Okinawa'):
         ax.text(xx,yy,country,fontsize=20)
     if (country == 'Zenkoku'):
         ax.text(xx,yy,country,fontsize=25)
@@ -66,7 +51,8 @@ for file in files:
 plt.title('2020 COVID-19 Pandemic in Japan',fontsize=30)
 plt.ylabel('R0',fontsize=20)
 #plt.yscale('log')
-plt.ylim(0,5.0)
+plt.ylim(0,10)
+plt.yticks(np.arange(0,10,1.0))
 
 plt.grid(which='both')
 
