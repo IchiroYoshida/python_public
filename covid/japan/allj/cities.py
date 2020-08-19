@@ -25,7 +25,7 @@ for file in files:
     Days = len(D7)
 
     dates = np.array([base + datetime.timedelta(days=i) for i in range(Days)])
-    locator = mdates.AutoDateLocator()
+    locator = mdates.AutoDateLocator(maxticks=30)
     formatter = mdates.ConciseDateFormatter(locator)
     ax.xaxis.set_major_locator(locator)
     ax.xaxis.set_major_formatter(formatter)
