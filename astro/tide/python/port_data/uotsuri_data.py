@@ -1,0 +1,97 @@
+"""
+尖閣　魚釣島　４０分潮
+"""
+
+import numpy as np
+import tide
+pt = tide.Port
+
+pt.name = "尖閣諸島（魚釣島）"
+pt.lat  =  25.44
+pt.lng  = 123.28
+pt.level= 95 
+
+pt.pl = np.zeros(40,np.float64)
+pt.hr = np.zeros(40,np.float64)
+
+pt.pl[0]  = 130.00    # Sa 
+pt.pl[1]  =   0.00    # Ssa 
+pt.pl[2]  =   0.00    # Mm 
+pt.pl[3]  =   0.00    # MSf 
+pt.pl[4]  =   0.00    # Mf 
+pt.pl[5]  =   0.00    # Q1 
+pt.pl[6]  =   0.00    # Rho1 
+pt.pl[7]  = 203.20    # O1 
+pt.pl[8]  =   0.00    # MP1 
+pt.pl[9]  =   0.00    # M1 
+pt.pl[10]  =   0.00    # Pi1 
+pt.pl[11]  = 222.50    # P1 
+pt.pl[12]  =   0.00    # S1 
+pt.pl[13]  = 222.50    # K1 
+pt.pl[14]  =   0.00    # Psi1 
+pt.pl[15]  =   0.00    # Phi1 
+pt.pl[16]  =   0.00    # J1 
+pt.pl[17]  =   0.00    # SO1 
+pt.pl[18]  =   0.00    # OO1 
+pt.pl[19]  =   0.00    # 2N2 
+pt.pl[20]  =  40.60    # Mu2 
+pt.pl[21]  =   0.00    # N2 
+pt.pl[22]  =   0.00    # Nu2 
+pt.pl[23]  =   0.00    # OP2 
+pt.pl[24]  = 219.40    # M2 
+pt.pl[25]  =   0.00    # Lam2 
+pt.pl[26]  =   0.00    # L2 
+pt.pl[27]  =   0.00    # T2 
+pt.pl[28]  = 241.00    # S2 
+pt.pl[29]  =   0.00    # R2 
+pt.pl[30]  = 241.00    # K2 
+pt.pl[31]  =   0.00    # 2SM2 
+pt.pl[32]  =   0.00    # MO3 
+pt.pl[33]  =   0.00    # M3 
+pt.pl[34]  =   0.00    # MK3 
+pt.pl[35]  =   0.00    # SK3 
+pt.pl[36]  = 130.20    # M4 
+pt.pl[37]  = 248.20    # MS4 
+pt.pl[38]  =   0.00    # M6 
+pt.pl[39]  =   0.00    # 2MS6 
+
+pt.hr[0]  =  15.00    # Sa 
+pt.hr[1]  =   0.00    # Ssa 
+pt.hr[2]  =   0.00    # Mm 
+pt.hr[3]  =   0.00    # MSf 
+pt.hr[4]  =   0.00    # Mf 
+pt.hr[5]  =   0.00    # Q1 
+pt.hr[6]  =   0.00    # Rho1 
+pt.hr[7]  =  19.60    # O1 
+pt.hr[8]  =   0.00    # MP1 
+pt.hr[9]  =   0.00    # M1 
+pt.hr[10]  =   0.00    # Pi1 
+pt.hr[11]  =   7.00    # P1 
+pt.hr[12]  =   0.00    # S1 
+pt.hr[13]  =  21.10    # K1 
+pt.hr[14]  =   0.00    # Psi1 
+pt.hr[15]  =   0.00    # Phi1 
+pt.hr[16]  =   0.00    # J1 
+pt.hr[17]  =   0.00    # SO1 
+pt.hr[18]  =   0.00    # OO1 
+pt.hr[19]  =   0.00    # 2N2 
+pt.hr[20]  =   6.00    # Mu2 
+pt.hr[21]  =   0.00    # N2 
+pt.hr[22]  =   0.00    # Nu2 
+pt.hr[23]  =   0.00    # OP2 
+pt.hr[24]  =  48.90    # M2 
+pt.hr[25]  =   0.00    # Lam2 
+pt.hr[26]  =   0.00    # L2 
+pt.hr[27]  =   0.00    # T2 
+pt.hr[28]  =  15.70    # S2 
+pt.hr[29]  =   0.00    # R2 
+pt.hr[30]  =   4.30    # K2 
+pt.hr[31]  =   0.00    # 2SM2 
+pt.hr[32]  =   0.00    # MO3 
+pt.hr[33]  =   0.00    # M3 
+pt.hr[34]  =   0.00    # MK3 
+pt.hr[35]  =   0.00    # SK3 
+pt.hr[36]  =   0.60    # M4 
+pt.hr[37]  =   0.60    # MS4 
+pt.hr[38]  =   0.00    # M6 
+pt.hr[39]  =   0.00    # 2MS6 

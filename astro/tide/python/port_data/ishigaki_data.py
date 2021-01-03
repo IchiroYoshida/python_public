@@ -1,0 +1,99 @@
+"""
+石垣　固有値（２０１６年）
+"""
+import numpy as np
+import tide
+pt = tide.Port
+
+pt.name = "石垣"
+
+pt.lat   =  24.20  #緯度
+pt.lng   = 124.10  #経度
+pt.level = 107     #平均潮位（cm）
+
+pt.pl = np.zeros(40,np.float64)
+pt.hr = np.zeros(40,np.float64)
+
+# 調和定数（遅角）      分潮
+pt.pl[0]  = 135.19    # Sa
+pt.pl[1]  = 308.50    # Ssa
+pt.pl[2]  =  54.88    # Mm
+pt.pl[3]  = 300.78    # MSf
+pt.pl[4]  =  27.10    # Mf
+pt.pl[5]  = 187.05    # Q1
+pt.pl[6]  = 177.07    # Rho1
+pt.pl[7]  = 199.36    # O1
+pt.pl[8]  = 248.57    # MP1
+pt.pl[9]  = 202.98    # M1
+pt.pl[10] = 215.11    # Pi1
+pt.pl[11] = 217.86    # P1
+pt.pl[12] = 227.12    # S1
+pt.pl[13] = 221.35    # K1
+pt.pl[14] = 228.48    # Psi1
+pt.pl[15] = 204.45    # Phi1
+pt.pl[16] = 235.94    # J1
+pt.pl[17] = 274.68    # SO1
+pt.pl[18] = 253.39    # OO1
+pt.pl[19] = 171.88    # 2N2
+pt.pl[20] = 179.83    # Mu2
+pt.pl[21] = 185.45    # N2
+pt.pl[22] = 185.39    # Nu2
+pt.pl[23] = 277.49    # OP2
+pt.pl[24] = 193.52    # M2
+pt.pl[25] = 185.10    # Lam2
+pt.pl[26] = 194.01    # L2
+pt.pl[27] = 211.53    # T2
+pt.pl[28] = 216.23    # S2 
+pt.pl[29] = 228.71    # R2
+pt.pl[30] = 211.92    # K2
+pt.pl[31] = 163.78    # 2SM2
+pt.pl[32] = 328.89    # MO3
+pt.pl[33] = 200.64    # M3
+pt.pl[34] = 294.31    # MK3
+pt.pl[35] = 319.69    # SK3
+pt.pl[36] = 315.22    # M4
+pt.pl[37] = 313.16    # MS4
+pt.pl[38] = 218.12    # M6
+pt.pl[39] = 258.16    # 2MS6
+
+# 調和定数（振幅）
+pt.hr[0]  = 17.04     # Sa
+pt.hr[1]  =  4.06     # Ssa
+pt.hr[2]  =  0.91     # Mm
+pt.hr[3]  =  0.72     # MSf
+pt.hr[4]  =  0.38     # Mf
+pt.hr[5]  =  3.44     # Q1
+pt.hr[6]  =  0.62     # Rho1
+pt.hr[7]  = 16.93     # O1
+pt.hr[8]  =  0.31     # MP1
+pt.hr[9]  =  0.77     # M1
+pt.hr[10] =  0.45     # Pi1
+pt.hr[11] =  6.35     # P1
+pt.hr[12] =  0.14     # S1
+pt.hr[13] = 19.81     # K1
+pt.hr[14] =  0.19     # Psi1
+pt.hr[15] =  0.39     # Phi1
+pt.hr[16] =  1.06     # J1
+pt.hr[17] =  0.25     # SO1
+pt.hr[18] =  0.52     # OO1
+pt.hr[19] =  1.25     # 2N2
+pt.hr[20] =  1.56     # Mu2
+pt.hr[21] =  8.87     # N2
+pt.hr[22] =  1.65     # Nu2
+pt.hr[23] =  0.40     # OP2
+pt.hr[24] = 44.24     # M2
+pt.hr[25] =  0.27     # Lam2 
+pt.hr[26] =  1.13     # L2
+pt.hr[27] =  1.14     # T2
+pt.hr[28] = 19.49     # S2
+pt.hr[29] =  0.12     # R2
+pt.hr[30] =  5.28     # K2
+pt.hr[31] =  0.04     # 2SM2
+pt.hr[32] =  0.22     # MO3
+pt.hr[33] =  0.76     # M3
+pt.hr[34] =  0.24     # MK3
+pt.hr[35] =  0.13     # SK3
+pt.hr[36] =  0.46     # M4
+pt.hr[37] =  0.40     # MS4
+pt.hr[38] =  0.26     # M6
+pt.hr[39] =  0.24     # 2MS6

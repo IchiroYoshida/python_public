@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+   <meta charset="utf-8">
+   <title>福岡タワーの影</title>
+   <style>
+#map {
+      height: 100%;
+     }
+      html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+     }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+/* Google Maps PrnJavaScript */
+function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 15,
+      center: {lat: 35.3606, lng: 138.7274},
+      mapTypeID: 'terrain' 
+});
+var triangleCoords = [
+        {lat: 35.3606, lng: 138.7274},
+        {lat: 35.26514240816604, lng: 139.26805519540727},
+        {lat: 35.259710981396445, lng: 139.29248368759806},
+        {lat: 35.25377436626738, lng: 139.31916182619045},
+        {lat: 35.24726064521275, lng: 139.34841122665335},
+        {lat: 35.24008264885937, lng: 139.3806167606556},
+        {lat: 35.232135828439176, lng: 139.41624364478986},
+        {lat: 35.22329240265018, lng: 139.45585897222898},
+        {lat: 35.21339488590444, lng: 139.50016150344047},
+        {lat: 35.20224676758416, lng: 139.55002135441524},
+        {lat: 35.189600328521095, lng: 139.6065367466878},
+        {lat: 35.3606, lng: 138.7274}
+];
+
+// Construct the polygon.
+ var sunTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35
+});
+sunTriangle.setMap(map);
+}
+</script>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxxpAAPkHdujr5Rht0Kl_gDrTtM0q25k&callback=initMap">
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Fdb version 3
+["dvipdf"] 1527320430 "Ose2018.dvi" "Ose2018.pdf" "Ose2018" 1527320827
+  "Ose2018.dvi" 1527320430 72128 0f09f67d011bd34f103f01e94ce15f8e "latex"
+  (generated)
+  "Ose2018.pdf"
+["latex"] 1527320429 "Ose2018.tex" "Ose2018.dvi" "Ose2018" 1527320827
+  "/home/ichiro1/.texlive/texmf-var/web2c/eptex/platex.fmt" 1503733829 7854098 58351190f71c2b6e52850378718d5e16 ""
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1520157216 3332 103109f5612ad95229751940c61aada0 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1520153536 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1520153536 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1520157226 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1520157226 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1520157226 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/share/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1520153540 59289 4022a27865170e2023315b1d1ab0f1ff ""
+  "/usr/share/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1520153540 6061 1242b5308ecb0db77c71c1ff6c687ace ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1520157258 32585 d82bbcf7626b7842c87671687479e852 ""
+  "Ose2018.aux" 1527320430 8 a94a2480d3289e625eea47cd1b285758 ""
+  "Ose2018.tex" 1527320412 36040 6685a35e8edfd35fe684604a16e06559 ""
+  (generated)
+  "Ose2018.aux"
+  "Ose2018.log"
+  "Ose2018.dvi"

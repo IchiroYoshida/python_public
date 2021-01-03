@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+version="1.1"
+creator="Kashmir3D 8.900 - http://www.kashmir3d.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.topografix.com/GPX/1/1"
+xmlns:kashmir3d="http://www.kashmir3d.com/namespace/kashmir3d"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
+	http://www.kashmir3d.com/namespace/kashmir3d http://www.kashmir3d.com/namespace/kashmir3d.xsd">
+<wpt lat="26.488286" lon="127.845186"><name><123abc></name></wpt>
+<wpt lat="26.33" lon="128.02"><name><sukku></name></wpt>
+<wpt lat="26.42" lon="127.48"><name><ie></name></wpt>
+<wpt lat="24.55" lon="125.15"><name><ikema></name></wpt>
+<wpt lat="24.21" lon="123.45"><name><iriomote-sirahama></name></wpt>
+<wpt lat="24.27" lon="122.56"><name><kubura-yonaguni></name></wpt>
+<wpt lat="24.50" lon="125.13"><name><sarahama-irabu></name></wpt>
+<wpt lat="26.12" lon="127.22"><name><tokasiki></name></wpt>
+<wpt lat="26.39" lon="127.54"><name><toguchi></name></wpt>
+<wpt lat="26.23" lon="127.44"><name><toya></name></wpt>
+<wpt lat="26.13" lon="127.40"><name><naha></name></wpt>
+<wpt lat="24.04" lon="123.46"><name><hateruma></name></wpt>
+<wpt lat="26.45" lon="128.11"><name><hetona></name></wpt>
+<wpt lat="26.11" lon="127.47"><name><maten></name></wpt>
+<wpt lat="26.44" lon="128.19"><name><ada></name></wpt>
+<wpt lat="26.40" lon="128.01"><name><unten></name></wpt>
+<wpt lat="26.08" lon="127.47"><name><oujima></name></wpt>
+<wpt lat="25.56" lon="123.41"><name><senkaku-ouokyo></name></wpt>
+<wpt lat="27.02" lon="127.58"><name><gakiya></name></wpt>
+<wpt lat="26.20" lon="126.46"><name><gima-kumejima></name></wpt>
+<wpt lat="25.44" lon="123.28"><name><uoturi></name></wpt>
+<wpt lat="26.13" lon="127.18"><name><zamami></name></wpt>
+<wpt lat="26.08" lon="127.40"><name><itoman></name></wpt>
+<wpt lat="24.20" lon="124.10"><name><ishigaki></name></wpt>
+<wpt lat="26.25" lon="127.51"><name><ishikawa></name></wpt>
+<wpt lat="24.20" lon="123.44"><name><iriomote></name></wpt>
+<wpt lat="26.21" lon="126.49"><name><nakasato></name></wpt>
+<wpt lat="24.48" lon="125.12"><name><nagayama-irabu></name></wpt>
+<wpt lat="25.49" lon="131.14"><name><minami-daito></name></wpt>
+<wpt lat="26.18" lon="127.55"><name><hirasikiya></name></wpt>
+<wpt lat="24.48" lon="125.17"><name><hirara-miyako></name></wpt>
+<wpt lat="26.19" lon="127.51"><name><awase></name></wpt>
+<wpt lat="24.25" lon="123.00"><name><></name></wpt>
+</gpx>

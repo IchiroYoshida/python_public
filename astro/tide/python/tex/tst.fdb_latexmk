@@ -1,0 +1,22 @@
+# Fdb version 3
+["dvipdf"] 1514095955 "tst.dvi" "tst.pdf" "tst" 1514095955
+  "tst.dvi" 1514095955 8268 378dec0d9837d38892aae05ac3cfae18 "latex"
+  (generated)
+  "tst.pdf"
+["latex"] 1514095955 "tst.tex" "tst.dvi" "tst" 1514095955
+  "/home/ichiro1/.texlive/texmf-var/web2c/eptex/platex.fmt" 1503733829 7854098 58351190f71c2b6e52850378718d5e16 ""
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1510784337 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1510396079 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1510396078 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1510784344 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1510784344 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1510784344 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/share/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1510396088 59289 4022a27865170e2023315b1d1ab0f1ff ""
+  "/usr/share/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1510396088 6061 1242b5308ecb0db77c71c1ff6c687ace ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1510784374 32585 d82bbcf7626b7842c87671687479e852 ""
+  "tst.aux" 1514095955 8 a94a2480d3289e625eea47cd1b285758 ""
+  "tst.tex" 1514095940 3570 a22caaa8c32f6c4605bb6ec68a10bb6e ""
+  (generated)
+  "tst.aux"
+  "tst.log"
+  "tst.dvi"

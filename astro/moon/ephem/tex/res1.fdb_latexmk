@@ -1,0 +1,22 @@
+# Fdb version 3
+["dvipdf"] 1513054625 "res1.dvi" "res1.pdf" "res1" 1513054625
+  "res1.dvi" 1513054625 6668 905db39b6fd6c40c55f05ffcd32ad507 "latex"
+  (generated)
+  "res1.pdf"
+["latex"] 1513054624 "res1.tex" "res1.dvi" "res1" 1513054625
+  "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/ptex/jis/jis.tfm" 1274206740 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/ptex/standard/tmin10.tfm" 1274206740 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/local/texlive/2015/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1400831602 55132 1568ea7ebb5ed2b2ea63f45c633eadda ""
+  "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1445297872 31985 3b2aa1e4e73426e2011ec5231ac92e0f ""
+  "/usr/local/texlive/2015/texmf-var/web2c/eptex/platex.fmt" 1450438083 4004653 4e642471a75c2610f933af1b5060fce4 ""
+  "/usr/local/texlive/2015/texmf.cnf" 1369923207 577 cbc827f6294276973a1952e86e8ad73a ""
+  "/usr/local/texlive/texmf-local/web2c/texmf.cnf" 1390718680 148 732f6d5dd11adc5c60f8ac9c2dbf75a4 ""
+  "res1.aux" 1513054625 8 a94a2480d3289e625eea47cd1b285758 ""
+  "res1.tex" 1513054618 2417 4ff78543bf2257c3ee18780cc1e13d2b ""
+  (generated)
+  "res1.log"
+  "res1.aux"
+  "res1.dvi"

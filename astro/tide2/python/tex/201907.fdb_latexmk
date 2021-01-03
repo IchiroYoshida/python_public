@@ -1,0 +1,9 @@
+# Fdb version 3
+["dvipdf"] 0 "201907.dvi" "201907.pdf" "201907" 0
+  "201907.dvi" 0 -1 0 "latex"
+  (generated)
+  "201907.pdf"
+["latex"] 1562978818 "201907.tex" "201907.dvi" "201907" 1562978818
+  (generated)
+  "201907.dvi"
+  "201907.log"

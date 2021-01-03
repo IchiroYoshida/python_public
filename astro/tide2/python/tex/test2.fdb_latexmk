@@ -1,0 +1,31 @@
+# Fdb version 3
+["dvipdf"] 1564290166 "test2.dvi" "test2.pdf" "test2" 1564290167
+  "test2.dvi" 1564290166 328 f83bf7f31a1ce42957712ee4246e0fe5 "latex"
+  (generated)
+  "test2.pdf"
+["latex"] 1564290166 "test2.tex" "test2.dvi" "test2" 1564290167
+  "/home/ichiro1/.texlive/texmf-var/web2c/eptex/platex.fmt" 1564290137 8183664 734177ece9ddf883b26885359870e67a ""
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1557554374 3332 103109f5612ad95229751940c61aada0 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1557556234 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1557556234 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1557554374 1458 43ab4710dc82f3edeabecd0d099626b2 ""
+  "/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty" 1557554374 1300 96620a7d94bc0ceb261d968770ce8315 ""
+  "/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty" 1557554374 6797 90b7f83b0ad46826bc16058b1e3d48df ""
+  "/usr/share/texmf-dist/tex/latex/bxjscls/bxjsarticle.cls" 1557556234 77773 0f6a602712f98566727a5b707f4b34cf ""
+  "/usr/share/texmf-dist/tex/latex/bxjscls/bxjscompat.sty" 1557556234 4065 7d63f9aa03a65f8d2641754a71df0a48 ""
+  "/usr/share/texmf-dist/tex/latex/bxjscls/bxjsja-minimal.def" 1557556234 13187 687ca380fb81f9eb64646bc7f4fccf07 ""
+  "/usr/share/texmf-dist/tex/latex/bxjscls/bxjsja-standard.def" 1557556234 21952 9c5d7cc8e6e32bb72482575a25606492 ""
+  "/usr/share/texmf-dist/tex/latex/bxwareki/bxwareki-cd.def" 1557556234 12567 bd320bbdb8f50bab52f9c7421e9aa9a0 ""
+  "/usr/share/texmf-dist/tex/latex/bxwareki/bxwareki.sty" 1557556234 18288 45288dc16003cdf8da42ffefa2d99b35 ""
+  "/usr/share/texmf-dist/tex/latex/bxwareki/bxwareki2019.def" 1557556234 44 1c75ad14cb882f1bf05a93ee87b5e551 ""
+  "/usr/share/texmf-dist/tex/latex/geometry/geometry.sty" 1557554374 41645 0653033a985e06c69a2a9cea9a95e31a ""
+  "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1557554374 2591 6404d0c7d28505fb38ce0d86c2e28ae7 ""
+  "/usr/share/texmf-dist/tex/latex/tools/calc.sty" 1557554374 10212 357072c1d20578a30d6387d8a22e72ab ""
+  "/usr/share/texmf-dist/tex/platex/japanese-otf-uptex/otf.sty" 1557556234 23252 1ba366a375eafec45fecf230c53025e3 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
+  "test2.aux" 1564290166 8 a94a2480d3289e625eea47cd1b285758 "latex"
+  "test2.tex" 1564289694 136 2a192b0fb4830e457d412d5a188d6a0e ""
+  (generated)
+  "test2.log"
+  "test2.dvi"
+  "test2.aux"

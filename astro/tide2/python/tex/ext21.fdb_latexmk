@@ -1,0 +1,14 @@
+# Fdb version 3
+["dvipdf"] 0 "ext21.dvi" "ext21.pdf" "ext21" 0
+  "ext21.dvi" 0 -1 0 "latex"
+  (generated)
+  "ext21.pdf"
+["latex"] 1564913634 "ext21.tex" "ext21.dvi" "ext21" 1564913634
+  "/usr/share/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1557556234 59756 73678ed894605251d31768d9d5feb860 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
+  "/var/lib/texmf/web2c/euptex/uplatex.fmt" 1564913481 8175166 ce87510ce48134579f09a3620467c12d ""
+  "ext21.aux" 1564913634 8 a94a2480d3289e625eea47cd1b285758 ""
+  "ext21.tex" 1564913629 333 964d77cc0e97a59691556a1938c04a78 ""
+  (generated)
+  "ext21.log"
+  "ext21.dvi"

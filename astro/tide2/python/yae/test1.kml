@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"> <Placemark>
+ <name>test1</name>
+ <description>西表島崎山湾 0.1-1 11:34 - 12:26</description>
+ <Point>
+ <coordinates>123.666, 24.315</coordinates>
+ </Point>
+ </Placemark> </kml>

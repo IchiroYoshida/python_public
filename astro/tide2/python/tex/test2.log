@@ -1,0 +1,173 @@
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.euc) (TeX Live 2019/Arch Linux) (preloaded format=platex 2019.8.4)  4 AUG 2019 19:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**test2
+(./test2.tex
+pLaTeX2e <2019-04-06> (based on LaTeX2e <2018-12-01>)
+(/usr/share/texmf-dist/tex/latex/bxjscls/bxjsarticle.cls
+Document Class: bxjsarticle 2019/03/10 v1.9f BXJS document classes
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count83
+\calc@Bcount=\count84
+\calc@Adimen=\dimen118
+\calc@Bdimen=\dimen119
+\calc@Askip=\skip41
+\calc@Bskip=\skip42
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count85
+\calc@Cskip=\skip43
+)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf-dist/tex/latex/bxjscls/bxjscompat.sty
+Package: bxjscompat 2019/03/10 v1.9f BXJS document classes
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+\stockwidth=\dimen120
+\stockheight=\dimen121
+\jsc@mpt=\dimen122
+\jsc@mmm=\dimen123
+\jsZw=\dimen124
+\jsc@smallskipamount=\skip44
+\fullwidth=\dimen125
+
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count86
+\Gm@cntv=\count87
+\c@Gm@tempcnt=\count88
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
+\Gm@dimlist=\toks16
+)
+\c@part=\count89
+\c@section=\count90
+\c@subsection=\count91
+\c@subsubsection=\count92
+\c@paragraph=\count93
+\c@subparagraph=\count94
+\@abstractbox=\box43
+\c@figure=\count95
+\c@table=\count96
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\jsc@tocl@width=\dimen134
+\@lnumwidth=\dimen135
+\bibindent=\dimen136
+
+(/usr/share/texmf-dist/tex/latex/bxwareki/bxwareki.sty
+Package: bxwareki 2019/04/01 v0.5
+\c@warekiyear=\count97
+
+(/usr/share/texmf-dist/tex/latex/bxwareki/bxwareki-cd.def
+File: bxwareki-cd.def 2018/10/01 v0.4
+))
+(/usr/share/texmf-dist/tex/latex/bxjscls/bxjsja-standard.def
+File: bxjsja-standard.def 2019/03/10 v1.9f BXJS document classes
+
+(/usr/share/texmf-dist/tex/latex/bxjscls/bxjsja-minimal.def
+File: bxjsja-minimal.def 2019/03/10 v1.9f BXJS document classes
+LaTeX Info: Redefining \rmfamily on input line 198.
+LaTeX Info: Redefining \sffamily on input line 201.
+LaTeX Info: Redefining \ttfamily on input line 204.
+LaTeX Info: Redefining \textmc on input line 208.
+LaTeX Info: Redefining \textgt on input line 209.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.61014pt on input line 213.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.61014pt on input line 213.
+)
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 399.
+LaTeX Info: Redefining \textmc on input line 667.
+LaTeX Info: Redefining \textgt on input line 668.
+)) (./test2.aux)
+\openout1 = `test2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+
+*geometry* detected driver: dvipdfm
+*geometry* verbose mode - [ preamble ] result:
+* driver: dvipdfm
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* hratio: 1:1
+* vratio: 1:1
+* modes: includehead includefoot truedimen 
+* h-part:(L,W,R)=(59.75215pt, 378.4189pt, 59.75217pt)
+* v-part:(T,H,B)=(59.85684pt, 584.49202pt, 59.85684pt)
+* \paperwidth=597.49146pt
+* \paperheight=845.03174pt
+* \textwidth=369.88525pt
+* \textheight=522.0pt
+* \oddsidemargin=3.79434pt
+* \evensidemargin=3.79434pt
+* \topmargin=-2.8367pt
+* \headheight=20.0pt
+* \headsep=13.71492pt
+* \topskip=10.0pt
+* \footskip=23.71492pt
+* \marginparwidth=9.24713pt
+* \marginparsep=18.49426pt
+* \columnsep=18.49426pt
+* \skip\footins=16.0pt plus 5.0pt minus 2.0pt
+* \hoffset=0.01344pt
+* \voffset=0.01344pt
+* \mag=1200
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1
+
+] (./test2.aux) ) 
+Here is how much of TeX's memory you used:
+ 1640 strings out of 493230
+ 23794 string characters out of 6149323
+ 91450 words of memory out of 5000000
+ 5668 multiletter control sequences out of 15000+600000
+ 7884 words of font info for 34 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 26i,4n,29p,181b,170s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on test2.dvi (1 page, 328 bytes).

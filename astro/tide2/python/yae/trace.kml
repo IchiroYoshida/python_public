@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+        <Placemark>
+        <LineString>
+           <coordinates>124.004,24.213,0. 124.005,24.211,0.</coordinates>
+        </LineString>
+
+        <Style>
+            <LineStyle>
+                <color>ffff0000</color>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        </Placemark>
+        <Placemark>
+            <name>Entory 9:36</name>
+            <Point>
+                <coordinates>124.004, 24.213</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Exit 10:40</name>
+            <Point>
+                <coordinates>124.005, 24.211</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
