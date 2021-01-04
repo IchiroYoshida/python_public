@@ -11,7 +11,7 @@ import eph_func as ephf
 RAD = 180. / ephem.pi
 NEAR = 10.
 
-year = 2019
+year = 2021
 
 moon = ephem.Moon()
 sun = ephem.Sun()
