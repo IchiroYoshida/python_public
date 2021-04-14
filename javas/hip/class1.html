@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html lang ="ja">
+<head>
+<meta charset = "utf-8">
+<title>Java Class1</title>
+</head>
+<body>
+<script>
+class Hipparcos{
+    constructor(No,Mag,Ra_Deg,Dec_Deg,BV_Color){
+        this.No = No;
+        this.Mag = Mag;
+        this.Ra_Deg = Ra_Deg;
+        this.Dec_Deg = Dec_Deg;
+        this.BV_Color = BV_Color;
+    }
+}
+
+const HIP32349 = new Hipparcos(32349,-1.44,101.288,-16.713,0.009);
+
+console.log(HIP32349.No,HIP32349.Mag);
+
+</script>
+</body>
+</html>
+
