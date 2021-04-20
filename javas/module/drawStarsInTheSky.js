@@ -1,5 +1,5 @@
 // drawStarsInTheSky.js 
-function drawStarsInTheSky(ctx,Stars){
+function drawStarsInTheSky(ctx){
     for(var star in Stars){
 	    var ra = Hipparcos[Stars[star]].Ra/15;
 	    var dec = Hipparcos[Stars[star]].Dec;

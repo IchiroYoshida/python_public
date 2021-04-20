@@ -20,5 +20,7 @@ function drawSky(){
     ctx.fillStyle = lingrad;
     ctx.fillRect(-drawRadius,-drawRadius,drawRadius2,drawRadius2);
 
-    drawStarsInTheSky(ctx,Stars);
+    drawStarsInTheSky(ctx);  //draw Hipparcos 1000 stars.
+    drawPlanets(ctx); //draw planets.
+
 }
