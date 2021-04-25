@@ -1,3 +1,5 @@
+// Milkyway 1000 clusters.
+
 const Clusters = {
 	Ruprecht37:{Ra:117.45,Dec:-17.2464},
 	Mamajek1:{Ra:130.525,Dec:-79.0272},
