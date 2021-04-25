@@ -14,7 +14,7 @@ import pangle
 location = ephem.Observer()
 location.name = 'Fukuoka'
 location.lon, location.lat = '130.391', '33.593'
-location.date = '2020/06/01 21:00:00' #21:00 JST
+location.date = '2021/04/25 21:00:00' #21:00 JST
 location.date -= 9*ephem.hour
 
 moon = ephem.Moon(location)

@@ -4,7 +4,7 @@
 
     Astronomy library for JavaScript (browser and Node.js).
     https://github.com/cosinekitty/astronomy
-
+    UN_GM
     MIT License
 
     Copyright (c) 2019-2021 Don Cross <cosinekitty@gmail.com>

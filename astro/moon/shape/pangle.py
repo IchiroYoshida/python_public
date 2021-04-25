@@ -11,4 +11,6 @@ def moon_Pangle(observer):
     kai = math.atan2(cs1, cs2 - scc)
     if (kai < 0): kai += 2*math.pi
 
+    deg = kai*math.pi/180
+    print(deg,kai)
     return(kai)

@@ -1,3 +1,11 @@
+//
+const drawRadius2 = 640;
+let drawRadius = parseInt(drawRadius2/2);
+const drawClip = 300;
+
+const PI = Math.PI;
+
+// Location Fukuoka
 const latitude = 33.594;
 const longitude = 130.387;
 const elevation = 20.0;
@@ -7,49 +15,46 @@ date = new Date();
 console.log(date);
 var Stars = Object.keys(Hipparcos);
 
+//planisFunction.js
 function drawPolar(az, alt){
-    const canvasRadius = 300;
-    let Az = az * (Math.PI/180);
-    let Alt = alt * (Math.PI/180);
+    let Az = az * (PI/180);
+    let Alt = alt * (PI/180);
 
-    let r = Math.PI/2 - Alt;
+    let r = PI/2 - Alt;
     let x =  -r * Math.sin(Az);
     let y =  -r * Math.cos(Az);
-    let XX = 2*x/Math.PI*canvasRadius;
-    let YY = 2*y/Math.PI*canvasRadius;
+    let XX = 2*x/PI*drawRadius;
+    let YY = 2*y/PI*drawRadius;
     //console.log(XX, YY);
     return{x:XX, y:YY};
 }
 
-//var Stars = Object.keys(Hipparcos);
-
+// drawSky.js
 function drawSky(){
-    const Radius2 = 640;
-    const Clip = 320;
-    var Radius = parseInt(Radius2/2);
     var canvas = document.getElementById('stars');
     if (canvas.getContext){
         var ctx = canvas.getContext('2d');
     }
-    ctx.fillRect(0,0,Radius2, Radius2);
-    ctx.translate(Radius, Radius);
+    ctx.fillRect(0,0,drawRadius2, drawRadius2);
+    ctx.translate(drawRadius, drawRadius);
 
     // 円形のクリッピングパスを作成
     ctx.beginPath();
-    ctx.arc(0, 0, Clip,0,Math.PI*2,true);
+    ctx.arc(0, 0, drawClip,0,PI*2,true);
     ctx.clip();
 
     //　背景を描く
-    var lingrad = ctx.createLinearGradient(0,-Radius,0,Radius);
+    var lingrad = ctx.createLinearGradient(0,-drawRadius,0,drawRadius);
     lingrad.addColorStop(0, '#232256');
     lingrad.addColorStop(1, '#143778');
 
     ctx.fillStyle = lingrad;
-    ctx.fillRect(-Radius,-Radius,Radius2,Radius2);
+    ctx.fillRect(-drawRadius,-drawRadius,drawRadius2,drawRadius2);
 
     drawStarsInTheSky(ctx,Stars);
 }
 
+// drawStarsInTheSky.js 
 function drawStarsInTheSky(ctx,Stars){
     for(var star in Stars){
 	    var ra = Hipparcos[Stars[star]].Ra/15;
@@ -61,11 +66,9 @@ function drawStarsInTheSky(ctx,Stars){
         alt = hor.altitude;
 
         if (alt>0) {
-            //let pol  = polar(az, alt);
-            //let dot  = drawCanvas(pol);
             let dot = drawPolar(az, alt);
             ctx.save();
-            ctx.fillStyle = '#fff';
+            ctx.fillStyle = bv;
             ctx.translate(dot.x,dot.y);
             let r = (5-mag)**1.5/2;
             //console.log(r);
@@ -74,7 +77,6 @@ function drawStarsInTheSky(ctx,Stars){
         }
     }
 }
-
 
 function drawStar(ctx,r){
     ctx.save();

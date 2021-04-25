@@ -11,8 +11,9 @@ const longitude = 130.387;
 const elevation = 20.0;
 let observer = new Astronomy.Observer(latitude, longitude, elevation);
 
-date = new Date();
-console.log(date);
+//date = new Date();
+date = new Date(2021,3,25,20,0,0);
+console.log('Debug:',date);
 
 // BodyList of Solar system.
 const BodyList = [

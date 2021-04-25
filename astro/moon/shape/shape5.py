@@ -14,7 +14,7 @@ location = ephem.Observer()
 
 location.name = 'Fukuoka'
 location.lon, location.lat = '130.391', '33.593'
-location.date = '2019/02/23 12:00:00' #21:00 JST
+location.date = '2021/04/25 12:00:00' #21:00 JST
 
 moon = ephem.Moon(location)
 alpha = moon.elong 

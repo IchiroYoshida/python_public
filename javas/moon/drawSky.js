@@ -1,6 +1,12 @@
 // drawSky.js
+
+const drawRadius2 = 640;
+let drawRadius = parseInt(drawRadius2/2);
+const drawClip = 300;
+const PI=Math.PI;
+
 function drawSky(){
-    var canvas = document.getElementById('stars');
+    var canvas = document.getElementById('Moon');
     if (canvas.getContext){
         var ctx = canvas.getContext('2d');
     }
@@ -20,10 +26,5 @@ function drawSky(){
     ctx.fillStyle = lingrad;
     ctx.fillRect(-drawRadius,-drawRadius,drawRadius2,drawRadius2);
 
-    drawMilkyway(ctx); //draw Milkyway 1000 clusters.
-    drawStarsInTheSky(ctx);  //draw Hipparcos 1000 stars.
-    drawPlanets(ctx); //draw planets.
-    drawEcliEqu(ctx); //draw Ecli. Equ. lines.
-    drawMoon(ctx); //draw Moon.
-    drawConstName(ctx); //draw constellation names.
+    shape(ctx); //draw Moon.
 }
