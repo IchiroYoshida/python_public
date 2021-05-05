@@ -12,7 +12,9 @@ const elevation = 20.0;
 let observer = new Astronomy.Observer(latitude, longitude, elevation);
 
 date = new Date();
-console.log(date);
+//console.log(date);
+astroToday = new Astronomy.MakeTime(date);
+console.log(date,astroToday);
 
 // BodyList of Solar system.
 const BodyList = [

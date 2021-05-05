@@ -10,7 +10,7 @@ t_max = 100
 tspan =np.linspace(0.0, t_max,t_max+1)
 
 I0 = 1  
-R0 = 2.73
+R0 = 1.5
 gamma = 1/7. 
 beta  = R0*gamma /N
 
