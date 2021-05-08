@@ -49,13 +49,12 @@ file = files[-1]
 
 wm = pd.read_pickle(wm_path+file)
 
-
 wm_iso3 = pd.merge(wm, iso3, left_on = 'Country', right_on='worldmeters country name')
-
 del wm_iso3['worldmeters country name']
 
 pom_countries = wm_iso3['pomber(GitHub) country name']
 pom_countries_list = pom_countries.values.tolist()
+
 wm_countries = wm_iso3['Country']
 wm_countries_list = wm_countries.values.tolist()
 wm_pop = wm_iso3['Population']
@@ -65,22 +64,22 @@ dd = np.zeros(data_col)
 dd[:] = np.nan
 
 #countries0 = ['Japan']
-
 for country in countries:
+    print(country)
     try:
         idx = pom_countries_list.index(country)
         wm_country = wm_countries_list[idx]
         popMil = float(wm_pop_list[idx])/1000000
-
+        #print(country,idx,popMil)
+        
     except ValueError:
-        continue 
-
+        continue
+         
     data0 = df.loc[(country)].copy()
     data1 =data0.reset_index()
     data1.insert(0,'Country',wm_country)
 
     data = data1.copy()
-    
 #---------------Cases Total(7Ave)-----
     confirmed = data['confirmed']
     conf = confirmed.values.tolist()
@@ -251,8 +250,6 @@ Index=['Country', 'date', 'confirmed', 'deaths', 'recovered',
 
 new_df0 = pd.DataFrame(dd,columns=Index)
 new_df = new_df0.set_index(['Country','date'])
-
 pic_file = './data/dst/'+now_utc+'.zip'
 print(pic_file)
 new_df.to_pickle(pic_file)
-

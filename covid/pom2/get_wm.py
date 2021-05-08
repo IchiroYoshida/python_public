@@ -27,7 +27,9 @@ wm_res = requests.get(wmc)
 wm_soup = BeautifulSoup(wm_res.text, 'html.parser')
 wm_table = wm_soup.find('table')
 wm_data = [dat.text for dat in wm_table('td')]
-wm_col = 19   #colums of the worldmeters HTML table
+wm_col = 22  #colums of the worldmeters HTML table
+
+#print(wm_data)
 
 csvRow = []
 
@@ -39,6 +41,7 @@ while len(wm_data):
     csvRow.append(row)
     del wm_data[:wm_col]
 
+#print(csvRow)
 del csvRow[:8]   # Delete Head.
 del csvRow[-8:]  # Delete Tail.
 

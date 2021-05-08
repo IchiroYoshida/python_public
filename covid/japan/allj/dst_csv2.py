@@ -167,7 +167,7 @@ for area in areas:
         del case2[:1]
 
     data['Td7']=Td7_list
-    data['R0']=R0_list
+    data['Rt']=R0_list
     data['K']=K_list
     data['CFR'] = deaths/cases 
 
