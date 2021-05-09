@@ -1,4 +1,4 @@
-date,npatients,ndeaths,Cases Total(Ave7),Cases Day,Cases Day(Ave7),Deaths Total(Ave7),Deaths Day,Deaths Day(Ave7),Td7,R0,K,CFR
+date,npatients,ndeaths,Cases Total(Ave7),Cases Day,Cases Day(Ave7),Deaths Total(Ave7),Deaths Day,Deaths Day(Ave7),Td7,Rt,K,CFR
 2020-03-18,794,31.0,,,,,,,,,,
 2020-03-19,829,33.0,,35.0,,,2.0,,,,,
 2020-03-20,871,35.0,,42.0,,,2.0,,,,,

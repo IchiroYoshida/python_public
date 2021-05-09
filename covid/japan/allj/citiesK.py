@@ -41,10 +41,6 @@ for file in files:
     if (country == 'Hokkaido'):
         ax.plot(dates,Kval,color='cyan',linewidth ='2',zorder=0)
 
-
-    #else:
-    #    ax.plot(dates,D7,zorder=0)
-
     xx = dates[-1]
     yy = Kval[-1]
     

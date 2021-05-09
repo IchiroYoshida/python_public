@@ -9,8 +9,6 @@ csv_path = './data/csv2/'
 files = os.listdir(csv_path)
 files.sort()
 
-print(files)
-
 for file in files:
     country = file.split('.csv')[0]
 

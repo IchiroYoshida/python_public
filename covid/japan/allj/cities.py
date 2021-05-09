@@ -19,7 +19,6 @@ for file in files:
 
     read_csv = csv_path+file
     csv = pd.read_csv(read_csv)
-
     Td7 = csv['Td7']
     D7 = Td7.values.tolist()
     Days = len(D7)
@@ -72,4 +71,3 @@ plt.grid(which='both')
 
 plt.show()
 plt.close()
-

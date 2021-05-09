@@ -12,17 +12,38 @@ json_path = './data/json/'
 csv_path = './data/csv2/'
 
 def td7(n0, n1):
-    return(7.0*math.log(2)/(math.log(n1/n0)))
+    if (n0 >0 and n1>0): 
+        try:
+            Td7 = 7.0*math.log(2)/math.log(n1/n0)
+        except:
+            Td7 = np.nan
+    else:
+        Td7 = np.nan
+    return(Td7)
 
 def ReproductionN(n0, n1):
-    return((n1/n0) ** (5/7))
-
+    if (n0 >0 and n1>0):
+        try:
+            Rt = (n1/n0) ** (5/7)
+        except:
+            Rt = np.nan
+    else:
+        Rt = np.nan
+    return(Rt)
+    
 def Kval(n0, n1): #Takashi Nakano Osaka. Univ.
-    return(1-(n0/n1))
+    if (n0>0 and n1>0):
+        try:
+            Kv = 1-(n0/n1)
+        except:
+            Kv = np.nan
+    else:
+        Kv = np.nan
+    return(Kv)
 
 def conv7(data):
     ave = np.convolve(data, np.ones(7)/float(7), 'valid')
-    return(ave)
+    return(ave[0])
 
 files = os.listdir(json_path)
 files.sort()

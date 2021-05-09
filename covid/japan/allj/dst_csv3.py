@@ -5,6 +5,7 @@
 '''
 import os
 import math
+import csv
 import numpy as np
 import pandas as pd
 
@@ -12,165 +13,110 @@ json_path = './data/json/'
 csv_path = './data/csv3/'
 
 def td7(n0, n1):
-    return(7.0*math.log(2)/(math.log(n1/n0)))
+    if (n0 >0 and n1>0):
+        if (n1 > n0):
+            try:
+                Td7 = 7.0*math.log(2)/math.log(n1/n0)
+            except:
+                Td7 = np.nan
+        else:
+            Td7 = np.nan
+    else:
+        Td7 = np.nan
+    return(Td7)
 
 def ReproductionN(n0, n1):
-    return((n1/n0) ** (5/7))
+    if (n0>0 and n1>0):
+        try:
+            rt = (n1/n0) ** (5/7)
+        except:
+            rt = np.nan
+    else:
+        rt = np.nan
+    return(rt)
 
 def Kval(n0, n1): #Takashi Nakano Osaka. Univ.
-    return(1-(n0/n1))
+    if (n0>0 and n1>0):
+        try:
+            Kv = 1-(n0/n1)
+        except:
+            Kv = np.nan
+    else:
+        Kv = np.nan
+    return(Kv)
 
-def conv7(data):
-    ave = np.convolve(data, np.ones(7)/float(7), 'valid')
-    return(ave)
-
+def ave7(data):
+    diff_list = np.zeros(7)
+    for d in range(0, 6):
+        dat = data[:2]
+        try:
+            diff = int(dat[1])-int(dat[0])
+        except:
+            diff = np.nan
+        diff_list[d] = diff
+        del data[:1]
+    try:
+        ave = np.convolve(diff_list, np.ones(7)/float(7), 'valid')
+    except:
+        ave = np.nan
+    return(ave[0])
+    
 files = os.listdir(json_path)
 files.sort()
 file = files[-1]
 
 df = pd.read_pickle(json_path+file)
-
-df2 = df.swaplevel('date','name')
-df3 = df2.droplevel('name_jp').sort_index()
-
+df2 = df.droplevel('name_jp')
+df3=df2.swaplevel('date','name')
 areas = df3.index.levels[0].tolist()
-#areas =['Tokyo']
+dates = df2.index.levels[0].tolist()
+#areas =['Hokkaido','Tokyo','Aichi','Osaka','Fukuoka','Zenkoku']
 
-for area in areas:
-    df4 = df3.loc[(area)]
-    df5 = df4[['npatients','ndeaths']]
-    data = df5.copy()
-#---------------Cases Total(7Ave)-----
-    confirmed = data['npatients']
-    conf = confirmed.values.tolist()
-    data_list = np.zeros(7)
-    data_list[:] = np.nan
-    while (len(conf)-7):
-       dat = conf[:7]
-       ave7 = conv7(dat)
-       data_list=np.append(data_list, ave7)
-       del conf[:1]
+#for d in range(5):
+for d in range(len(dates)-14):
+    csvRow = []
+    date1 = dates[d+7]
+    date0 = dates[d]
+    
+    dd3=df2.swaplevel('date','name')
+    for area in areas:
+        areaData = dd3.loc[(area)]
+        areaData2 = areaData[['npatients','ndeaths']]
+        data0 = areaData2[:7].copy()
+        data1 = areaData2[7:14].copy()
+        
+#----------------Cases Day(7Ave)----------
+        confirmed0 = data0['npatients']
+        conf0 = confirmed0.values.tolist()
+        npat0=conf0[0]
+        caseAve7_n0 = ave7(conf0)
+        
+        confirmed1= data1['npatients']
+        conf1 = confirmed1.values.tolist()
+        npat1=conf1[0]
+        caseAve7_n1 = ave7(conf1)
+        
+#--------------Deaths Day(7Ave)-------------
+        deaths = data0['ndeaths']
+        dead = deaths.values.tolist()
+        deathAve7 = ave7(dead)
+#--------------Td7,Rt,K value,CFR--------        
+        Rt = ReproductionN(caseAve7_n0, caseAve7_n1)
+        Td7 = td7(npat0, npat1)
+        Kv = Kval(npat0, npat1)
 
-    data['Cases Total(Ave7)']= data_list
-#----------------Cases Day----------
-    confirmed = data['npatients']
-    conf = confirmed.values.tolist()
-    diff_list = np.zeros(1)
-    diff_list[:] = np.nan
-    while (len(conf)-1):
-            con = conf[:2]
-            diff = int(con[1])-int(con[0])
-            diff_list = np.append(diff_list, diff)
-            del conf[:1]
+        if(caseAve7_n0 >0):
+            try:
+                CFR = deathAve7/caseAve7_n0
+            except:
+                CFR = np.nan
+        csvRow.append([area,caseAve7_n0,deathAve7,Td7,Rt,Kv,CFR])
+    df2=df2.drop(index=date0)
 
-    data['Cases Day'] = diff_list
-#---------------Cases Day(7Ave)-----
-    cases = data['Cases Day']
-    case = cases.values.tolist()
-    data_list = np.zeros(7)
-    data_list[:] = np.nan
-    while (len(case)-7):
-       dat = case[:7]
-       ave7 = conv7(dat)
-       data_list=np.append(data_list, ave7)
-       del case[:1]
-
-    data['Cases Day(Ave7)']= data_list
-#---------------Deaths Total(7Ave)-----
-    deaths = data['ndeaths']
-    dead = deaths.values.tolist()
-    data_list = np.zeros(7)
-    data_list[:] = np.nan
-    while (len(dead)-7):
-        dat = dead[:7]
-        ave7 = conv7(dat)
-        data_list = np.append(data_list, ave7)
-        del dead[:1]
-
-    data['Deaths Total(Ave7)']=data_list
-#--------------Deaths Day ---
-    deaths = data['ndeaths']
-    dead = deaths.values.tolist()
-    diff_list = np.zeros(1)
-    diff_list[:] = np.nan
-    while (len(dead)-1):
-        dea = dead[:2]
-        try:
-            diff = int(dea[1])-int(dea[0])
-        except ValueError:
-            diff = np.nan
-
-        diff_list = np.append(diff_list, diff)
-        del dead[:1]
-
-    data['Deaths Day'] = diff_list
-#--------------Deaths Day(7Ave)---
-    death = data['Deaths Day']
-    dead = death.values.tolist()
-    data_list = np.zeros(7)
-    data_list[:] = np.nan
-    while (len(dead)-7):
-        dat = dead[:7]
-        ave7 = conv7(dat)
-        data_list=np.append(data_list, ave7)
-        del dead[:1]
-
-    data['Deaths Day(Ave7)'] = data_list
-#--------------Td7,R0,K value,CFR--------
-    cases = data['Cases Total(Ave7)']
-    cases2 = data['Cases Day(Ave7)']
-    case = cases.values.tolist()
-    case2 = cases2.values.tolist()
-    deaths = data['Deaths Total(Ave7)']
-    dead = deaths.values.tolist()
-
-    data_list = np.zeros(7)
-    data_list[:] = np.nan
-    Td7_list = np.zeros(7)
-    Td7_list[:] = np.nan
-    R0_list = np.zeros(7)
-    R0_list[:] = np.nan
-    K_list = np.zeros(7)
-    K_list[:]=np.nan
-
-    while(len(case)-7):
-        dat=case[:7]
-        dat2 = case2[:7]
-        n0 = dat[0]
-        n1 = dat[6]
-        nn0 = dat2[0]
-        nn1 = dat2[6]
- 
-        if(nn0>0):
-           R0 = ReproductionN(nn0, nn1)
-        else:
-           R0 = np.nan
-
-        if(n0):
-            if(n0<n1):
-               Td7 = td7(n0, n1)
-               #R0  = ReproductionN(n0, n1)
-               K   = Kval(n0, n1)
-            else:
-               Td7 = np.nan 
-               #R0  = np.nan
-               K   = np.nan
-        else:
-           Td7 = np.nan
-           #R0  = np.nan
-           K   = np.nan
-
-        Td7_list = np.append(Td7_list, Td7)
-        R0_list = np.append(R0_list, R0)
-        K_list = np.append(K_list, K)
-        del case[:1]
-        del case2[:1]
-
-    data['Td7']=Td7_list
-    data['R0']=R0_list
-    data['K']=K_list
-    data['CFR'] = deaths/cases 
-
-    file_name = csv_path+area+'.csv'
-    print(file_name)
-    data.to_csv(file_name)
+    file_name = csv_path+date1+'.csv'
+    
+    with open(file_name, 'w', encoding='utf-8') as f:
+        writer =csv.writer(f)
+        writer.writerow(['Pref.','cases(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
+        writer.writerows(csvRow)
+        print(file_name)
