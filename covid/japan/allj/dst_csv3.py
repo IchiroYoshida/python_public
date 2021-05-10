@@ -45,7 +45,7 @@ def Kval(n0, n1): #Takashi Nakano Osaka. Univ.
         Kv = np.nan
     return(Kv)
 
-def ave7(data):
+def caseAve7(data):
     diff_list = np.zeros(7)
     for d in range(0, 6):
         dat = data[:2]
@@ -60,7 +60,14 @@ def ave7(data):
     except:
         ave = np.nan
     return(ave[0])
-    
+
+def totalAve7(data):
+    try:
+        ave = np.convolve(data, np.ones(7)/float(7), 'valid')
+    except:
+        ave = np.nan
+    return(ave[0])
+
 files = os.listdir(json_path)
 files.sort()
 file = files[-1]
@@ -75,7 +82,7 @@ dates = df2.index.levels[0].tolist()
 #for d in range(5):
 for d in range(len(dates)-14):
     csvRow = []
-    date1 = dates[d+7]
+    date1 = dates[d+13]
     date0 = dates[d]
     
     dd3=df2.swaplevel('date','name')
@@ -89,34 +96,38 @@ for d in range(len(dates)-14):
         confirmed0 = data0['npatients']
         conf0 = confirmed0.values.tolist()
         npat0=conf0[0]
-        caseAve7_n0 = ave7(conf0)
+        totalAve7_n0 = totalAve7(conf0)
+        caseAve7_n0 = caseAve7(conf0)
         
         confirmed1= data1['npatients']
         conf1 = confirmed1.values.tolist()
         npat1=conf1[0]
-        caseAve7_n1 = ave7(conf1)
+        totalAve7_n1 = totalAve7(conf1)
+        caseAve7_n1 = caseAve7(conf1)
         
 #--------------Deaths Day(7Ave)-------------
         deaths = data0['ndeaths']
         dead = deaths.values.tolist()
-        deathAve7 = ave7(dead)
+        deathAve7 = caseAve7(dead)
+        totalDeathAve7 = totalAve7(dead)
+        
 #--------------Td7,Rt,K value,CFR--------        
         Rt = ReproductionN(caseAve7_n0, caseAve7_n1)
-        Td7 = td7(npat0, npat1)
-        Kv = Kval(npat0, npat1)
+        Td7 = td7(totalAve7_n0, totalAve7_n1)
+        Kv = Kval(totalAve7_n0, totalAve7_n1)
 
-        if(caseAve7_n0 >0):
+        if(caseAve7_n1 >0):
             try:
-                CFR = deathAve7/caseAve7_n0
+                CFR = deathAve7/caseAve7_n1
             except:
                 CFR = np.nan
-        csvRow.append([area,caseAve7_n0,deathAve7,Td7,Rt,Kv,CFR])
+        csvRow.append([area,totalAve7_n1,caseAve7_n1,totalDeathAve7,deathAve7,Td7,Rt,Kv,CFR])
     df2=df2.drop(index=date0)
 
     file_name = csv_path+date1+'.csv'
     
     with open(file_name, 'w', encoding='utf-8') as f:
         writer =csv.writer(f)
-        writer.writerow(['Pref.','cases(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
+        writer.writerow(['Pref.','Total cases(ave7)','cases(ave7)','Total deaths(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
         writer.writerows(csvRow)
         print(file_name)
