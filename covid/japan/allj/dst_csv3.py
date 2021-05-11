@@ -80,7 +80,7 @@ dates = df2.index.levels[0].tolist()
 #areas =['Hokkaido','Tokyo','Aichi','Osaka','Fukuoka','Zenkoku']
 
 #for d in range(5):
-for d in range(len(dates)-14):
+for d in range(len(dates)-13):
     csvRow = []
     date1 = dates[d+13]
     date0 = dates[d]
@@ -95,22 +95,20 @@ for d in range(len(dates)-14):
 #----------------Cases Day(7Ave)----------
         confirmed0 = data0['npatients']
         conf0 = confirmed0.values.tolist()
-        npat0=conf0[0]
         totalAve7_n0 = totalAve7(conf0)
         caseAve7_n0 = caseAve7(conf0)
         
         confirmed1= data1['npatients']
         conf1 = confirmed1.values.tolist()
-        npat1=conf1[0]
         totalAve7_n1 = totalAve7(conf1)
         caseAve7_n1 = caseAve7(conf1)
-        
+        npatients = conf1[0] 
 #--------------Deaths Day(7Ave)-------------
-        deaths = data0['ndeaths']
+        deaths = data1['ndeaths']
         dead = deaths.values.tolist()
         deathAve7 = caseAve7(dead)
         totalDeathAve7 = totalAve7(dead)
-        
+        ndeaths = dead[0] 
 #--------------Td7,Rt,K value,CFR--------        
         Rt = ReproductionN(caseAve7_n0, caseAve7_n1)
         Td7 = td7(totalAve7_n0, totalAve7_n1)
@@ -121,13 +119,13 @@ for d in range(len(dates)-14):
                 CFR = deathAve7/caseAve7_n1
             except:
                 CFR = np.nan
-        csvRow.append([area,totalAve7_n1,caseAve7_n1,totalDeathAve7,deathAve7,Td7,Rt,Kv,CFR])
+        csvRow.append([area,npatients,ndeaths,totalAve7_n1,caseAve7_n1,totalDeathAve7,deathAve7,Td7,Rt,Kv,CFR])
     df2=df2.drop(index=date0)
 
     file_name = csv_path+date1+'.csv'
     
     with open(file_name, 'w', encoding='utf-8') as f:
         writer =csv.writer(f)
-        writer.writerow(['Pref.','Total cases(ave7)','cases(ave7)','Total deaths(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
+        writer.writerow(['Pref.','npatients','ndeaths','Total cases(ave7)','cases(ave7)','Total deaths(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
         writer.writerows(csvRow)
         print(file_name)
