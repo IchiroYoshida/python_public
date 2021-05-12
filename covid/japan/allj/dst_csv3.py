@@ -11,6 +11,13 @@ import pandas as pd
 
 json_path = './data/json/'
 csv_path = './data/csv3/'
+pref_data = './data/pref_data.csv'
+
+PrefDF = pd.read_csv(pref_data, index_col=0)
+prefs = PrefDF.index
+prefs_list = prefs.values.tolist()
+pref_pop = PrefDF['popNum']
+pref_pop_list = pref_pop.values.tolist()
 
 def td7(n0, n1):
     if (n0 >0 and n1>0):
@@ -87,6 +94,9 @@ for d in range(len(dates)-13):
     
     dd3=df2.swaplevel('date','name')
     for area in areas:
+        idx = prefs_list.index(area)
+        popNum = float(pref_pop_list[idx])/100000
+        
         areaData = dd3.loc[(area)]
         areaData2 = areaData[['npatients','ndeaths']]
         data0 = areaData2[:7].copy()
@@ -103,12 +113,15 @@ for d in range(len(dates)-13):
         totalAve7_n1 = totalAve7(conf1)
         caseAve7_n1 = caseAve7(conf1)
         npatients = conf1[0] 
+        caseAve7_pop = caseAve7_n1 /popNum
+        
 #--------------Deaths Day(7Ave)-------------
         deaths = data1['ndeaths']
         dead = deaths.values.tolist()
         deathAve7 = caseAve7(dead)
         totalDeathAve7 = totalAve7(dead)
         ndeaths = dead[0] 
+        deathAve7_pop = deathAve7 /popNum
 #--------------Td7,Rt,K value,CFR--------        
         Rt = ReproductionN(caseAve7_n0, caseAve7_n1)
         Td7 = td7(totalAve7_n0, totalAve7_n1)
@@ -119,13 +132,13 @@ for d in range(len(dates)-13):
                 CFR = deathAve7/caseAve7_n1
             except:
                 CFR = np.nan
-        csvRow.append([area,npatients,ndeaths,totalAve7_n1,caseAve7_n1,totalDeathAve7,deathAve7,Td7,Rt,Kv,CFR])
+        csvRow.append([area,npatients,ndeaths,totalAve7_n1,caseAve7_n1,caseAve7_pop,totalDeathAve7,deathAve7,deathAve7_pop,Td7,Rt,Kv,CFR])
     df2=df2.drop(index=date0)
 
     file_name = csv_path+date1+'.csv'
     
     with open(file_name, 'w', encoding='utf-8') as f:
         writer =csv.writer(f)
-        writer.writerow(['Pref.','npatients','ndeaths','Total cases(ave7)','cases(ave7)','Total deaths(ave7)','deaths(ave7)','Td','Rt','K','CFR'])
+        writer.writerow(['Pref.','npatients','ndeaths','Total cases(ave7)','cases(ave7)','cases/pop','Total deaths(ave7)','deaths(ave7)','death/pop','Td7','Rt','K','CFR'])
         writer.writerows(csvRow)
         print(file_name)
