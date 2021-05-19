@@ -42,16 +42,6 @@ def ReproductionN(n0, n1):
         rt = np.nan
     return(rt)
 
-def Kval(n0, n1): #Takashi Nakano Osaka. Univ.
-    if (n0>0 and n1>0):
-        try:
-            Kv = 1-(n0/n1)
-        except:
-            Kv = np.nan
-    else:
-        Kv = np.nan
-    return(Kv)
-
 def caseAve7(data):
     diff_list = np.zeros(7)
     for d in range(0, 6):
@@ -93,7 +83,7 @@ for d in range(len(dates)-13):
     date0 = dates[d]
     
     dd3=df2.swaplevel('date','name')
-    for area in areas:
+    for area in areas:                              #A
         idx = prefs_list.index(area)
         popNum = float(pref_pop_list[idx])/100000
         
@@ -112,33 +102,48 @@ for d in range(len(dates)-13):
         conf1 = confirmed1.values.tolist()
         totalAve7_n1 = totalAve7(conf1)
         caseAve7_n1 = caseAve7(conf1)
-        npatients = conf1[0] 
-        caseAve7_pop = caseAve7_n1 /popNum
+        conf1 = confirmed1.values.tolist()
         
+        npatients = conf1[6]                          #B
+        TotalCasesAve7 = totalAve7_n1                 #D
+        CasesAve7 = caseAve7_n1                       #G
+        CasesPop = caseAve7_n1 /popNum                #H
+        Cases = conf1[6] - conf1[5]                   #F
+      
 #--------------Deaths Day(7Ave)-------------
         deaths = data1['ndeaths']
         dead = deaths.values.tolist()
-        deathAve7 = caseAve7(dead)
-        totalDeathAve7 = totalAve7(dead)
-        ndeaths = dead[0] 
-        deathAve7_pop = deathAve7 /popNum
+        DeathsAve7 = caseAve7(dead)                   #J
+        TotalDeathsAve7 = totalAve7(dead)             #E
+        dead = deaths.values.tolist()
+        ndeaths = dead[6]                             #C
+        DeathsPop = DeathsAve7 /popNum                 #K
+        Deaths = dead[6]-dead[5]                      #I
 #--------------Td7,Rt,K value,CFR--------        
-        Rt = ReproductionN(caseAve7_n0, caseAve7_n1)
-        Td7 = td7(totalAve7_n0, totalAve7_n1)
-        Kv = Kval(totalAve7_n0, totalAve7_n1)
+        Rt = ReproductionN(caseAve7_n0, caseAve7_n1)  #M
+        Td7 = td7(totalAve7_n0, totalAve7_n1)         #L
 
         if(caseAve7_n1 >0):
             try:
-                CFR = deathAve7/caseAve7_n1
+                CFR = DeathsAve7/CasesAve7            #N
             except:
                 CFR = np.nan
-        csvRow.append([area,npatients,ndeaths,totalAve7_n1,caseAve7_n1,caseAve7_pop,totalDeathAve7,deathAve7,deathAve7_pop,Td7,Rt,Kv,CFR])
+        csvRow.append([area,npatients,ndeaths,                 #A,B,C
+                       TotalCasesAve7, TotalDeathsAve7,        #D,E,
+                       Cases,CasesAve7,CasesPop,               #F,G,H
+                       Deaths,DeathsAve7,DeathsPop,            #I,J,K
+                       Td7,Rt,CFR])                            #L,M,N
+        
     df2=df2.drop(index=date0)
 
     file_name = csv_path+date1+'.csv'
     
     with open(file_name, 'w', encoding='utf-8') as f:
         writer =csv.writer(f)
-        writer.writerow(['Pref.','npatients','ndeaths','Total cases(ave7)','cases(ave7)','cases/pop','Total deaths(ave7)','deaths(ave7)','death/pop','Td7','Rt','K','CFR'])
+        writer.writerow(['Pref.','npatients','ndeaths',
+                         'Total cases(ave7)','Total deaths(ave7)',
+                         'Daily cases','cases(ave7)','cases/100000pop.',
+                         'Daily deaths','deaths(ave7)','deaths/10000pop.',
+                         'Td7','Rt','CFR'])
         writer.writerows(csvRow)
         print(file_name)

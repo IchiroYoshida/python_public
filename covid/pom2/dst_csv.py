@@ -15,7 +15,7 @@ files.sort()
 file = files[-1]
 
 df = pd.read_pickle(dst_path+file)
-df= pd.read_pickle(dst_path+'20210418_202221.zip')
+#df= pd.read_pickle(dst_path+'20210418_202221.zip')
 
 countries = df.index.levels[0].tolist()
 
