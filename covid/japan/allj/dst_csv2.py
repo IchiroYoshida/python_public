@@ -184,8 +184,8 @@ for area in areas:
 
     data['Td7']=Td7_list                       #L
     data['Rt']=R0_list                         #M
-    data['CFR'] = deaths/cases                 #N 
+    data['CFR(%)'] = deaths/cases *100            #N 
 
     file_name = csv_path+area+'.csv'
     print(file_name)
-    data.to_csv(file_name,float_format="%.3f")
+    data.to_csv(file_name,float_format="%.2f")

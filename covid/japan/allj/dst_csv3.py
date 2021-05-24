@@ -125,7 +125,7 @@ for d in range(len(dates)-13):
 
         if(caseAve7_n1 >0):
             try:
-                CFR = DeathsAve7/CasesAve7            #N
+                CFR = DeathsAve7/CasesAve7 *100      #N
             except:
                 CFR = np.nan
         csvRow.append([area,npatients,ndeaths,                 #A,B,C
@@ -133,20 +133,15 @@ for d in range(len(dates)-13):
                        Cases,CasesAve7,CasesPop,               #F,G,H
                        Deaths,DeathsAve7,DeathsPop,            #I,J,K
                        Td7,Rt,CFR])                            #L,M,N
-        files_df = pd.DataFrame({date0:csvRow}) 
-    df2=df2.drop(index=date0)
 
-print(files_df)
-'''   
+    csvRow_df = pd.DataFrame(csvRow, columns = [
+                        'Pref.','npatients','ndeaths',
+                        'Total cases(ave7)','Total deaths(ave7)',
+                        'Daily cases','cases(ave7)','cases/100000pop',
+                        'Daily deaths','deaths(ave7)','deaths/10000pop.',
+                        'Td7','Rt','CFR(%)']) 
     file_name = csv_path+date1+'.csv'
+    csvRow_df.to_csv(file_name, index=False, float_format="%.2f")
+    print(file_name)
+    df2=df2.drop(index=date0)
     
-    with open(file_name, 'w', encoding='utf-8') as f:
-        writer =csv.writer(f)
-        writer.writerow(['Pref.','npatients','ndeaths',
-                         'Total cases(ave7)','Total deaths(ave7)',
-                         'Daily cases','cases(ave7)','cases/100000pop.',
-                         'Daily deaths','deaths(ave7)','deaths/10000pop.',
-                         'Td7','Rt','CFR'])
-        writer.writerows(csvRow)
-        print(file_name)
-'''
