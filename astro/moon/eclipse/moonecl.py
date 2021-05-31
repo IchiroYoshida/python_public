@@ -10,7 +10,7 @@ AU = 1.496e8
 gatech = ephem.Observer()
 gatech.name = 'Fukuoka'
 gatech.lon, gatech.lat = '33.593', '130.390' #Fukuoka
-gatech.date ='2018/07/28 2:00:00' #JST
+gatech.date ='2021/05/26 18:00:00' #JST
 gatech.date -= 9*ephem.hour #JST -> UT
 timetuple = gatech.date
 
