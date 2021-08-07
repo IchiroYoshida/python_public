@@ -40,8 +40,8 @@ for file in files:
     if (country == 'Tokyo'):
         ax.text(xx,yy,country,fontsize=20)
 
-plt.title('2020 COVID-19  Pandemic in Japan R0',fontsize=30)
-plt.ylabel('R0',fontsize=20)
+plt.title('2020 COVID-19  Pandemic Tokyo ',fontsize=30)
+plt.ylabel('Rt',fontsize=20)
 #plt.yscale('log')
 plt.ylim(0,2)
 plt.grid(which='both')
