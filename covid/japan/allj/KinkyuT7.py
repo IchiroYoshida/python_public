@@ -1,4 +1,4 @@
-import os
+いimport os
 import math
 import matplotlib.pyplot as plt
 import numpy as np
