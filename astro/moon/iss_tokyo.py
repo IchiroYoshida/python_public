@@ -10,7 +10,7 @@ home = ephem.Observer()
 home.lon = '139.70'   # +E
 home.lat = '35.69'      # +N
 home.elevation = 10. # meters
-home.date= '2016/6/16 10:54:30' #JST 19:54
+home.date= '202196/25 10:54:30' #JST 19:54
 
 # Always get the latest ISS TLE data from:
 # http://spaceflight.nasa.gov/realdata/sightings/SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html
