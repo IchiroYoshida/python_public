@@ -2,9 +2,9 @@
 TLE data from NASA
 
 """
-from datetime import datetime
-from datetime import timedelta
-import re
+#from datetime import datetime
+#from datetime import timedelta
+#import re
 import requests
 import sys
 import traceback
@@ -13,16 +13,7 @@ FILE ='./iss_tle.py'
 
 class TleIssNasa:
     URL = (
-        "https://spaceflight.nasa.gov/realdata/sightings/"
-        "SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html"
-    )
-    UA = (
-        "mk-mode Bot (by Python/{}.{}.{}, "
-        "Administrator: postmaster@mk-mode.com)"
-    ).format(
-        sys.version_info.major,
-        sys.version_info.minor,
-        sys.version_info.micro
+        "http://celestrak.com/NORAD/elements/stations.txt"
     )
     MSG_ERR = (
         "Invalid date!\n"
@@ -85,8 +76,9 @@ class TleIssNasa:
                     "[ERROR] Could not retreive html."
                 ).format(status, reason))
                 sys.exit(1)
-            for tle in re.findall(r"ISS\n +(1.+?)\n +(2.+?)\n", html):
-                res.append([tle[0], tle[1]])
+            tle_source = html.splitlines()
+            for i in range(3):
+                res.append(tle_source[i])
             return res
         except Exception as e:
             raise
@@ -94,8 +86,9 @@ class TleIssNasa:
     def __get_html(self):
         """ HTML 取得 """
         try:
-            headers = {'User-Agent': self.UA}
-            res = requests.get(self.URL, headers)
+            #headers = {'User-Agent': self.UA}
+            #res = requests.get(self.URL, headers)
+            res = requests.get(self.URL)
             return [res.text, res.status_code, res.reason]
         except Exception as e:
             raise

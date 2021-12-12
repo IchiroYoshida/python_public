@@ -3,20 +3,16 @@ import numpy as np
 import ephem
 from datetime import datetime
 #from iss_tle import *
-import tle_iss_nasa as tle
+#import tle_iss_nasa as tle
+import tle_iss_celestrak as tle
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from mpl_toolkits.basemap import Basemap
 from observe import *
 
-obj = tle.TleIssNasa()
-tles = obj.exec()
+tles = tle.TleISS()
 
-utc_time = obs.date.datetime()
-lines = tle.tle_utc(utc_time, tles)
-iss = ephem.readtle("ISS(ZARYA)", lines[0], lines[1])
-
-
+iss = ephem.readtle("ISS(ZARYA)", tles[1], tles[2])
 fig = plt.figure(figsize=(8,10))
 
 m = Basemap(projection='merc',

@@ -2,7 +2,7 @@ import math
 import ephem
 from operator import itemgetter
 from datetime import datetime
-import tle_iss_nasa as tle
+import tle_iss_celestrak as tle
 from observe import *
 
 def show_results(results):
@@ -32,8 +32,8 @@ obs.date = datetime.now()
 obs.date -= 9 * ephem.hour #JST -> UTC
 date1 = obs.date
 
-lines = tle.TleIssNasa().exec()
-iss = ephem.readtle("ISS(ZARYA)",lines[0],lines[1])
+lines = tle.TleISS()
+iss = ephem.readtle("ISS(ZARYA)",lines[1],lines[2])
 
 print('Name = %s' % iss.name)
 print('Location: %s' % obs.name)

@@ -2,7 +2,8 @@ import numpy as np
 import math
 import ephem
 import datetime
-import tle_iss_nasa as tle
+#import tle_iss_nasa as tle
+import tle_iss_celestrak as tle
 from observe import *
 import planisfunc as plf
 
@@ -15,8 +16,8 @@ class iss:
 
         date1 = observe.date
 
-        lines = tle.TleIssNasa().exec()
-        iss = ephem.readtle("ISS(ZARYA)", lines[0], lines[1])
+        lines = tle.TleISS()
+        iss = ephem.readtle("ISS(ZARYA)", lines[1], lines[2])
 
         Az = []
         Alt = []
