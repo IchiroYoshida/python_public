@@ -75,7 +75,7 @@ for day in range(0, 30, 1):
                         #print('Date =%s ISS Az=%6.2lf Alt=%6.2lf  Sun Alt = %6.2lf'
                         #        % (obs.date,az,alt,sun_alt))
 
-    newline = True
+        newline = True
 
 if(results):
     show_results(results)
