@@ -6,11 +6,14 @@ def check_non_zero(x):
     return x > 0
 
 # Date
-timetuple=(2015, 3,20,8,10,00)
+#timetuple=(2015, 3,20,8,10,00)
+timetuple=(2022,11,8,9,0,0)
 
 # Location
 gatech = ephem.Observer()
-gatech.lon, gatech.lat = '-1.268304', '51.753101'
+#gatech.lon, gatech.lat = '-1.268304', '51.753101'
+gatech.long, gatech.lat = '130.39', '33.59'
+
 gatech.date = timetuple
 
 # Objects

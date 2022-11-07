@@ -43,7 +43,7 @@ for file in files:
 plt.title('2020 COVID-19  Pandemic Tokyo ',fontsize=30)
 plt.ylabel('Rt',fontsize=20)
 #plt.yscale('log')
-plt.ylim(0,2)
+plt.ylim(0,5)
 plt.grid(which='both')
 plt.show()
 plt.close()
