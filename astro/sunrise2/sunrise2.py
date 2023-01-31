@@ -8,14 +8,15 @@ from datetime import datetime
 
 import ephem
 import numpy as np
+import cartopy.crs as ccrs
+import matplotlib.ticker as mticker
 import matplotlib.pyplot as plt
 import scipy.optimize as spo
-#from myjavas import PrnJavaScript
 
 position = ephem.Observer()
 sun = ephem.Sun()
 
-time0 = '2018-01-01 6:47:49'    #JST 
+time0 = '2023-01-01 6:47:49'    #JST 
 
 trise = ephem.Date(time0)- 9 * ephem.hour               #UT = JST -9hr
 
@@ -25,9 +26,6 @@ def sun_alt(lon, lat, t):
     sun.compute(position)
 
     return (sun.alt)
-
-
-# Find position where sunrise.
 
 lats = np.linspace(20, 46 , 27)
 
@@ -52,5 +50,21 @@ for lat in lats:
 
        longis.append(lons)
 
-#PrnJavaScript("sunrise.js",lats,lons)
-print(lats, lons)
+# 描画サイズ指定
+fig = plt.figure(figsize=(10, 10), facecolor="white",tight_layout=True)
+ax = fig.add_subplot(111, projection=ccrs.Mercator(central_longitude=140.0), facecolor="white")
+ax.set_global()
+ax.coastlines()
+
+# ラベル表示
+ax.gridlines(draw_labels=True)
+
+# 描画位置（Lon, Lat）指定
+ax.set_extent([120.0, 150.0, 20.0, 50.0], crs=ccrs.PlateCarree())
+gl = ax.gridlines(draw_labels=True)
+gl.xlocator = mticker.FixedLocator(np.arange(120, 150.1, 1.0))
+gl.ylocator = mticker.FixedLocator(np.arange(20, 50.1, 1.0))
+ax.plot(lons,lats, transform=ccrs.PlateCarree())
+plt.title('日本', fontsize=15)
+
+plt.show()
