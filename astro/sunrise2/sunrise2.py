@@ -50,6 +50,8 @@ for lat in lats:
 
        longis.append(lons)
 
+print(lons, lats)
+'''
 # 描画サイズ指定
 fig = plt.figure(figsize=(10, 10), facecolor="white",tight_layout=True)
 ax = fig.add_subplot(111, projection=ccrs.Mercator(central_longitude=140.0), facecolor="white")
@@ -68,3 +70,4 @@ ax.plot(lons,lats, transform=ccrs.PlateCarree())
 plt.title('日本', fontsize=15)
 
 plt.show()
+'''
