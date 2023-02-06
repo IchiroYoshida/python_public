@@ -12,12 +12,18 @@ import matplotlib.pyplot as plt
 import scipy.optimize as spo
 
 ts = load.timescale()
-t = ts.utc(2023, 1, 1, 6, 47, 49)
+t = ts.utc(2022,12,31,21,46,12)   #2023.1.1-6:46:12  ->UTC
 tz = timezone('Asia/Tokyo')
 
 eph = load('de421.bsp')
 sun, earth = eph['sun'], eph['earth']
 
+position = earth + Topos('35.6925 N', '140.8656 E')
+sun_alt = position.at(t).observe(sun).apparent().altaz()[0].degrees
+
+print(sun_alt)
+
+'''
 def sun_alt(lon, lat, t):
     position = earth + Topos(str(lon)+' N',str(lat)+' E')
     sun_alt = position.at(t).observe(sun).apparent().altaz()[0].degrees
@@ -40,8 +46,7 @@ for lat in lats:
        lons = [(lon+180)%360.-180 for lon in lons] # wraparound at +/1 180
        longis.append(lons)
 
-print(lons)
-'''
+print(lons,lats)
 # 描画サイズ指定
 fig = plt.figure(figsize=(10, 10), facecolor="white",tight_layout=True)
 ax = fig.add_subplot(111, projection=ccrs.Mercator(central_longitude=140.0), facecolor="white")
