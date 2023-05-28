@@ -1,6 +1,8 @@
 import simplekml
 kml = simplekml.Kml()
 
+
+
 ent = kml.newpoint()
 ent.name ="Start"
 ent.description = "2023-05-23 No.1 Entry point"
