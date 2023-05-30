@@ -19,13 +19,13 @@ for dat in data[1:]:
         EntT    = dat[7] #Entry Time
         ExtT    = dat[8] #Exit Time
         EntLat  = dat[9] #Entry Latitude 
-        EntLaM  = dat[10] #Entry Latitude minite
+        EntLaM  = dat[10] #Entry Latitude minutes
         EntLng  = dat[11] #Entry Longitude
-        EntLnM  = dat[12] #Entry Longitude minite
+        EntLnM  = dat[12] #Entry Longitude minutes
         ExtLat  = dat[13] #Exit Latitude
-        ExtLaM  = dat[14] #Exit Latitude minite
+        ExtLaM  = dat[14] #Exit Latitude minutes
         ExtLng  = dat[15] #Exit Longitude
-        ExtLnM  = dat[16] #Exit Longitude minite
+        ExtLnM  = dat[16] #Exit Longitude minutes
         
         if (Style == 'D'):
             EntLatPos = int(EntLat)+float(EntLaM)/60.
@@ -44,7 +44,7 @@ for dat in data[1:]:
 
             ent = kml.newpoint(name=NameDN+' Entry')
             ent.coords = Entry
-            ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png'
+            ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png'
 
             mid = kml.newpoint(name=NameMA)
             mid.coords = Mid
@@ -52,7 +52,7 @@ for dat in data[1:]:
 
             ext = kml.newpoint(name=NameDN+' Exit')
             ext.coords = Exit
-            ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png'
+            ext.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/track-none.png'
 
 
             trk  = kml.newlinestring(name=NameDN+'MA:'+MoonAge, coords=Track )
