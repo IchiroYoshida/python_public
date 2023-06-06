@@ -1,16 +1,17 @@
 # 気象庁　潮位掲載地点一覧表の読み込み Ver 2.0
 # 2023-06-05 Ichiro Yoshida
-year = '2023'
+year = '2017'
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-url = 'http://www.data.jma.go.jp/kaiyou/db/tide/suisan/station.php'
+url = 'http://www.data.jma.go.jp/kaiyou/db/tide/suisan/station'+year+'.php'
 #station2011 - station2023
 points_html = requests.get(url)
 points = BeautifulSoup(points_html.content, 'html.parser')
 table = points.find('table')
+print(url)
 
 datas = []
 for tr in table.find_all('tr'):
