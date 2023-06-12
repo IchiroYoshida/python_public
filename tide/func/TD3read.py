@@ -2,7 +2,7 @@ import os
 import numpy as np
 import func.jmadata as jma
 
-DIR   = './td/2019/'
+DIR   = './td/2023/'
 FILE  = '石垣.TD3'
 
 file_td3=DIR+FILE
