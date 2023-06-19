@@ -666,11 +666,13 @@ class Tide(object):
          f[57] = f0[6]*f0[6]*f0[7]       #58     2MK6
          f[58] = f0[6]                   #59     2SM6
          f[59] = f0[6]*f0[7]             #60     MSK6
-
+         print('f=',f)
+         
          dcnt  = 0
          cnt   = 0
 
          #hr[]:振幅、ags[]：角速度、pl[]：遅角
+         
          for i in range(0,self.inc+3):
            self.tl[i] = self.level
 
@@ -678,11 +680,19 @@ class Tide(object):
               self.tl[i] += f[j] * self.hr[j] * math.cos((vl[j] \
                          + ags[j] * (i - 2) / (60 /self.itv) \
                          - self.pl[j]) * lib.dr)
+         
+         print('tl=',self.tl)
+         print('hr=',self.hr)
+         print('vl=',vl)
+         print('ags=',ags)
+         print('pl=',self.pl)
+         print('level=',self.level)
            
          #補間し１分毎の潮位を算出
          len_tl=len(self.tl)
          range_tl = 60*24  # minutes per day.
          tl = np.array(self.tl)
+         #print('tl=',tl)
          time       = sorted(np.arange(-self.itv*2,range_tl+3*self.itv,self.itv))
          time0  = np.array(time)
 

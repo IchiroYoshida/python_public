@@ -17,7 +17,7 @@ import func.TD3read as td
 #from func.peakdetect import *
 from scipy.signal import argrelmin, argrelmax
 
-date = '2023/06/15'
+date = '2023/06/16'
 dt = datetime.datetime.strptime(date,'%Y/%m/%d')
 
 pt = tf.Port
@@ -53,6 +53,7 @@ hitide = today.hitide
 lowtide= today.lowtide
 
 ti = pd.Series(tide, index=pd.date_range(pt.date+"  0:00", pt.date+" 23:59", freq='min'))
+print(ti.head())
 
 t2 = ti[(pt.date+"  8:00"):(pt.date+"  19:59")]
 
