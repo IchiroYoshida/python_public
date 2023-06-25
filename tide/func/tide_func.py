@@ -666,7 +666,7 @@ class Tide(object):
          f[57] = f0[6]*f0[6]*f0[7]       #58     2MK6
          f[58] = f0[6]                   #59     2SM6
          f[59] = f0[6]*f0[7]             #60     MSK6
-         print('f=',f)
+         #print('f=',f)
          
          dcnt  = 0
          cnt   = 0
@@ -681,12 +681,12 @@ class Tide(object):
                          + ags[j] * (i - 2) / (60 /self.itv) \
                          - self.pl[j]) * lib.dr)
          
-         print('tl=',self.tl)
-         print('hr=',self.hr)
-         print('vl=',vl)
-         print('ags=',ags)
-         print('pl=',self.pl)
-         print('level=',self.level)
+         #print('tl=',self.tl)
+         #print('hr=',self.hr)
+         #print('vl=',vl)
+         #print('ags=',ags)
+         #print('pl=',self.pl)
+         #print('level=',self.level)
            
          #補間し１分毎の潮位を算出
          len_tl=len(self.tl)

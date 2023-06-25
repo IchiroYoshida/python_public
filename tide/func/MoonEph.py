@@ -1,5 +1,5 @@
 '''
-Moon Ephemerisis: Moon Age and Tide by Skyfield
+Moon Ephemeris: Moon Age and Tide by Skyfield
 2023/06/20  Ichiro Yoshida (yoshida.ichi@gmail.com)
 '''
 from skyfield import api
@@ -11,6 +11,12 @@ from skyfield import almanac
 import numpy as np
 
 tz = timezone('Asia/Tokyo')
+
+def WeekDay(date):
+    Name=['月','火','水','木','金','土','日']
+    day = datetime.datetime.strptime(date,'%Y/%m/%d')
+    d = day.weekday()
+    return(Name[d])
 
 #JMA:気象庁
 def tidename_JMA(x):
@@ -45,7 +51,8 @@ class MoonEph(object):
        self.moon_age = '{:.1f}'.format(t1 - t_newmoon)
 
 if __name__ == '__main__':
-    date = '2023/06/20'
+    date = datetime.date.today().strftime('%Y/%m/%d')
     me = MoonEph(date)
+    print(date)
     print(me.tide_name,' 潮')
     print('月齢＝',me.moon_age)      

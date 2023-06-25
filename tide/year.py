@@ -26,7 +26,7 @@ pt.level = td.level
 pt.pl = td.pl
 pt.hr = td.hr
 
-for month in range (1,13):
+for month in range (1,2):
     days = tf.month_days(year,month)
 
     print (year,month)

@@ -10,16 +10,13 @@ import pandas as pd
 from scipy.interpolate import interp1d
 from scipy.signal import argrelmin, argrelmax
 
-class lib:
-   dr = 0.0174532925199433  # degree to radian 
-   rd = 57.29577951308232   # radian to degree
-   pi = 3.14159265358979
+D2R, R2D = np.pi/180.0, 180.0/np.pi
 
 def fix(x):
    if(x >= 0) :
-      return (math.floor(math.fabs(x)))
+      return (np.floor(np.fabs(x)))
    else:
-      return (-math.floor(math.fabs(x)))
+      return (-np.floor(np.fabs(x)))
   
 def rnd36(x):
    return(x - np.floor(x /360) * 360)
@@ -261,9 +258,9 @@ class Tide(object):
       v[58]= -2*s  +2*h                #59     2SM6
       v[59]= -2*s  +4*h                #60     MSK6
 
-      s1 = math.sin(      n      * lib.dr)
-      s2 = math.sin(rnd36(n * 2) * lib.dr)
-      s3 = math.sin(rnd36(n * 3) * lib.dr)
+      s1 = math.sin(      n      * D2R)
+      s2 = math.sin(rnd36(n * 2) * D2R)
+      s3 = math.sin(rnd36(n * 3) * D2R)
 
       u0[0] =   0
       u0[1] = -23.74 * s1 + 2.68 * s2 - 0.38 * s3
@@ -274,25 +271,25 @@ class Tide(object):
       u0[6] =  -2.14 * s1
       u0[7] = -17.74 * s1 + 0.68 * s2 - 0.04 * s3
 
-      cu = 1 - 0.2505 * math.cos( p * 2 * lib.dr) \
-             - 0.1102 * math.cos((p * 2 - n) * lib.dr) \
-             - 0.0156 * math.cos((p * 2 - n * 2) * lib.dr) \
-             - 0.0370 * math.cos(n * lib.dr)
+      cu = 1 - 0.2505 * math.cos( p * 2 * D2R) \
+             - 0.1102 * math.cos((p * 2 - n) * D2R) \
+             - 0.0156 * math.cos((p * 2 - n * 2) * D2R) \
+             - 0.0370 * math.cos(n * D2R)
 
-      su =   - 0.2505 * math.sin(p * 2 * lib.dr) \
-             - 0.1102 * math.sin((p * 2 - n) * lib.dr) \
-             - 0.0156 * math.sin((p * 2 - n * 2) * lib.dr) \
-             - 0.0370 * math.sin(n * lib.dr)
+      su =   - 0.2505 * math.sin(p * 2 * D2R) \
+             - 0.1102 * math.sin((p * 2 - n) * D2R) \
+             - 0.0156 * math.sin((p * 2 - n * 2) * D2R) \
+             - 0.0370 * math.sin(n * D2R)
 
-      u0[8] = math.atan2(su, cu) * lib.rd
+      u0[8] = math.atan2(su, cu) * R2D
 
-      cu =    2 * math.cos(p * lib.dr) \
-          + 0.4 * math.cos((p - n) * lib.dr)
+      cu =    2 * math.cos(p * D2R) \
+          + 0.4 * math.cos((p - n) * D2R)
 
-      su =        math.sin(p * lib.dr)\
-          + 0.2 * math.cos((p - n) * lib.dr)
+      su =        math.sin(p * D2R)\
+          + 0.2 * math.cos((p - n) * D2R)
 
-      u0[9] = math.atan2(su, cu) * lib.rd
+      u0[9] = math.atan2(su, cu) * R2D
 
       # Nの補正　　（第２表　uiの係数）
 
@@ -361,9 +358,9 @@ class Tide(object):
       vl = rnd36(v + float(lng) * nc - ags *zt /15)     
       
       #  天文因数 f 
-      n1 = math.cos(n * lib.dr)
-      n2 = math.cos(rnd36(n * 2) * lib.dr)
-      n3 = math.cos(rnd36(n * 3) * lib.dr)
+      n1 = math.cos(n * D2R)
+      n2 = math.cos(rnd36(n * 2) * D2R)
+      n3 = math.cos(rnd36(n * 3) * D2R)
 
       # 海上保安庁　書誌７４２号　日本沿岸　潮汐調和定数表　第２表
 
@@ -377,28 +374,28 @@ class Tide(object):
       f0[7] = 1.0241 + 0.2863 * n1 + 0.0083 * n2 - 0.0015 * n3
 
       # L2
-      cu = 1 - 0.2505 * math.cos(p * 2 * lib.dr) \
-             - 0.1102 * math.cos((p * 2 - n) * lib.dr) \
-             - 0.0156 * math.cos((p * 2 - n * 2) * lib.dr) \
-             - 0.0370 * math.cos(n * lib.dr)
+      cu = 1 - 0.2505 * math.cos(p * 2 * D2R) \
+             - 0.1102 * math.cos((p * 2 - n) * D2R) \
+             - 0.0156 * math.cos((p * 2 - n * 2) * D2R) \
+             - 0.0370 * math.cos(n * D2R)
 
-      su = - 0.2505 * math.sin(p * 2 * lib.dr) \
-           - 0.1102 * math.sin((p * 2 - n) * lib.dr) \
-           - 0.0156 * math.sin((p * 2 - n * 2) * lib.dr) \
-           - 0.0370 * math.sin(n * lib.dr)
+      su = - 0.2505 * math.sin(p * 2 * D2R) \
+           - 0.1102 * math.sin((p * 2 - n) * D2R) \
+           - 0.0156 * math.sin((p * 2 - n * 2) * D2R) \
+           - 0.0370 * math.sin(n * D2R)
 
-      arg = math.atan2(su, cu) * lib.rd
+      arg = math.atan2(su, cu) * R2D
 
-      f0[8] = su / math.sin(arg * lib.dr);
+      f0[8] = su / math.sin(arg * D2R);
 
       # Mi
-      cu = 2 * math.cos(p * lib.dr) \
-         + 0.4 * math.cos((p - n) * lib.dr)
-      su = math.sin(p * lib.dr) \
-         + 0.2 * math.cos((p - n) * lib.dr)
-      arg = math.atan2(su, cu) * lib.rd
+      cu = 2 * math.cos(p * D2R) \
+         + 0.4 * math.cos((p - n) * D2R)
+      su = math.sin(p * D2R) \
+         + 0.2 * math.cos((p - n) * D2R)
+      arg = math.atan2(su, cu) * R2D
 
-      f0[9] = cu / math.cos(arg * lib.dr)
+      f0[9] = cu / math.cos(arg * D2R)
 
       # Nの補正（第２表 fiの係数） 
 
@@ -475,9 +472,9 @@ class Tide(object):
          for j in range(0,60):
             tl[i] += f[j] * hr[j] * math.cos((vl[j] \
                    + ags[j] * (i - 2) / (60 /itv) \
-                   - pl[j]) * lib.dr)
+                   - pl[j]) * D2R)
       
-      #tl = [level + f[j] * hr[j] * math.cos((vl[j]  + ags[j] * (i - 2) / (60 /itv) - pl[j]) * lib.dr) for i in range(0,inc+3) for j in range(60)]
+      #tl = [level + f[j] * hr[j] * math.cos((vl[j]  + ags[j] * (i - 2) / (60 /itv) - pl[j]) * D2R) for i in range(0,inc+3) for j in range(60)]
             
       #補間し１分毎の潮位を算出
       len_tl=len(tl)
@@ -493,11 +490,11 @@ class Tide(object):
 
       ti = func_tide[2*itv:range_tl+2*itv]
       self.tide = pd.Series(ti, index=pd.date_range(date+"  0:00", date+" 23:59", freq='min')).round(1)
-     
+    
      # Ebb and Flow （干潮と満潮）
       Tide = self.tide.values
       Time = self.tide.index
       hitides, lowtides = argrelmax(ti), argrelmin(ti)
       
       self.ebb  = pd.Series(Tide[lowtides],index=Time[lowtides])
-      self.flow = pd.Series(Tide[hitides],index=Time[hitides])     
+      self.flow = pd.Series(Tide[hitides],index=Time[hitides]) 

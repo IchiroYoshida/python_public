@@ -13,13 +13,14 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 name = '石垣'
-date = '2023/06/20'
+#date = '2023/06/23'
+date = datetime.date.today().strftime('%Y/%m/%d')
 
 td3 = td.TD3(name)
 pt = h6.Tide(td3,date)
 me = ME.MoonEph(date)
 
-date_prn = name+date+'  '+me.tide_name+'潮'+'  月齢  '+me.moon_age+' 日'
+date_prn = name+'   '+date+'  '+'  月齢  '+me.moon_age+' 日  '+me.tide_name+'潮'
 t2 = pt.tide[(date+"  8:00"):(date+"  20:00")]
 Tide = t2.values
 Time = t2.index
@@ -36,7 +37,7 @@ Tmin = datetime.datetime.strptime(date+"  7:45",'%Y/%m/%d %H:%M')
 Tmax = datetime.datetime.strptime(date+" 20:15",'%Y/%m/%d %H:%M')
 
 fig, ax = plt.subplots()
-ax.plot(Time, Tide)
+ax.plot(Time, Tide, color = 'blue')
 ax.set_xlim(Tmin,Tmax)
 ax.set_xlabel('(時)')
 ax.set_ylabel('潮位(cm)')
@@ -44,19 +45,34 @@ ax.set_title(date_prn)
 formatter = mdates.DateFormatter('%H:%M')
 ax.xaxis.set_major_formatter(formatter)
 
-offset = 5
+offset = 5 
+td =datetime.timedelta(minutes=30)
+
+#08:00 Left
+ti = Time[0]
+hi = Tide[0]
+StrLevel ='{:.0f}'.format(hi)+' (cm)'
+ax.text(ti, hi-offset, StrLevel)
+
+#20:00 Right
+ti = Time[-1]
+hi = Tide[-1]
+StrLevel ='{:.0f}'.format(hi)+' (cm)'
+ax.text(ti, hi-offset, StrLevel)
+                                   
+#干潮の表示
 for time, level in zip(EbbTimes, EbbLevels):
-    print('time=',time)
     StrTime =time.strftime('%H:%M')
     StrLevel = '{:.0f}'.format(level)+' (cm)'
-    ax.text(time, level-offset, StrTime)
-    ax.text(time, level+offset, StrLevel)
+    ax.text(time-td, level-offset, StrTime)
+    ax.text(time-td, level+offset, StrLevel)
 
+#満潮の表示
 for time, level in zip(FlowTimes, FlowLevels):
     StrTime =time.strftime('%H:%M')
     StrLevel = '{:.0f}'.format(level)+' (cm)'
-    ax.text(time, level-offset, StrTime)
-    ax.text(time, level+offset, StrLevel)
+    ax.text(time-td, level-offset, StrTime)
+    ax.text(time-td, level+offset, StrLevel)
 
 ax.grid()
 plt.show()
