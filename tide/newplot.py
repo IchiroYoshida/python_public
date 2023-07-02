@@ -13,7 +13,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-matplotlib.rcParams['font.family'] = 'Noto Sans CJK JP'
+matplotlib.rcParams['font.family'] = 'IPAexGothic'
 
 name = '石垣'
 #date = '2023/06/23'
