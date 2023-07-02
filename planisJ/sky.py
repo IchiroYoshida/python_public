@@ -7,7 +7,7 @@ import math
 
 offset = np.pi/24.
 
-mpl.rc('font', family='Noto Sans JP')
+mpl.rc('font', family='Noto Sans CJK JP')
 mpl.rcParams['font.weight'] = 'bold'
 
 class skyfield:

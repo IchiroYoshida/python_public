@@ -9,8 +9,11 @@ import func.MoonEph as ME
 import datetime
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+
+matplotlib.rcParams['font.family'] = 'Noto Sans CJK JP'
 
 name = '石垣'
 #date = '2023/06/23'
