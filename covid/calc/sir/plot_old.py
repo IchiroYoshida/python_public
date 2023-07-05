@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.integrate import odeint
-import matplotlib.pylab as plt
+##import matplotlib.pylab as plt
 from matplotlib.pylab import rcParams
-import seaborn as sns
+plt.style.use('seaborn-colorblind')
 
 #Parameters
 N=1000
@@ -27,9 +27,11 @@ ini_state = [N-I0,I0,0]
 
 rcParams['figure.figsize']=12,7
 ode_int = odeint(sir, ini_state, tspan)
+
 ode = ode_int[:]
 
-sns.lineplot(data=ode)
+plt.plot(ode)
+plt.legend(['S:Susceptible I:Infected R:Recovered'])
 plt.xlabel('Days')
 plt.ylabel('Number of populations')
 plt.show()
