@@ -9,24 +9,24 @@ import func.MoonEph as ME
 import datetime
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import seaborn as sns
+
+matplotlib.rcParams['font.family'] = 'IPAexGothic'
 
 name = '石垣'
-date = '2008/05/06'
-dive_start = '13:17'
-dive_end   = '14:10'
+#date = '2023/06/23'
+date = datetime.date.today().strftime('%Y/%m/%d')
 
 td3 = td.TD3(name)
 pt = h6.Tide(td3,date)
 me = ME.MoonEph(date)
 
-date_prn = name+'   '+date+'  '+'  月齢  '+me.moon_age+' 日  '+me.tide_name+'潮' \
-      +'\n '+dive_start+' - '+dive_end
+date_prn = name+'   '+date+'  '+'  月齢  '+me.moon_age+' 日  '+me.tide_name+'潮'
 t2 = pt.tide[(date+"  8:00"):(date+"  20:00")]
-
-t_dive = pt.tide[(date+' '+dive_start):(date+' '+dive_end)]
+Tide = t2.values
+Time = t2.index
 
 eb2 = pt.ebb[(date+"  8:00"):(date+"  20:00")]
 fl2 = pt.flow[(date+"  8:00"):(date+"  20:00")]
@@ -40,9 +40,7 @@ Tmin = datetime.datetime.strptime(date+"  7:45",'%Y/%m/%d %H:%M')
 Tmax = datetime.datetime.strptime(date+" 20:15",'%Y/%m/%d %H:%M')
 
 fig, ax = plt.subplots()
-sns.lineplot(data=t2, color = 'blue', linewidth =2, ax = ax)
-sns.lineplot(data=t_dive, color = 'red', linewidth =5, ax = ax)
-
+ax.plot(Time, Tide, color = 'blue')
 ax.set_xlim(Tmin,Tmax)
 ax.set_xlabel('(時)')
 ax.set_ylabel('潮位(cm)')
@@ -54,14 +52,14 @@ offset = 5
 td =datetime.timedelta(minutes=30)
 
 #08:00 Left
-ti = datetime.datetime.strptime(date+ "   8:00",'%Y/%m/%d %H:%M')
-hi = t2[(date + "  8:00")]
+ti = Time[0]
+hi = Tide[0]
 StrLevel ='{:.0f}'.format(hi)+' (cm)'
 ax.text(ti, hi-offset, StrLevel)
 
 #20:00 Right
-ti = datetime.datetime.strptime(date+ "  20:00",'%Y/%m/%d %H:%M')
-hi = t2[(date + " 20:00")]
+ti = Time[-1]
+hi = Tide[-1]
 StrLevel ='{:.0f}'.format(hi)+' (cm)'
 ax.text(ti, hi-offset, StrLevel)
                                    
@@ -81,4 +79,5 @@ for time, level in zip(FlowTimes, FlowLevels):
 
 ax.grid()
 plt.show()
+
 plt.close('all')
