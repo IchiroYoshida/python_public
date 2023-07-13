@@ -39,31 +39,27 @@ for MA in range(30):
                 MidLatPos = (EntLatPos + ExtLatPos)/2.
                 MidLngPos = (EntLngPos + ExtLngPos)/2.
         
-                Name = ' MA: '+str(MoonAge) + '  ' + Date + ' No.' + DayNo + ' Ser.' + SerNo
+                NameMA = Date + 'MA: '+str(MoonAge)
+                NameDN = Date + 'No.' + DayNo
                 Entry = [(EntLngPos, EntLatPos)]
                 Exit  = [(ExtLngPos, ExtLatPos)]
                 Mid   = [(MidLngPos, MidLatPos)]
                 Track = Entry + Exit
 
-                #ent = fol.newpoint(name=NameDN+' Entry')
-                ent = fol.newpoint()
+                ent = fol.newpoint(name=NameDN+' Entry')
                 ent.coords = Entry
                 ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png'
 
-                mid = fol.newpoint(name=Name)
+                mid = fol.newpoint(name=NameMA+' Ser.:'+SerNo)
                 mid.coords = Mid
                 mid.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
 
-                #ext = fol.newpoint(name=NameDN+' Exit')
-                ext = fol.newpoint()
+                ext = fol.newpoint(name=NameDN+' Exit')
                 ext.coords = Exit
                 ext.iconstyle.icon.href ='http://earth.google.com/images/kml-icons/track-directional/track-none.png'
 
-                trk  = fol.newlinestring(name=Name, coords=Track )
-                if (EntLatPos < ExtLatPos) : #Go North!
-                    trk.style.linestyle.color = simplekml.Color.magenta
-                else: # Go South!
-                    trk.style.linestyle.color = simplekml.Color.cyan
+                trk  = fol.newlinestring(name=NameDN+'MA:'+str(MoonAge), coords=Track )
+                trk.style.linestyle.color = simplekml.Color.yellow
                 trk.linestyle.width = 3
 
 kml.save('driftMA.kml')

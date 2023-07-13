@@ -9,11 +9,16 @@ with open(filename, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader]
 
-for MA in range(30):
+for MA in range(15):
     fol = kml.newfolder(name='MA'+str(MA))
     for dat in data[1:]:
         MoonAge = float(dat[0]) #MoonAge
-        if (MA <= MoonAge < (MA+1)):
+        if (MoonAge > 15.):
+            MoonAge2 = MoonAge - 15.
+        else:
+            MoonAge2 = MoonAge
+         
+        if (MA <= MoonAge2 < (MA+1)):
             Date    = dat[1] #Date
             SerNo   = dat[2] #Serial Number
             DayNo   = dat[3] #Tanks of the day
@@ -66,4 +71,4 @@ for MA in range(30):
                     trk.style.linestyle.color = simplekml.Color.cyan
                 trk.linestyle.width = 3
 
-kml.save('driftMA.kml')
+kml.save('driftMA2.kml')
