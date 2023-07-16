@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(10, 10), facecolor="white",tight_layout=True)
 ax = fig.add_subplot(111, projection=ccrs.Mercator(central_longitude=140.0), facecolor="white")
 ax.set_global()
-ax.coastlines()
+ax.coastlines(resolution='10m')
 
 # ラベル表示
 ax.gridlines(draw_labels=True)

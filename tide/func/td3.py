@@ -2,7 +2,7 @@ import csv
 import numpy as np
 import pandas as pd
 
-DIR   = './td/2023/'
+DIR   = './td/2011/'
 
 CompSymb  = ['Sa','Ssa','Mm','MSf','Mf','2Q1','Sig1','Q1','Rho1','O1','MP1','M1', \
              'Chi1','Pi1','P1','S1','K1','Psi1','Phi1','The1','J1','SO1','OO1','OQ2', \

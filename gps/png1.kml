@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>Uriyasa2</name>
+            <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;./png/20040505N2.png&quot;
+ width=&quot;500&quot; height=&quot;500&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;
+ &lt;tr&gt;&lt;td&gt;Image caption&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description>
+            <Point id="2">
+                <coordinates>124.164,24.3321,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
