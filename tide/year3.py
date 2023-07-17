@@ -22,7 +22,7 @@ td3 = td.TD3(name)
 
 days = pd.date_range(start=year+'-01-01', end=year+'-12-31', freq = 'D')
 
-for months in range(7,9):
+for months in range(5,8):
     print(name, year, months)
     print('  日    月齢       満潮  (cm)               干潮  (cm)       ')
     
