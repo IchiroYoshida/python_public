@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fecd257f9e06caabc51e00ca2d40e8a2 {
+                    position: relative;
+                    width: 1024.0px;
+                    height: 800.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fecd257f9e06caabc51e00ca2d40e8a2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fecd257f9e06caabc51e00ca2d40e8a2 = L.map(
+                "map_fecd257f9e06caabc51e00ca2d40e8a2",
+                {
+                    center: [24.332, 124.164],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 20,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a10ba43aa88c5753b704d0ade51c7eec = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {"attribution": "\u5730\u7406\u9662\u5730\u56f3", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_fecd257f9e06caabc51e00ca2d40e8a2);
+        
+    
+            var marker_f3214698ea8314f180d863f5a090ea32 = L.marker(
+                [24.332, 124.164],
+                {}
+            ).addTo(map_fecd257f9e06caabc51e00ca2d40e8a2);
+        
+    
+        var custom_icon_d99a7cb4d5291189681d6928f61a3683 = L.icon({"iconAnchor": [15, 15], "iconSize": [30, 30], "iconUrl": "http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png", "popupAnchor": [0, 0]});
+        marker_eb309b155eff93a761572a97f9f05378.setIcon(custom_icon_d99a7cb4d5291189681d6928f61a3683);
+        
+    
+        var popup_bb3506dcf6d0ef4ed7ab7d335037640f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f88ebf88be5a267295fe9e7c2eea4349 = $(`<div id="html_f88ebf88be5a267295fe9e7c2eea4349" style="width: 100.0%; height: 100.0%;">潜人号はここにいます！</div>`)[0];
+                popup_bb3506dcf6d0ef4ed7ab7d335037640f.setContent(html_f88ebf88be5a267295fe9e7c2eea4349);
+            
+        
+
+        marker_f3214698ea8314f180d863f5a090ea32.bindPopup(popup_bb3506dcf6d0ef4ed7ab7d335037640f)
+        ;
+
+        
+    
+    
+            var marker_eb309b155eff93a761572a97f9f05378 = L.marker(
+                [24.36, 123.954],
+                {}
+            ).addTo(map_fecd257f9e06caabc51e00ca2d40e8a2);
+        
+    
+            var marker_8ab1cd2775ae6094a7a0503741824814 = L.marker(
+                [24.337, 123.947],
+                {}
+            ).addTo(map_fecd257f9e06caabc51e00ca2d40e8a2);
+        
+    
+        var custom_icon_2be27280fae19866ba213618f74f2403 = L.icon({"iconAnchor": [15, 15], "iconSize": [30, 30], "iconUrl": "http://earth.google.com/images/kml-icons/track-directional/track-none.png", "popupAnchor": [0, 0]});
+        marker_8ab1cd2775ae6094a7a0503741824814.setIcon(custom_icon_2be27280fae19866ba213618f74f2403);
+        
+</script>
+</html>

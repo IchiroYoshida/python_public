@@ -17335,7 +17335,7 @@
             </Style>
             <Style id="5253">
                 <LineStyle id="5254">
-                    <color>ffff00ff</color>
+                    <color>ffffff00</color>
                     <colorMode>normal</colorMode>
                     <width>3</width>
                 </LineStyle>
@@ -17974,7 +17974,7 @@
             <Placemark id="5218">
                 <styleUrl>#5219</styleUrl>
                 <Point id="5217">
-                    <coordinates>123.72845,24.275416666666665,0.0</coordinates>
+                    <coordinates>123.71555,24.276116666666667,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="5223">
@@ -17982,20 +17982,20 @@
                 <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/gps/png/20051125N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;center&gt;Ser.168 &lt;/center&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#5224</styleUrl>
                 <Point id="5222">
-                    <coordinates>123.72839166666667,24.275374999999997,0.0</coordinates>
+                    <coordinates>123.715,24.27583333333333,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="5228">
                 <styleUrl>#5229</styleUrl>
                 <Point id="5227">
-                    <coordinates>123.72833333333334,24.275333333333332,0.0</coordinates>
+                    <coordinates>123.71445,24.27555,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="5233">
                 <name> MA: 23.1  2005/11/25 No.1 Ser.168</name>
                 <styleUrl>#5234</styleUrl>
                 <LineString id="5232">
-                    <coordinates>123.72845,24.275416666666665,0.0 123.72833333333334,24.275333333333332,0.0</coordinates>
+                    <coordinates>123.71555,24.276116666666667,0.0 123.71445,24.27555,0.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark id="5237">
@@ -18009,20 +18009,20 @@
                 <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/gps/png/20051125N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;center&gt;Ser.169 &lt;/center&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#5243</styleUrl>
                 <Point id="5241">
-                    <coordinates>123.72059166666666,28.380891666666667,0.0</coordinates>
+                    <coordinates>123.72059166666666,24.2768,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="5247">
                 <styleUrl>#5248</styleUrl>
                 <Point id="5246">
-                    <coordinates>123.72033333333333,32.483333333333334,0.0</coordinates>
+                    <coordinates>123.72033333333333,24.27515,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="5252">
                 <name> MA: 23.1  2005/11/25 No.2 Ser.169</name>
                 <styleUrl>#5253</styleUrl>
                 <LineString id="5251">
-                    <coordinates>123.72085,24.27845,0.0 123.72033333333333,32.483333333333334,0.0</coordinates>
+                    <coordinates>123.72085,24.27845,0.0 123.72033333333333,24.27515,0.0</coordinates>
                 </LineString>
             </Placemark>
             <Placemark id="5256">
