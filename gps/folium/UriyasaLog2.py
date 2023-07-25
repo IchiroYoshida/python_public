@@ -1,6 +1,5 @@
 import folium
 import csv
-from folium.features import CustomIcon
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
@@ -10,22 +9,21 @@ str2 = "width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>"
 
 center =[24.301, 123.986]
 
-fmap1 = folium.Map(
-    location = center,
-    tiles = Tile,
-    attr = "地理院地図",
-    zoom_start = 12,
-    width = 1024, height = 800
-)
-
 filename = 'MALog.csv'
 with open(filename, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader] #[:50]
 
 for MA in range(15):
-    #fol = kml.newfolder(name='MA'+str(MA))
-    #print(fol)
+    fmap1 = folium.Map(
+        location = center,
+        tiles = Tile,
+        attr = "地理院地図",
+        zoom_start = 12,
+        width = 1024, height = 800
+    )
+    htmfile = './html/UriyasaLogs_MA'+'{0:02}'.format(MA)+'.html'
+    print(htmfile)
     for dat in data[1:]:
         MoonAge = float(dat[0]) #MoonAge
         if (MoonAge > 15.):
@@ -63,15 +61,9 @@ for MA in range(15):
                 EntLngPos = int(EntLng)+float(EntLnM)/60.
                 ExtLatPos = int(ExtLat)+float(ExtLaM)/60.
                 ExtLngPos = int(ExtLng)+float(ExtLnM)/60.
-                MidLatPos = (EntLatPos + ExtLatPos)/2.
-                MidLngPos = (EntLngPos + ExtLngPos)/2.
-        
                 
                 Entry = [EntLatPos, EntLngPos] #[(EntLngPos, EntLatPos)]
                 Exit  = [ExtLatPos, ExtLngPos] #[(ExtLngPos, ExtLatPos)]
-                Mid   = [MidLatPos, MidLngPos] #[(MidLngPos, MidLatPos)]
-                #Track = Entry + Exit
-                print(Name,Entry,Mid,Exit)
                 
                 #Entry point
                 folium.Marker(location=Entry,popup=desstr,icon=folium.Icon("orange")).add_to(fmap1)
@@ -81,5 +73,4 @@ for MA in range(15):
                 else: # Go South!
                     folium.PolyLine([Entry, Exit], color='#00FFFF', weight=3).add_to(fmap1)
 
-
-fmap1.save('index.html')
+    fmap1.save(htmfile)
