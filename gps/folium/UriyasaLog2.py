@@ -22,7 +22,7 @@ for MA in range(15):
         zoom_start = 12,
         width = 1024, height = 800
     )
-    htmfile = './html/UriyasaLogs_MA'+'{0:02}'.format(MA)+'.html'
+    htmfile = './html2/UriyasaLogs_MA'+'{0:02}'.format(MA)+'.html'
     print(htmfile)
     for dat in data[1:]:
         MoonAge = float(dat[0]) #MoonAge
