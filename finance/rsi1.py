@@ -10,7 +10,7 @@ import pandas as pd
 import random
 
 N = 1000
-period = 1000
+period = 750
 RSI=[]
 Ratio=[]
 
