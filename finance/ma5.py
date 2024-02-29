@@ -86,8 +86,10 @@ plt.scatter(Dev3, Ratio3, c='C3', alpha= 0.3)
 #------F
 Ver1 = np.var(Ratio1, ddof=1)
 Ver2 = np.var(Ratio2, ddof=1)
+Ver3 = np.var(Ratio3, ddof=1)
 Mean1 = np.mean(Ratio1)
 Mean2 = np.mean(Ratio2)
+Mean3 = np.mean(Ratio3)
 
 L1 = len(Ratio1)
 L2 = len(Ratio2)
@@ -97,6 +99,7 @@ oneside_pval2 = stats.f.sf(f, L1, L2)
 twoside_pval = min(oneside_pval1, oneside_pval2) *2
 print('Mean1',Mean1)
 print('Mean2',Mean2)
+print('Mean3',Mean3)
 print('F:    ', round(f, 3))
 print('p-value: ', round(twoside_pval, 4))
 res=stats.ttest_ind(Ratio1, Ratio2, equal_var=False)
