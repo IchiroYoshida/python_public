@@ -2,7 +2,7 @@ import numpy as np
 import math
 import ephem
 import datetime
-import tle_iss_nasa as tle
+import tle_iss_new as tle
 from observe import *
 import planisfunc as plf
 

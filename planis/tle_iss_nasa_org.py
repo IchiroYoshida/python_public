@@ -22,12 +22,10 @@ import traceback
 FILE ='./iss_tle.py'
 
 class TleIssNasa:
-    #URL = (
-    #    "https://spaceflight.nasa.gov/realdata/sightings/"
-    #    "SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html"
-    #)
-
-    URL = "http://www.celestrak.com/NORAD/elements/stations.txt"
+    URL = (
+        "https://spaceflight.nasa.gov/realdata/sightings/"
+        "SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html"
+    )
     UA = (
         "mk-mode Bot (by Python/{}.{}.{}, "
         "Administrator: postmaster@mk-mode.com)"
