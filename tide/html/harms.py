@@ -1,6 +1,6 @@
 # 気象庁　潮位掲載地点一覧表の読み込み Ver 2.0
 # 2023-06-03 Ichiro Yoshida
-year = '2022'
+year = '2024'
 
 import pandas as pd
 import requests
