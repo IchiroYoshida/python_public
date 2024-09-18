@@ -15,15 +15,18 @@ import seaborn as sns
 import os
 import csv
 
+LOG = './LOG/2023log/'
+PNG = './PNG/2023png/'
+
 name = '石垣'
-year = '2024'
+year = '2023'
 tide3 = td.TD3(year)
 
-log_files = os.listdir('./0901')
+log_files = os.listdir(LOG)
 log_files.sort()
 
 for logs in log_files:
-    with open('./0901/'+logs, encoding='utf8', newline='') as l:
+    with open(LOG+logs, encoding='utf8', newline='') as l:
         csvreader =csv.reader(l)
         data = [row for row in csvreader][0]
         
@@ -102,9 +105,5 @@ for logs in log_files:
         ax.grid()
         #plt.show()
         FName=dat[0]+'N'+DayNo
-        plt.savefig('./0901png/'+FName+'.png')
+        plt.savefig(PNG+FName+'.png')
         plt.close('all')
-            
-        
-        
-        
