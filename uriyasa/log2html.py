@@ -7,15 +7,15 @@ import folium
 import csv
 import os
 
-LOG = './LOG/2024log/'
-PNG = './PNG/2024png/'
-#HTM = './HTM/2024htm/'
+LOG = './log/'
+PNG = './png/'
+#HTM = './HTM'
 HTM = ''
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
-#githuburl = "https://raw.githubusercontent.com/IchiroYoshida/python_public/master/gps/png/"
-githuburl = ''
+githuburl = "https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/"
+#githuburl = ''
 str1 = "<table><tr><td><img src=\""
 str2 = "width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>"
 
