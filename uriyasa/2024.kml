@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
     <Document id="1">
-        <name>Diving Logs</name>
+        <name>Diving Logs 2024</name>
         <Folder id="2">
             <Style id="5">
                 <IconStyle id="6">
@@ -44,27 +44,28 @@
             <Placemark id="4">
                 <styleUrl>#5</styleUrl>
                 <Point id="3">
-                    <coordinates>123.555,24.191,0.0</coordinates>
+                    <coordinates>123.5548,24.1909,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="9">
                 <name>20240901 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20240901N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#10</styleUrl>
                 <Point id="8">
-                    <coordinates>123.5515,24.1905,0.0</coordinates>
+                    <coordinates>123.5517,24.19055,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="14">
                 <styleUrl>#15</styleUrl>
                 <Point id="13">
-                    <coordinates>123.548,24.19,0.0</coordinates>
+                    <coordinates>123.5486,24.1902,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="19">
                 <name>20240901 No.1</name>
                 <styleUrl>#20</styleUrl>
                 <LineString id="18">
-                    <coordinates>123.555,24.191,0.0 123.548,24.19,0.0</coordinates>
+                    <coordinates>123.5548,24.1909,0.0 123.5486,24.1902,0.0</coordinates>
                 </LineString>
             </Placemark>
         </Folder>
@@ -110,27 +111,28 @@
             <Placemark id="24">
                 <styleUrl>#25</styleUrl>
                 <Point id="23">
-                    <coordinates>123.571,24.196,0.0</coordinates>
+                    <coordinates>123.5711,24.1971,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="29">
                 <name>20240901 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20240901N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#30</styleUrl>
                 <Point id="28">
-                    <coordinates>123.572,24.1945,0.0</coordinates>
+                    <coordinates>123.5723,24.195050000000002,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="34">
                 <styleUrl>#35</styleUrl>
                 <Point id="33">
-                    <coordinates>123.573,24.193,0.0</coordinates>
+                    <coordinates>123.5735,24.193,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="39">
                 <name>20240901 No.2</name>
                 <styleUrl>#40</styleUrl>
                 <LineString id="38">
-                    <coordinates>123.571,24.196,0.0 123.573,24.193,0.0</coordinates>
+                    <coordinates>123.5711,24.1971,0.0 123.5735,24.193,0.0</coordinates>
                 </LineString>
             </Placemark>
         </Folder>
@@ -176,27 +178,28 @@
             <Placemark id="44">
                 <styleUrl>#45</styleUrl>
                 <Point id="43">
-                    <coordinates>123.573,24.196,0.0</coordinates>
+                    <coordinates>123.5726,24.1964,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="49">
                 <name>20240901 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20240901N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#50</styleUrl>
                 <Point id="48">
-                    <coordinates>123.573,24.195500000000003,0.0</coordinates>
+                    <coordinates>123.57284999999999,24.19545,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="54">
                 <styleUrl>#55</styleUrl>
                 <Point id="53">
-                    <coordinates>123.573,24.195,0.0</coordinates>
+                    <coordinates>123.5731,24.1945,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="59">
                 <name>20240901 No.3</name>
                 <styleUrl>#60</styleUrl>
                 <LineString id="58">
-                    <coordinates>123.573,24.196,0.0 123.573,24.195,0.0</coordinates>
+                    <coordinates>123.5726,24.1964,0.0 123.5731,24.1945,0.0</coordinates>
                 </LineString>
             </Placemark>
         </Folder>
@@ -242,27 +245,28 @@
             <Placemark id="64">
                 <styleUrl>#65</styleUrl>
                 <Point id="63">
-                    <coordinates>123.568,24.194,0.0</coordinates>
+                    <coordinates>123.5676,24.1935,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="69">
                 <name>20240901 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20240901N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
                 <styleUrl>#70</styleUrl>
                 <Point id="68">
-                    <coordinates>123.5705,24.1955,0.0</coordinates>
+                    <coordinates>123.57025,24.195149999999998,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="74">
                 <styleUrl>#75</styleUrl>
                 <Point id="73">
-                    <coordinates>123.573,24.197,0.0</coordinates>
+                    <coordinates>123.5729,24.1968,0.0</coordinates>
                 </Point>
             </Placemark>
             <Placemark id="79">
                 <name>20240901 No.4</name>
                 <styleUrl>#80</styleUrl>
                 <LineString id="78">
-                    <coordinates>123.568,24.194,0.0 123.573,24.197,0.0</coordinates>
+                    <coordinates>123.5676,24.1935,0.0 123.5729,24.1968,0.0</coordinates>
                 </LineString>
             </Placemark>
         </Folder>

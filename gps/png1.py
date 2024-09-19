@@ -1,7 +1,7 @@
 import simplekml
-githuburl = "https://raw.githubusercontent.com/IchiroYoshida/python_public/master/gps/png/"
-pngfile = "20040503N2.png"
-Name = 'Ser.225'
+githuburl = "https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/"
+pngfile = "20240901N2.png"
+Name = 'Kamishima'
 
 kml = simplekml.Kml()
 
@@ -13,6 +13,6 @@ desstr = str1+githuburl+pngfile+'\" '+str2+str3
 
 test_point = kml.newpoint(name=Name, \
       description = desstr, \
-      coords=[(124.1640, 24.3321)]) 
+      coords=[(123.819, 24.330)]) 
   
-kml.save('png1.kml')
+kml.save('kamishima.kml')

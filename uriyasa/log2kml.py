@@ -6,18 +6,25 @@ import simplekml
 import csv
 import os
 
-kml = simplekml.Kml()
-kml.document.name ="Diving Logs 2023"
-
-FileName = '2023.kml'
-LOG = './LOG/2023log/'
-#PNG = './PNG/2024png/'
+YEAR = '2023'
+FileName = YEAR+'.kml'
+LOG = './log2/'
+PNG = './png/'
 #KML = ''
+
+githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
+str1 = '<table><tr><td><img src=\"'
+str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
+
+kml = simplekml.Kml()
+kml.document.name ="Diving Logs "+YEAR
 
 log_files = os.listdir(LOG)
 log_files.sort()
 
-for date in log_files: 
+log_year = [ y for y in log_files if y.startswith(YEAR) ]
+
+for date in log_year: 
     with open(LOG+date, encoding='utf8', newline='') as l:
         csvreader =csv.reader(l)
         data = [row for row in csvreader][0]
@@ -45,7 +52,10 @@ for date in log_files:
             Style = 'A'
 
         Name = date+' No.'+DayNo
-           
+        NamePNG = date+'N'+DayNo+'.png'
+        str3 = '</table></td>/</tr></table'
+        desstr = str1+githuburl+NamePNG+'\"'+str2+str3
+
         if(Style == 'D'):   
             MidLat = (EntLat+ExtLat)/2.
             MidLng = (EntLng+ExtLng)/2.
@@ -61,7 +71,7 @@ for date in log_files:
             ent.coords = Entry
             ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png'
 
-            mid = fol.newpoint(name=Name)
+            mid = fol.newpoint(name=Name, description = desstr)
             mid.coords = Mid
             mid.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
 
@@ -80,7 +90,7 @@ for date in log_files:
             Entry = [(EntLng, EntLat)]
             print(Name,Entry)
             
-            ent = fol.newpoint(name=Name)
+            ent = fol.newpoint(name=Name, description = desstr)
             ent.coords = Entry
             ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'    
 kml.save(FileName)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>Kamishima</name>
+            <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20240901N2.png&quot; width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;center&gt;Kamishima&lt;/center&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description>
+            <Point id="2">
+                <coordinates>123.819,24.33,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
