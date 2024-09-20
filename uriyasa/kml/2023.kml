@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <name>Diving Logs 2023</name>
+        <Folder id="2">
+            <Style id="5">
+                <IconStyle id="6">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="7">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="10">
+                <IconStyle id="11">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="12">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="15">
+                <IconStyle id="16">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="17">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="20">
+                <LineStyle id="21">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230429N1</name>
+            <Placemark id="4">
+                <styleUrl>#5</styleUrl>
+                <Point id="3">
+                    <coordinates>124.3477,24.5672,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="9">
+                <name>20230429 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230429N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#10</styleUrl>
+                <Point id="8">
+                    <coordinates>124.34915000000001,24.56805,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="14">
+                <styleUrl>#15</styleUrl>
+                <Point id="13">
+                    <coordinates>124.3506,24.5689,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="19">
+                <name>20230429 No.1</name>
+                <styleUrl>#20</styleUrl>
+                <LineString id="18">
+                    <coordinates>124.3477,24.5672,0.0 124.3506,24.5689,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="22">
+            <Style id="25">
+                <IconStyle id="26">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="27">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="30">
+                <IconStyle id="31">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="32">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="35">
+                <IconStyle id="36">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="37">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="40">
+                <LineStyle id="41">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230429N2</name>
+            <Placemark id="24">
+                <styleUrl>#25</styleUrl>
+                <Point id="23">
+                    <coordinates>124.3549,24.6039,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="29">
+                <name>20230429 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230429N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#30</styleUrl>
+                <Point id="28">
+                    <coordinates>124.35495,24.60255,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="34">
+                <styleUrl>#35</styleUrl>
+                <Point id="33">
+                    <coordinates>124.355,24.6012,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="39">
+                <name>20230429 No.2</name>
+                <styleUrl>#40</styleUrl>
+                <LineString id="38">
+                    <coordinates>124.3549,24.6039,0.0 124.355,24.6012,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="42">
+            <Style id="45">
+                <IconStyle id="46">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="47">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="50">
+                <IconStyle id="51">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="52">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="55">
+                <IconStyle id="56">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="57">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="60">
+                <LineStyle id="61">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230429N3</name>
+            <Placemark id="44">
+                <styleUrl>#45</styleUrl>
+                <Point id="43">
+                    <coordinates>124.3443,24.6149,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="49">
+                <name>20230429 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230429N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#50</styleUrl>
+                <Point id="48">
+                    <coordinates>124.34365,24.61515,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="54">
+                <styleUrl>#55</styleUrl>
+                <Point id="53">
+                    <coordinates>124.343,24.6154,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="59">
+                <name>20230429 No.3</name>
+                <styleUrl>#60</styleUrl>
+                <LineString id="58">
+                    <coordinates>124.3443,24.6149,0.0 124.343,24.6154,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="62">
+            <Style id="65">
+                <IconStyle id="66">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="67">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="70">
+                <IconStyle id="71">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="72">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="75">
+                <IconStyle id="76">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="77">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="80">
+                <LineStyle id="81">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230429N4</name>
+            <Placemark id="64">
+                <styleUrl>#65</styleUrl>
+                <Point id="63">
+                    <coordinates>124.3262,24.6207,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="69">
+                <name>20230429 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230429N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#70</styleUrl>
+                <Point id="68">
+                    <coordinates>124.32435000000001,24.6216,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="74">
+                <styleUrl>#75</styleUrl>
+                <Point id="73">
+                    <coordinates>124.3225,24.6225,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="79">
+                <name>20230429 No.4</name>
+                <styleUrl>#80</styleUrl>
+                <LineString id="78">
+                    <coordinates>124.3262,24.6207,0.0 124.3225,24.6225,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="82">
+            <Style id="85">
+                <IconStyle id="86">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="87">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="90">
+                <IconStyle id="91">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="92">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="95">
+                <IconStyle id="96">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="97">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="100">
+                <LineStyle id="101">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230430N1</name>
+            <Placemark id="84">
+                <styleUrl>#85</styleUrl>
+                <Point id="83">
+                    <coordinates>123.6624,24.3039,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="89">
+                <name>20230430 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230430N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#90</styleUrl>
+                <Point id="88">
+                    <coordinates>123.66155,24.304850000000002,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="94">
+                <styleUrl>#95</styleUrl>
+                <Point id="93">
+                    <coordinates>123.6607,24.3058,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="99">
+                <name>20230430 No.1</name>
+                <styleUrl>#100</styleUrl>
+                <LineString id="98">
+                    <coordinates>123.6624,24.3039,0.0 123.6607,24.3058,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="102">
+            <Style id="105">
+                <IconStyle id="106">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="107">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="110">
+                <IconStyle id="111">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="112">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="115">
+                <IconStyle id="116">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="117">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="120">
+                <LineStyle id="121">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230430N2</name>
+            <Placemark id="104">
+                <styleUrl>#105</styleUrl>
+                <Point id="103">
+                    <coordinates>123.6699,24.2924,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="109">
+                <name>20230430 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230430N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#110</styleUrl>
+                <Point id="108">
+                    <coordinates>123.6716,24.29055,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="114">
+                <styleUrl>#115</styleUrl>
+                <Point id="113">
+                    <coordinates>123.6733,24.2887,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="119">
+                <name>20230430 No.2</name>
+                <styleUrl>#120</styleUrl>
+                <LineString id="118">
+                    <coordinates>123.6699,24.2924,0.0 123.6733,24.2887,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="122">
+            <Style id="125">
+                <IconStyle id="126">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="127">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="130">
+                <IconStyle id="131">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="132">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="135">
+                <IconStyle id="136">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="137">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="140">
+                <LineStyle id="141">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230430N3</name>
+            <Placemark id="124">
+                <styleUrl>#125</styleUrl>
+                <Point id="123">
+                    <coordinates>123.6798,24.281,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="129">
+                <name>20230430 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230430N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#130</styleUrl>
+                <Point id="128">
+                    <coordinates>123.6823,24.28065,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="134">
+                <styleUrl>#135</styleUrl>
+                <Point id="133">
+                    <coordinates>123.6848,24.2803,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="139">
+                <name>20230430 No.3</name>
+                <styleUrl>#140</styleUrl>
+                <LineString id="138">
+                    <coordinates>123.6798,24.281,0.0 123.6848,24.2803,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="142">
+            <Style id="145">
+                <IconStyle id="146">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="147">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="150">
+                <IconStyle id="151">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="152">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="155">
+                <IconStyle id="156">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="157">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="160">
+                <LineStyle id="161">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230430N4</name>
+            <Placemark id="144">
+                <styleUrl>#145</styleUrl>
+                <Point id="143">
+                    <coordinates>123.7034,24.2772,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="149">
+                <name>20230430 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230430N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#150</styleUrl>
+                <Point id="148">
+                    <coordinates>123.7003,24.2787,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="154">
+                <styleUrl>#155</styleUrl>
+                <Point id="153">
+                    <coordinates>123.6972,24.2802,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="159">
+                <name>20230430 No.4</name>
+                <styleUrl>#160</styleUrl>
+                <LineString id="158">
+                    <coordinates>123.7034,24.2772,0.0 123.6972,24.2802,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="162">
+            <Style id="165">
+                <IconStyle id="166">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="167">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="170">
+                <IconStyle id="171">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="172">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="175">
+                <IconStyle id="176">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="177">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="180">
+                <LineStyle id="181">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230501N1</name>
+            <Placemark id="164">
+                <styleUrl>#165</styleUrl>
+                <Point id="163">
+                    <coordinates>124.016,24.2102,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="169">
+                <name>20230501 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230501N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#170</styleUrl>
+                <Point id="168">
+                    <coordinates>124.01474999999999,24.21015,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="174">
+                <styleUrl>#175</styleUrl>
+                <Point id="173">
+                    <coordinates>124.0135,24.2101,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="179">
+                <name>20230501 No.1</name>
+                <styleUrl>#180</styleUrl>
+                <LineString id="178">
+                    <coordinates>124.016,24.2102,0.0 124.0135,24.2101,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="182">
+            <Style id="185">
+                <IconStyle id="186">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="187">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="190">
+                <IconStyle id="191">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="192">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="195">
+                <IconStyle id="196">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="197">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="200">
+                <LineStyle id="201">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230501N2</name>
+            <Placemark id="184">
+                <styleUrl>#185</styleUrl>
+                <Point id="183">
+                    <coordinates>124.0119,24.2096,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="189">
+                <name>20230501 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230501N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#190</styleUrl>
+                <Point id="188">
+                    <coordinates>124.00919999999999,24.21015,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="194">
+                <styleUrl>#195</styleUrl>
+                <Point id="193">
+                    <coordinates>124.0065,24.2107,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="199">
+                <name>20230501 No.2</name>
+                <styleUrl>#200</styleUrl>
+                <LineString id="198">
+                    <coordinates>124.0119,24.2096,0.0 124.0065,24.2107,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="202">
+            <Style id="205">
+                <IconStyle id="206">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="207">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="210">
+                <IconStyle id="211">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="212">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="215">
+                <IconStyle id="216">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="217">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="220">
+                <LineStyle id="221">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230501N3</name>
+            <Placemark id="204">
+                <styleUrl>#205</styleUrl>
+                <Point id="203">
+                    <coordinates>124.0271,24.2162,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="209">
+                <name>20230501 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230501N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#210</styleUrl>
+                <Point id="208">
+                    <coordinates>124.02295000000001,24.2136,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="214">
+                <styleUrl>#215</styleUrl>
+                <Point id="213">
+                    <coordinates>124.0188,24.211,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="219">
+                <name>20230501 No.3</name>
+                <styleUrl>#220</styleUrl>
+                <LineString id="218">
+                    <coordinates>124.0271,24.2162,0.0 124.0188,24.211,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="222">
+            <Style id="225">
+                <IconStyle id="226">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="227">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="230">
+                <IconStyle id="231">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="232">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="235">
+                <IconStyle id="236">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="237">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="240">
+                <LineStyle id="241">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230501N4</name>
+            <Placemark id="224">
+                <styleUrl>#225</styleUrl>
+                <Point id="223">
+                    <coordinates>124.0973,24.2466,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="229">
+                <name>20230501 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230501N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#230</styleUrl>
+                <Point id="228">
+                    <coordinates>124.09835000000001,24.24615,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="234">
+                <styleUrl>#235</styleUrl>
+                <Point id="233">
+                    <coordinates>124.0994,24.2457,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="239">
+                <name>20230501 No.4</name>
+                <styleUrl>#240</styleUrl>
+                <LineString id="238">
+                    <coordinates>124.0973,24.2466,0.0 124.0994,24.2457,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="242">
+            <Style id="245">
+                <IconStyle id="246">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="247">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="250">
+                <IconStyle id="251">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="252">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="255">
+                <IconStyle id="256">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="257">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="260">
+                <LineStyle id="261">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230930N1</name>
+            <Placemark id="244">
+                <styleUrl>#245</styleUrl>
+                <Point id="243">
+                    <coordinates>124.2377,24.3358,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="249">
+                <name>20230930 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230930N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#250</styleUrl>
+                <Point id="248">
+                    <coordinates>124.2398,24.3354,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="254">
+                <styleUrl>#255</styleUrl>
+                <Point id="253">
+                    <coordinates>124.2419,24.335,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="259">
+                <name>20230930 No.1</name>
+                <styleUrl>#260</styleUrl>
+                <LineString id="258">
+                    <coordinates>124.2377,24.3358,0.0 124.2419,24.335,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="262">
+            <Style id="265">
+                <IconStyle id="266">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="267">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="270">
+                <IconStyle id="271">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="272">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="275">
+                <IconStyle id="276">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="277">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="280">
+                <LineStyle id="281">
+                    <color>ffff00ff</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230930N2</name>
+            <Placemark id="264">
+                <styleUrl>#265</styleUrl>
+                <Point id="263">
+                    <coordinates>124.1578,24.2718,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="269">
+                <name>20230930 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230930N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#270</styleUrl>
+                <Point id="268">
+                    <coordinates>124.15755,24.27315,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="274">
+                <styleUrl>#275</styleUrl>
+                <Point id="273">
+                    <coordinates>124.1573,24.2745,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="279">
+                <name>20230930 No.2</name>
+                <styleUrl>#280</styleUrl>
+                <LineString id="278">
+                    <coordinates>124.1578,24.2718,0.0 124.1573,24.2745,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="282">
+            <Style id="285">
+                <IconStyle id="286">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="287">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="290">
+                <IconStyle id="291">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="292">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="295">
+                <IconStyle id="296">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="297">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="300">
+                <LineStyle id="301">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230930N3</name>
+            <Placemark id="284">
+                <styleUrl>#285</styleUrl>
+                <Point id="283">
+                    <coordinates>124.1689,24.2994,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="289">
+                <name>20230930 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230930N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#290</styleUrl>
+                <Point id="288">
+                    <coordinates>124.16765,24.29735,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="294">
+                <styleUrl>#295</styleUrl>
+                <Point id="293">
+                    <coordinates>124.1664,24.2953,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="299">
+                <name>20230930 No.3</name>
+                <styleUrl>#300</styleUrl>
+                <LineString id="298">
+                    <coordinates>124.1689,24.2994,0.0 124.1664,24.2953,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="302">
+            <Style id="305">
+                <IconStyle id="306">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="307">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="310">
+                <IconStyle id="311">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="312">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="315">
+                <IconStyle id="316">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="317">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="320">
+                <LineStyle id="321">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20230930N4</name>
+            <Placemark id="304">
+                <styleUrl>#305</styleUrl>
+                <Point id="303">
+                    <coordinates>124.1694,24.3084,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="309">
+                <name>20230930 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20230930N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#310</styleUrl>
+                <Point id="308">
+                    <coordinates>124.1694,24.305149999999998,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="314">
+                <styleUrl>#315</styleUrl>
+                <Point id="313">
+                    <coordinates>124.1694,24.3019,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="319">
+                <name>20230930 No.4</name>
+                <styleUrl>#320</styleUrl>
+                <LineString id="318">
+                    <coordinates>124.1694,24.3084,0.0 124.1694,24.3019,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="322">
+            <Style id="325">
+                <IconStyle id="326">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="327">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="330">
+                <IconStyle id="331">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="332">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="335">
+                <IconStyle id="336">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="337">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="340">
+                <LineStyle id="341">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20231001N1</name>
+            <Placemark id="324">
+                <styleUrl>#325</styleUrl>
+                <Point id="323">
+                    <coordinates>124.0233,24.2159,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="329">
+                <name>20231001 No.1</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20231001N1.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#330</styleUrl>
+                <Point id="328">
+                    <coordinates>124.0213,24.214100000000002,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="334">
+                <styleUrl>#335</styleUrl>
+                <Point id="333">
+                    <coordinates>124.0193,24.2123,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="339">
+                <name>20231001 No.1</name>
+                <styleUrl>#340</styleUrl>
+                <LineString id="338">
+                    <coordinates>124.0233,24.2159,0.0 124.0193,24.2123,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="342">
+            <Style id="345">
+                <IconStyle id="346">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="347">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="350">
+                <IconStyle id="351">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="352">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="355">
+                <IconStyle id="356">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="357">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="360">
+                <LineStyle id="361">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20231001N2</name>
+            <Placemark id="344">
+                <styleUrl>#345</styleUrl>
+                <Point id="343">
+                    <coordinates>124.0216,24.2145,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="349">
+                <name>20231001 No.2</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20231001N2.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#350</styleUrl>
+                <Point id="348">
+                    <coordinates>124.02025,24.213050000000003,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="354">
+                <styleUrl>#355</styleUrl>
+                <Point id="353">
+                    <coordinates>124.0189,24.2116,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="359">
+                <name>20231001 No.2</name>
+                <styleUrl>#360</styleUrl>
+                <LineString id="358">
+                    <coordinates>124.0216,24.2145,0.0 124.0189,24.2116,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="362">
+            <Style id="365">
+                <IconStyle id="366">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="367">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="370">
+                <IconStyle id="371">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="372">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="375">
+                <IconStyle id="376">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="377">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="380">
+                <LineStyle id="381">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20231001N3</name>
+            <Placemark id="364">
+                <styleUrl>#365</styleUrl>
+                <Point id="363">
+                    <coordinates>123.9966,24.2211,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="369">
+                <name>20231001 No.3</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20231001N3.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#370</styleUrl>
+                <Point id="368">
+                    <coordinates>123.9991,24.21745,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="374">
+                <styleUrl>#375</styleUrl>
+                <Point id="373">
+                    <coordinates>124.0016,24.2138,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="379">
+                <name>20231001 No.3</name>
+                <styleUrl>#380</styleUrl>
+                <LineString id="378">
+                    <coordinates>123.9966,24.2211,0.0 124.0016,24.2138,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+        <Folder id="382">
+            <Style id="385">
+                <IconStyle id="386">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="387">
+                        <href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="390">
+                <IconStyle id="391">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="392">
+                        <href>http://maps.google.com/mapfiles/kml/shapes/sailing.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="395">
+                <IconStyle id="396">
+                    <colorMode>normal</colorMode>
+                    <scale>1</scale>
+                    <heading>0</heading>
+                    <Icon id="397">
+                        <href>http://earth.google.com/images/kml-icons/track-directional/track-none.png</href>
+                    </Icon>
+                </IconStyle>
+            </Style>
+            <Style id="400">
+                <LineStyle id="401">
+                    <color>ffffff00</color>
+                    <colorMode>normal</colorMode>
+                    <width>3</width>
+                </LineStyle>
+            </Style>
+            <name>20231001N4</name>
+            <Placemark id="384">
+                <styleUrl>#385</styleUrl>
+                <Point id="383">
+                    <coordinates>124.0025,24.2128,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="389">
+                <name>20231001 No.4</name>
+                <description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20231001N4.png&quot;width=&quot;640&quot; height=&quot;480&quot; align=&quot;left&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/table&gt;&lt;/td&gt;/&lt;/tr&gt;&lt;/table</description>
+                <styleUrl>#390</styleUrl>
+                <Point id="388">
+                    <coordinates>124.00569999999999,24.21085,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="394">
+                <styleUrl>#395</styleUrl>
+                <Point id="393">
+                    <coordinates>124.0089,24.2089,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="399">
+                <name>20231001 No.4</name>
+                <styleUrl>#400</styleUrl>
+                <LineString id="398">
+                    <coordinates>124.0025,24.2128,0.0 124.0089,24.2089,0.0</coordinates>
+                </LineString>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>
