@@ -8,14 +8,14 @@ import os
 
 CSV = './csv/AllLogs.csv'
 PNG = './png/'
-KML = './kml/UriyasaMA.kml'
+KML = './kml/Uriyasa2024.kml'
 
 githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
 kml = simplekml.Kml()
-kml.document.name ="Diving Logs of Uriyasa 2024"
+kml.document.name ="Diving Logs of Uriyasa 2024."
 
 with open(CSV, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
@@ -45,23 +45,23 @@ for MA in range(30):
             desstr = str1+githuburl+NamePNG+'\"'+str2+str3
 
             if(Style == 'D'):   
-                MidLat = '{:.4f}'.format((EntLat+ExtLat)/2.)
-                MidLng = '{:.4f}'.format((EntLng+ExtLng)/2.)
+                #MidLat = '{:.4f}'.format((EntLat+ExtLat)/2.)
+                #MidLng = '{:.4f}'.format((EntLng+ExtLng)/2.)
 
                 Entry = [(EntLng, EntLat)]
                 Exit  = [(ExtLng, ExtLat)]
-                Mid   = [(MidLng, MidLat)]
+                #Mid   = [(MidLng, MidLat)]
                 Track = Entry + Exit
-                print(Name,Entry,Mid,Exit)
+                print(Name,Entry,Exit)
 
                 #Entry point
-                ent = fol.newpoint()
+                ent = fol.newpoint(name=Name, description = desstr)
                 ent.coords = Entry
                 ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png'
 
-                mid = fol.newpoint(name=Name, description = desstr)
-                mid.coords = Mid
-                mid.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
+                #mid = fol.newpoint(name=Name, description = desstr)
+                #mid.coords = Mid
+                #mid.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
 
                 #ext = fol.newpoint(name=NameDN+' Exit')
                 ext = fol.newpoint()
@@ -76,9 +76,12 @@ for MA in range(30):
                 trk.linestyle.width = 3
             else: # Style = 'A' Anchor
                 Entry = [(EntLng, EntLat)]
+                ent = fol.newpoint(name=Name, description = desstr)
+                ent.coords = Entry
+                ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
+ 
             print(Name,Entry)
-            
-            ent = fol.newpoint(name=Name, description = desstr)
-            ent.coords = Entry
-            ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'    
+            #ent = fol.newpoint(name=Name, description = desstr)
+            #ent.coords = Entry
+            #ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'    
 kml.save(KML)
