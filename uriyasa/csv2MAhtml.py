@@ -1,28 +1,41 @@
 '''
-./csv/AllLogs.csv and *.png ---> UriyasaMA.kml
-2024/09/20
+./csv/AllLogs.csv and *.png ---> MoonAge*.html (folium)
+2024/09/24
 '''
-import simplekml
+import folium
 import csv
 import os
 
 CSV = './csv/AllLogs.csv'
 PNG = './png/'
-KML = './kml/Uriyasa2024.kml'
+HTML = './html/'
+
+Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
 githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
-kml = simplekml.Kml()
-kml.document.name ="Diving Logs of Uriyasa 2024."
+Title ="Diving Logs of Uriyasa 2024."
+
+center = [24.301, 123.986]
+
 
 with open(CSV, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader]
 
 for MA in range(30):
-    fol = kml.newfolder(name='月齢 '+str(MA))
+    MoonAgeName = 'MoonAge'+str(MA)
+
+    fmap1 = folium.Map(
+        location = center,
+        tiles = Tile,
+        attr = "地理院地図",
+        zoom_start = 12,
+        width = 2048, height = 1600
+    )
+
     for dat in data[1:]:
         MoonAge = float(dat[1]) #MoonAge
         if (MA <= MoonAge < (MA+1)):
@@ -45,30 +58,26 @@ for MA in range(30):
             desstr = str1+githuburl+NamePNG+'\"'+str2+str3
 
             if(Style == 'D'):   
-                Entry = [(EntLng, EntLat)]
-                Exit  = [(ExtLng, ExtLat)]
-                Track = Entry + Exit
+                Entry = [EntLat, EntLng]
+                Exit  = [ExtLat, ExtLng]
                 print(Name,Entry,Exit)
 
                 #Entry point
-                ent = fol.newpoint(name=Name, description = desstr)
-                ent.coords = Entry
-                ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png'
-
-                ext = fol.newpoint()
-                ext.coords = Exit
-                ext.iconstyle.icon.href ='http://earth.google.com/images/kml-icons/track-directional/track-none.png'
-           
-                trk  = fol.newlinestring(name=Name, coords=Track )
+                folium.Marker(location=Entry,popup=desstr,icon=folium.Icon("orange")).add_to(fmap1)
+                
                 if (EntLat < ExtLat) : #Go North!
-                    trk.style.linestyle.color = simplekml.Color.magenta
+                    folium.PolyLine([Entry, Exit], color='#FF00FF', weight=3).add_to(fmap1)
                 else: # Go South!
-                    trk.style.linestyle.color = simplekml.Color.cyan
-                trk.linestyle.width = 3
-            else: # Style = 'A' Anchor
-                Entry = [(EntLng, EntLat)]
-                ent = fol.newpoint(name=Name, description = desstr)
-                ent.coords = Entry
-                ent.iconstyle.icon.href ='http://maps.google.com/mapfiles/kml/shapes/sailing.png'
+                    folium.PolyLine([Entry, Exit], color='#00FFFF', weight=3).add_to(fmap1)
+
+            elif(Style == 'A'):
+                Entry = [EntLat, EntLng]
                 print(Name,Entry)
-kml.save(KML)
+
+                #Entry point
+                folium.Marker(location=Entry,popup=desstr,icon=folium.Icon("orange")).add_to(fmap1)
+    
+    fmap1.get_root().html.add_child(folium.Element(Title))
+    File_html = HTML+MoonAgeName+'.html'
+    print(File_html)
+    fmap1.save(File_html)

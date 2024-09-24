@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7f37927b05f423d5d39c5565a71a15cf {
+                    position: relative;
+                    width: 2048.0px;
+                    height: 1600.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    Diving Logs of Uriyasa 2024.
+    
+            <div class="folium-map" id="map_7f37927b05f423d5d39c5565a71a15cf" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7f37927b05f423d5d39c5565a71a15cf = L.map(
+                "map_7f37927b05f423d5d39c5565a71a15cf",
+                {
+                    center: [24.301, 123.986],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d10c07239bf04d9c9db43eac332fdb2c = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {"attribution": "\u5730\u7406\u9662\u5730\u56f3", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_03fa004653bffd12ec9ce420b0926c9b = L.marker(
+                [24.4209, 124.0736],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_59f25c1b1c4e89cbea761cd289e8fd48 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_03fa004653bffd12ec9ce420b0926c9b.setIcon(icon_59f25c1b1c4e89cbea761cd289e8fd48);
+        
+    
+        var popup_74d9b8ac936a77f600a6b1d817f4fbcd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea7d91e7bfa7467484d71c12e673bd17 = $(`<div id="html_ea7d91e7bfa7467484d71c12e673bd17" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090430N3.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_74d9b8ac936a77f600a6b1d817f4fbcd.setContent(html_ea7d91e7bfa7467484d71c12e673bd17);
+            
+        
+
+        marker_03fa004653bffd12ec9ce420b0926c9b.bindPopup(popup_74d9b8ac936a77f600a6b1d817f4fbcd)
+        ;
+
+        
+    
+    
+            var poly_line_c1743f7998c6eaa5a491b4c72e6333e6 = L.polyline(
+                [[24.4209, 124.0736], [24.4256, 124.0693]],
+                {"bubblingMouseEvents": true, "color": "#FF00FF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF00FF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_e30509ddf7abbc27362a52c80218d83a = L.marker(
+                [24.4527, 124.0908],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_953867014461070bb8d7acdfea56faf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e30509ddf7abbc27362a52c80218d83a.setIcon(icon_953867014461070bb8d7acdfea56faf5);
+        
+    
+        var popup_9b39cb12f2b8776096df8adc80dfcba5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ca6c24576af1bcadc1dd5f3d521b391 = $(`<div id="html_9ca6c24576af1bcadc1dd5f3d521b391" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090430N1.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_9b39cb12f2b8776096df8adc80dfcba5.setContent(html_9ca6c24576af1bcadc1dd5f3d521b391);
+            
+        
+
+        marker_e30509ddf7abbc27362a52c80218d83a.bindPopup(popup_9b39cb12f2b8776096df8adc80dfcba5)
+        ;
+
+        
+    
+    
+            var marker_899b3baea5690125869c68df4bd77c62 = L.marker(
+                [24.4372, 124.0732],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_bbc47cbdbd6cf7c4214503072924eea2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_899b3baea5690125869c68df4bd77c62.setIcon(icon_bbc47cbdbd6cf7c4214503072924eea2);
+        
+    
+        var popup_e54ef88fc0d9f979f1216fb2793fc36b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_399cf89cc61c56781e05003ac01cd2b9 = $(`<div id="html_399cf89cc61c56781e05003ac01cd2b9" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090430N2.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_e54ef88fc0d9f979f1216fb2793fc36b.setContent(html_399cf89cc61c56781e05003ac01cd2b9);
+            
+        
+
+        marker_899b3baea5690125869c68df4bd77c62.bindPopup(popup_e54ef88fc0d9f979f1216fb2793fc36b)
+        ;
+
+        
+    
+    
+            var marker_bbcca5e70ffc08a707fbbca0d42d8af1 = L.marker(
+                [24.5421, 124.3181],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_96209fefe43878f9efb11be144432d43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_bbcca5e70ffc08a707fbbca0d42d8af1.setIcon(icon_96209fefe43878f9efb11be144432d43);
+        
+    
+        var popup_7fd8b1228906db076e131c096d4f8833 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cea3fa131d02838c940eb3ecd3b06d61 = $(`<div id="html_cea3fa131d02838c940eb3ecd3b06d61" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20061126N3.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_7fd8b1228906db076e131c096d4f8833.setContent(html_cea3fa131d02838c940eb3ecd3b06d61);
+            
+        
+
+        marker_bbcca5e70ffc08a707fbbca0d42d8af1.bindPopup(popup_7fd8b1228906db076e131c096d4f8833)
+        ;
+
+        
+    
+    
+            var poly_line_145ec02307566210f2b1074c3523c5ee = L.polyline(
+                [[24.5421, 124.3181], [24.5363, 124.316]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_db26d50d10ceecb5255c4ec3109de1e9 = L.marker(
+                [24.5647, 124.3458],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_5f954c5e72518fde98caa003c3499d42 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_db26d50d10ceecb5255c4ec3109de1e9.setIcon(icon_5f954c5e72518fde98caa003c3499d42);
+        
+    
+        var popup_5066c00d8aa42f2b1bef10f4099be870 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c9fa726394afdff5029727ccb8489fdd = $(`<div id="html_c9fa726394afdff5029727ccb8489fdd" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20061126N2.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_5066c00d8aa42f2b1bef10f4099be870.setContent(html_c9fa726394afdff5029727ccb8489fdd);
+            
+        
+
+        marker_db26d50d10ceecb5255c4ec3109de1e9.bindPopup(popup_5066c00d8aa42f2b1bef10f4099be870)
+        ;
+
+        
+    
+    
+            var poly_line_52c6885cc764ffdc9361f51c8880d841 = L.polyline(
+                [[24.5647, 124.3458], [24.5706, 124.3499]],
+                {"bubblingMouseEvents": true, "color": "#FF00FF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF00FF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_c2012d5be5becd7f536f1e662855cc8c = L.marker(
+                [24.5603, 124.3345],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_bb1c917a384865363758208490bc4396 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c2012d5be5becd7f536f1e662855cc8c.setIcon(icon_bb1c917a384865363758208490bc4396);
+        
+    
+        var popup_9aedaf4ef04055168135ac9fb1658def = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e32623d67f574c09ad51ce1fadf60599 = $(`<div id="html_e32623d67f574c09ad51ce1fadf60599" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20061126N1.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_9aedaf4ef04055168135ac9fb1658def.setContent(html_e32623d67f574c09ad51ce1fadf60599);
+            
+        
+
+        marker_c2012d5be5becd7f536f1e662855cc8c.bindPopup(popup_9aedaf4ef04055168135ac9fb1658def)
+        ;
+
+        
+    
+    
+            var poly_line_7113b15400c3e214e6188f63817bb3fb = L.polyline(
+                [[24.5603, 124.3345], [24.5588, 124.3376]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_d8d9a22e7be0963ea0d776bc611a9ef4 = L.marker(
+                [24.0732, 123.7545],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_08fc0518cc210884ea443eef0c9db836 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d8d9a22e7be0963ea0d776bc611a9ef4.setIcon(icon_08fc0518cc210884ea443eef0c9db836);
+        
+    
+        var popup_9e9d88c82e3960f6ba8022e9f6b8bcb0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b6912dea538203ae2a4f6247c14bbc0 = $(`<div id="html_0b6912dea538203ae2a4f6247c14bbc0" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20060503N1.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_9e9d88c82e3960f6ba8022e9f6b8bcb0.setContent(html_0b6912dea538203ae2a4f6247c14bbc0);
+            
+        
+
+        marker_d8d9a22e7be0963ea0d776bc611a9ef4.bindPopup(popup_9e9d88c82e3960f6ba8022e9f6b8bcb0)
+        ;
+
+        
+    
+    
+            var poly_line_6283e768e31f102441cbf3912aee0c9a = L.polyline(
+                [[24.0732, 123.7545], [24.0713, 123.7564]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_ee7565c55fff5d67d78b671e6757c4e9 = L.marker(
+                [24.218, 124.0333],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_b326c0805a9315d3a75e91e087c59351 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ee7565c55fff5d67d78b671e6757c4e9.setIcon(icon_b326c0805a9315d3a75e91e087c59351);
+        
+    
+        var popup_c547f96d06b436575a02741e97c294da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44a334c1d27d49e6f6d918e49588592c = $(`<div id="html_44a334c1d27d49e6f6d918e49588592c" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090924N1.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_c547f96d06b436575a02741e97c294da.setContent(html_44a334c1d27d49e6f6d918e49588592c);
+            
+        
+
+        marker_ee7565c55fff5d67d78b671e6757c4e9.bindPopup(popup_c547f96d06b436575a02741e97c294da)
+        ;
+
+        
+    
+    
+            var poly_line_d0ed3636c2888f6854f766f3dce63934 = L.polyline(
+                [[24.218, 124.0333], [24.2106, 124.0165]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_d8bfaa2163156c07f155325d63b7ae25 = L.marker(
+                [24.2129, 124.0196],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_94cf1dab5f0b63ea1f48cfb00b78cf1e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d8bfaa2163156c07f155325d63b7ae25.setIcon(icon_94cf1dab5f0b63ea1f48cfb00b78cf1e);
+        
+    
+        var popup_461154ea404b33b04e0bfc0669ecef94 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_04243656d640da9e82901dbfde23b7b9 = $(`<div id="html_04243656d640da9e82901dbfde23b7b9" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090924N2.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_461154ea404b33b04e0bfc0669ecef94.setContent(html_04243656d640da9e82901dbfde23b7b9);
+            
+        
+
+        marker_d8bfaa2163156c07f155325d63b7ae25.bindPopup(popup_461154ea404b33b04e0bfc0669ecef94)
+        ;
+
+        
+    
+    
+            var poly_line_b3f84fc28a047c461ac6b569024384db = L.polyline(
+                [[24.2129, 124.0196], [24.2094, 124.0143]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_8413b7ac1b0d5b7b17ef3f31bbc0267b = L.marker(
+                [24.2208, 123.9967],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_45f0680428945cf46a0d4f16a72ef37f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_8413b7ac1b0d5b7b17ef3f31bbc0267b.setIcon(icon_45f0680428945cf46a0d4f16a72ef37f);
+        
+    
+        var popup_f5cec1789683b4a7fdb83546f9efabcd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_efb4b3a07d127e49ac3608f384fb89d0 = $(`<div id="html_efb4b3a07d127e49ac3608f384fb89d0" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20090924N3.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_f5cec1789683b4a7fdb83546f9efabcd.setContent(html_efb4b3a07d127e49ac3608f384fb89d0);
+            
+        
+
+        marker_8413b7ac1b0d5b7b17ef3f31bbc0267b.bindPopup(popup_f5cec1789683b4a7fdb83546f9efabcd)
+        ;
+
+        
+    
+    
+            var poly_line_d4a91c45d8ea5eb23234f72d3fc54564 = L.polyline(
+                [[24.2208, 123.9967], [24.2106, 124.0059]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_b753739c345074705a84d4719a57aeb8 = L.marker(
+                [24.0489, 123.7443],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_61b555672f7131106ab3a26ca6ab1247 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b753739c345074705a84d4719a57aeb8.setIcon(icon_61b555672f7131106ab3a26ca6ab1247);
+        
+    
+        var popup_d579c64a91fe5ce3e3f5ca1bd0f31176 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fdf787de4c4007d988160684dd005599 = $(`<div id="html_fdf787de4c4007d988160684dd005599" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20060503N3.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_d579c64a91fe5ce3e3f5ca1bd0f31176.setContent(html_fdf787de4c4007d988160684dd005599);
+            
+        
+
+        marker_b753739c345074705a84d4719a57aeb8.bindPopup(popup_d579c64a91fe5ce3e3f5ca1bd0f31176)
+        ;
+
+        
+    
+    
+            var poly_line_e57a524abbb495c97a02ade54831e80c = L.polyline(
+                [[24.0489, 123.7443], [24.0509, 123.7395]],
+                {"bubblingMouseEvents": true, "color": "#FF00FF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF00FF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_e9b5a359a99ff930f16559ca01bfe25d = L.marker(
+                [24.0494, 123.7482],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_e007431750ffc8cc2ff5882a116572f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e9b5a359a99ff930f16559ca01bfe25d.setIcon(icon_e007431750ffc8cc2ff5882a116572f4);
+        
+    
+        var popup_6ecfd38701d102eddcd53fda64e2bbe0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cde5a9af01b096aec2302f79f73791ed = $(`<div id="html_cde5a9af01b096aec2302f79f73791ed" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20060503N2.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_6ecfd38701d102eddcd53fda64e2bbe0.setContent(html_cde5a9af01b096aec2302f79f73791ed);
+            
+        
+
+        marker_e9b5a359a99ff930f16559ca01bfe25d.bindPopup(popup_6ecfd38701d102eddcd53fda64e2bbe0)
+        ;
+
+        
+    
+    
+            var poly_line_5f2db8671d62c11c8b165d6b3e878159 = L.polyline(
+                [[24.0494, 123.7482], [24.0493, 123.7433]],
+                {"bubblingMouseEvents": true, "color": "#00FFFF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#00FFFF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var marker_3493275365d5c3d9208e8b8571b23e12 = L.marker(
+                [24.2463, 124.1],
+                {}
+            ).addTo(map_7f37927b05f423d5d39c5565a71a15cf);
+        
+    
+            var icon_77145e89a27c9af4fad508f06ed18dbf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_3493275365d5c3d9208e8b8571b23e12.setIcon(icon_77145e89a27c9af4fad508f06ed18dbf);
+        
+    
+        var popup_574b90c69ac940fe74a800f1f64266fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a2e1e99c5447f79271939fd48b32911 = $(`<div id="html_3a2e1e99c5447f79271939fd48b32911" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/20031229N1.png"width="640" height="480" align="left"/></td></tr><tr><td></table></td>/</tr></table</div>`)[0];
+                popup_574b90c69ac940fe74a800f1f64266fd.setContent(html_3a2e1e99c5447f79271939fd48b32911);
+            
+        
+
+        marker_3493275365d5c3d9208e8b8571b23e12.bindPopup(popup_574b90c69ac940fe74a800f1f64266fd)
+        ;
+
+        
+    
+</script>
+</html>
