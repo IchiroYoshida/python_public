@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', function(){
 }, false);
 
 function chg(d){
+    console.log(d)
     const date = new Date(d);
     if(isNaN(date.getTime())) return;
     date.setHours(12);
@@ -44,11 +45,37 @@ function chg(d){
           age = day > 0 ? day % r : (r + day % r) % r;
     console.log(age,date,day,date.getTime())
 
+    //Astronomy Librafy for JavaScript by CosineKitty
+    const date2 = new Astronomy.MakeTime(d);
+    if(isNaN(date2.getTime())) return;
+    date2.setHours(12);
+    
+    var prevMonth = astroToday.AddDays(-30);
+    var previousNewMoon = Astronomy.SearchMoonPhase(0, prevMonth.date, 30);
+    var MoonAge = astroToday.tt - previousNewMoon.tt; //Moon Age.
+    console.log(MoonAge,date)
+
+
     document.querySelector('#disp').innerHTML =
         `${date.toLocaleDateString()}<br>月齢:${age.toFixed(1)}`;
     appearance(age, r);
 }
 
+function chg2(d){
+    const date = new Astronomy.MakeTime(d);
+    if(isNaN(date.getTime())) return;
+    date.setHours(12);
+    
+    var prevMonth = astroToday.AddDays(-30);
+    var previousNewMoon = Astronomy.SearchMoonPhase(0, prevMonth.date, 30);
+    var MoonAge = astroToday.tt - previousNewMoon.tt; //Moon Age.
+    console.log(MoonAge,date)
+
+    document.querySelector('#disp').innerHTML =
+        `${date.toLocaleDateString()}<br>月齢:${age.toFixed(1)}`;
+    appearance(age, r);
+    
+}
 function appearance(age, m) {
     const s  = Math.cos(pi2 * age / m),
           s2 = Math.sin(pi2 * age / m),

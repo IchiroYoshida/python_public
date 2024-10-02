@@ -1,0 +1,16 @@
+.d {
+    background: black;
+    width: 150px;
+}
+#disp {
+    color: #ffff00;
+}
+.moonAge {
+    position: relative;
+    height: 200px;
+}
+canvas[id*='a'] {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
