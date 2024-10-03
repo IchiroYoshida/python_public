@@ -33,50 +33,24 @@ window.addEventListener('DOMContentLoaded', function(){
 }, false);
 
 function chg(d){
-    console.log(d)
+    //Astronomy Librafy for JavaScript by CosineKitty
     const date = new Date(d);
     if(isNaN(date.getTime())) return;
     date.setHours(12);
 
-    const day = date.getTime() / 864e5 - 6.475,
-          // 平均朔望月
-          r = 29.530588853 +
-                2.162e-9 * ((date.getTime() - 946727935816) / 315576e5),
-          age = day > 0 ? day % r : (r + day % r) % r;
-    console.log(age,date,day,date.getTime())
-
-    //Astronomy Librafy for JavaScript by CosineKitty
-    const date2 = new Astronomy.MakeTime(d);
-    if(isNaN(date2.getTime())) return;
-    date2.setHours(12);
-    
+    const astroToday = new Astronomy.MakeTime(date);
     var prevMonth = astroToday.AddDays(-30);
     var previousNewMoon = Astronomy.SearchMoonPhase(0, prevMonth.date, 30);
     var MoonAge = astroToday.tt - previousNewMoon.tt; //Moon Age.
-    console.log(MoonAge,date)
-
-
-    document.querySelector('#disp').innerHTML =
-        `${date.toLocaleDateString()}<br>月齢:${age.toFixed(1)}`;
-    appearance(age, r);
-}
-
-function chg2(d){
-    const date = new Astronomy.MakeTime(d);
-    if(isNaN(date.getTime())) return;
-    date.setHours(12);
-    
-    var prevMonth = astroToday.AddDays(-30);
-    var previousNewMoon = Astronomy.SearchMoonPhase(0, prevMonth.date, 30);
-    var MoonAge = astroToday.tt - previousNewMoon.tt; //Moon Age.
-    console.log(MoonAge,date)
+    //console.log('Astronomy',MoonAge,date)
 
     document.querySelector('#disp').innerHTML =
-        `${date.toLocaleDateString()}<br>月齢:${age.toFixed(1)}`;
-    appearance(age, r);
-    
+        `${date.toLocaleDateString()}<br>月齢:${MoonAge.toFixed(1)}`;
+    appearance(MoonAge);
 }
-function appearance(age, m) {
+
+function appearance(age) {
+    const m=29.530588853 //Mean synodic month
     const s  = Math.cos(pi2 * age / m),
           s2 = Math.sin(pi2 * age / m),
           r  = Math.abs(halfSize * s);
