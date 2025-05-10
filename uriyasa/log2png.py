@@ -15,8 +15,8 @@ import seaborn as sns
 import os
 import csv
 
-LOG = './LOG/2023log/'
-PNG = './PNG/2023png/'
+LOG = './log2/'
+PNG = './png2/'
 
 name = '石垣'
 year = '2023'
