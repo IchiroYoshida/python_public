@@ -15,8 +15,8 @@ import seaborn as sns
 import os
 import csv
 
-LOG = './log2/'
-PNG = './png2/'
+LOG = './log/'
+PNG = './png/'
 
 name = '石垣'
 year = '2023'
@@ -45,7 +45,7 @@ for logs in log_files:
         ExtT   = data[3]  #Exit
         
         date_prn = name+'   '+date+'  '+'  月齢  '+me.moon_age+' 日  '+me.tide_name+'潮' \
-          +'\n '+EntT+' - '+ExtT
+          +' ('+EntT+' - '+ExtT+')'
         #print(date_prn)
 
         t2 = pt.tide[(date+"  8:00"):(date+"  20:00")]
@@ -73,7 +73,7 @@ for logs in log_files:
         formatter = mdates.DateFormatter('%H:%M')
         ax.xaxis.set_major_formatter(formatter)
 
-        offset = 5 
+        offset = 5
         td =datetime.timedelta(minutes=30)
 
         #08:00 Left
@@ -86,21 +86,21 @@ for logs in log_files:
         ti = datetime.datetime.strptime(date+ "  20:00",'%Y/%m/%d %H:%M')
         hi = t2[(date + " 20:00")]
         StrLevel ='{:.0f}'.format(hi)+' (cm)'
-        ax.text(ti, hi-offset, StrLevel)
+        ax.text(ti, hi+offset, StrLevel)
                                    
         #干潮の表示
         for time, level in zip(EbbTimes, EbbLevels):
             StrTime =time.strftime('%H:%M')
             StrLevel = '{:.0f}'.format(level)+' (cm)'
-            ax.text(time-td, level-offset, StrTime)
-            ax.text(time-td, level+offset, StrLevel)
+            ax.text(time-td, level+offset, StrTime)
+            ax.text(time-td, level+1.8*offset, StrLevel)
 
         #満潮の表示
         for time, level in zip(FlowTimes, FlowLevels):
             StrTime =time.strftime('%H:%M')
             StrLevel = '{:.0f}'.format(level)+' (cm)'
             ax.text(time-td, level-offset, StrTime)
-            ax.text(time-td, level+offset, StrLevel)
+            ax.text(time-td, level-1.8*offset, StrLevel)
 
         ax.grid()
         #plt.show()

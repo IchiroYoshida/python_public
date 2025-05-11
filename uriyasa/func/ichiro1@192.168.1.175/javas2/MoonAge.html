@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star Map by Ichiro.</title>
+        <meta name="viewport" content="width=device-width,maximum-scale=2">
+    </head>
+    <body id="main_content_wrap" class="inner">
+        <h1>Star Map by Ichiro.</h1>
+
+        <h2>Observer</h2>
+        <table cellpadding="5" cellspacing="0" border="1">
+            <tr>
+                <td>
+                    <div>Date and Time:</div>
+                    <div>
+                        <input type="checkbox" id="AutoTimeCheckBox" onchange="OnToggleAutoTime()">
+                        <label for="AutoTimeCheckBox">Automatic</label>
+                    </div>
+                </td>
+                <td>
+                    <input type="datetime" id="DateTimeBox" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>Latitude:</td>
+                <td><input type="text" id="EditLatitude" pattern="[\-\+]?\d+(\.\d*)?" size="10"></td>
+            </tr>
+            <tr>
+                <td>Longitude:</td>
+                <td><input type="text" id="EditLongitude" pattern="[\-\+]?\d+(\.\d*)?" size="10"></td>
+            </tr>
+            <tr>
+                <td>Elevation (m):</td>
+                <td><input type="text" id="EditElevation" pattern="[\-\+]?\d+(\.\d*)?" size="10"></td>
+            </tr>
+        </table>
+    </body>
+
+    <script type="text/javascript" src="./module/astronomy.browser.js"></script>
+    <script type="text/javascript" src="./module/milkyway1000.js"></script>
+    <script type="text/javascript" src="./module/Hip1000.js"></script>
+    <script type="text/javascript" src="./module/nameE.js"></script>
+    <script type="text/javascript" src="./module/constE.js"></script>
+    <script type="text/javascript" src="./module/constLines.js"></script>
+
+    <script type="text/javascript" src="./module/drawBase.js"></script>
+    <script type="text/javascript" src="./module/drawSky.js"></script>
+    <script type="text/javascript" src="./module/drawMilkyway.js"></script>
+    <script type="text/javascript" src="./module/drawStarsInTheSky.js"></script>
+    <script type="text/javascript" src="./module/drawPlanets.js"></script>
+    <script type="text/javascript" src="./module/drawEcliEqu.js"></script>
+    <script type="text/javascript" src="./module/drawMoon.js"></script>
+    <script type="text/javascript" src="./module/drawConstName.js"></script>
+    <script type="text/javascript" src="./module/drawConstLines.js"></script>
+    <script type="text/javascript" src="./module/drawLegend.js"></script>
+
+    <canvas id="stars" width="1024" height="1024"></canvas>
+
+    <script>
+    const drawRadius2 = 1024;
+    let drawRadius = parseInt(drawRadius2/2);
+    const drawClip = drawRadius; //500
+    const PI = Math.PI;
+    // BodyList of Solar system.
+    const BodyList = [
+        'Mercury', 'Venus', 'Mars',
+        'Jupiter', 'Saturn'
+    ];
+    
+    // Milkyway 1000 clusters.
+    var Milkyway = Object.keys(Clusters);
+
+    // Hipparcos brightest 1000 stars.
+    var Stars = Object.keys(Hipparcos);
+
+    // The brightest 20 stars.
+    var Bright20Names = Object.keys(starName);
+
+    // Constellations.
+    var ConstName = Object.keys(Constellations);
+
+    // Constellation lines.
+    var ConstLines = Object.keys(constLines);
+
+    function drawPolar(az, alt){
+        let Az = az * (PI/180);
+        let Alt = alt * (PI/180);
+        let r = PI/2 - Alt;
+        let x =  -r * Math.sin(Az);
+        let y =  -r * Math.cos(Az);
+        let XX = 2*x/PI*drawRadius;
+        let YY = 2*y/PI*drawRadius;
+        return{x:XX, y:YY};
+    }
+
+    function OnToggleAutoTime() {
+        const checkbox = document.getElementById('AutoTimeCheckBox');
+        const editbox = document.getElementById('DateTimeBox');
+        if (checkbox.checked) {
+            editbox.setAttribute('readonly', true);
+        } else {
+            editbox.removeAttribute('readonly');
+        }
+    }
+
+    window.onload = function() {
+        const StorageKey = 'AstroDemo.Options';
+        var Options;
+
+        function IsValidNumber(s) {
+            return typeof s === 'string' && /^[\-\+]?\d+(\.\d*)?$/.test(s);
+        }
+
+        function IsValidDate(s) {
+            const d = new Date(s);
+            return Number.isFinite(d.getTime());
+        }
+
+        function LoadOptions() {
+            let options;
+            try {
+                options = JSON.parse(window.localStorage.getItem(StorageKey));
+            } catch (e) {
+            }
+            if (!options) options = {};
+            if (!IsValidNumber(options.latitude))  options.latitude  = '30';
+            if (!IsValidNumber(options.longitude)) options.longitude = '-90';
+            if (!IsValidNumber(options.elevation)) options.elevation = '0';
+            if (typeof options.automatic !== 'boolean') options.automatic = true;
+            if (!IsValidDate(options.date)) options.date = FormatDate(new Date());
+            return options;
+        }
+
+        function SaveOptions() {
+            try {
+                window.localStorage.setItem(StorageKey, JSON.stringify(Options));
+            } catch (e) {
+            }
+        }
+
+        function Init() {
+            let options = LoadOptions();
+            document.getElementById('EditLatitude').value  = options.latitude;
+            document.getElementById('EditLongitude').value = options.longitude;
+            document.getElementById('EditElevation').value = options.elevation;
+            document.getElementById('DateTimeBox').value = options.date;
+            let checkbox = document.getElementById('AutoTimeCheckBox');
+            checkbox.checked = options.automatic;
+            OnToggleAutoTime();
+            return options;
+        }
+
+        function Pad(s, w) {
+            s = s.toFixed(0);
+            while (s.length < w) {
+                s = '0' + s;
+            }
+            return s;
+        }
+
+        function FormatDate(date) {
+            var year = Pad(date.getFullYear(), 4);
+            var month = Pad(1 + date.getMonth(), 2);
+            var day = Pad(date.getDate(), 2);
+            var hour = Pad(date.getHours(), 2);
+            var minute = Pad(date.getMinutes(), 2);
+            var second = Pad(date.getSeconds(), 2);
+            return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+        }
+
+        function FormatCoord(x) {
+            return x.toFixed(2);
+        }
+
+        function UpdateScreen() {
+            const autotime = document.getElementById('AutoTimeCheckBox').checked;
+            const timebox = document.getElementById('DateTimeBox');
+            let text_latitude = document.getElementById('EditLatitude').value;
+            let text_longitude = document.getElementById('EditLongitude').value;
+            let text_elevation = document.getElementById('EditElevation').value;
+            let date;
+
+            if (autotime) {
+                // Automatically update the date/time every second, using the computer's clock.
+                date = new Date();
+                timebox.value = FormatDate(date);
+            } else {
+                // Try to parse a date/time from the user's input.
+                date = new Date(timebox.value);
+            }
+
+            if (!IsValidDate(timebox.value) || !IsValidNumber(text_latitude) || !IsValidNumber(text_longitude) || !IsValidNumber(text_elevation)) {
+                // Bail out until user corrects problems in the observer coordinates.
+                // Gray out the whole table so the user knows there is something wrong.
+                //document.getElementById('CalcTable').style.display = 'none';
+            } else {
+                //document.getElementById('CalcTable').style.display = '';
+
+                let latitude = parseFloat(text_latitude);
+                let longitude = parseFloat(text_longitude);
+                let elevation = parseFloat(text_elevation);
+                if (latitude !== Options.latitude || longitude !== Options.longitude || elevation !== Options.elevation || Options.automatic !== autotime) {
+                    Options = {
+                        latitude: text_latitude,
+                        longitude: text_longitude,
+                        elevation: text_elevation,
+                        automatic: autotime,
+                        date: timebox.value
+                    };
+                    SaveOptions();
+                }
+                let observer = new Astronomy.Observer(latitude, longitude, elevation);
+                drawSky(observer, date);
+            }
+            setTimeout(UpdateScreen, 1000);
+        }
+        Options = Init();
+        UpdateScreen();
+    }
+    </script>
+</html>

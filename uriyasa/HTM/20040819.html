@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a1ba43ee2167db277ce0463152b2a2f8 {
+                    position: relative;
+                    width: 2048.0px;
+                    height: 1600.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a1ba43ee2167db277ce0463152b2a2f8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a1ba43ee2167db277ce0463152b2a2f8 = L.map(
+                "map_a1ba43ee2167db277ce0463152b2a2f8",
+                {
+                    center: [24.471, 123.802],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4e4eb0a7259f56bcd778fbe2ad7d4cbd = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u5730\u7406\u9662\u5730\u56f3",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4e4eb0a7259f56bcd778fbe2ad7d4cbd.addTo(map_a1ba43ee2167db277ce0463152b2a2f8);
+        
+    
+            var marker_0848df009da4bb93855aba9d3c1d8f0d = L.marker(
+                [24.4509, 123.8353],
+                {
+}
+            ).addTo(map_a1ba43ee2167db277ce0463152b2a2f8);
+        
+    
+            var icon_2b7326ba9fa3fad6f9a3f08749b14bba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_665e7034ca1228ee167522cdc62fa815 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_232c3f772c6af3a95d86387e0da4e6a6 = $(`<div id="html_232c3f772c6af3a95d86387e0da4e6a6" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="../png/20040819N1.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20040819 No.1 </center></table></td></tr></table</div>`)[0];
+                popup_665e7034ca1228ee167522cdc62fa815.setContent(html_232c3f772c6af3a95d86387e0da4e6a6);
+            
+        
+
+        marker_0848df009da4bb93855aba9d3c1d8f0d.bindPopup(popup_665e7034ca1228ee167522cdc62fa815)
+        ;
+
+        
+    
+    
+                marker_0848df009da4bb93855aba9d3c1d8f0d.setIcon(icon_2b7326ba9fa3fad6f9a3f08749b14bba);
+            
+    
+            var marker_fe8418b3f1f675c44111587b0cf2948a = L.marker(
+                [24.4712, 123.8018],
+                {
+}
+            ).addTo(map_a1ba43ee2167db277ce0463152b2a2f8);
+        
+    
+            var icon_aa70712113e289cf9ed57121e31bae56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d09d212ef931bd3c3855421b01667f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7c564caf581cac9eaadc43a797d085e = $(`<div id="html_b7c564caf581cac9eaadc43a797d085e" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="../png/20040819N2.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20040819 No.2 </center></table></td></tr></table</div>`)[0];
+                popup_8d09d212ef931bd3c3855421b01667f8.setContent(html_b7c564caf581cac9eaadc43a797d085e);
+            
+        
+
+        marker_fe8418b3f1f675c44111587b0cf2948a.bindPopup(popup_8d09d212ef931bd3c3855421b01667f8)
+        ;
+
+        
+    
+    
+                marker_fe8418b3f1f675c44111587b0cf2948a.setIcon(icon_aa70712113e289cf9ed57121e31bae56);
+            
+</script>
+</html>

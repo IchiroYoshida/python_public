@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1">
+<meta charset='utf-8'>
+<title>月齢表示</title>
+<link rel='stylesheet' href='./style.css' type='text/css'>
+<script type="text/javascript"src="./module/astronomy.browser.js"></script>
+<script src='./script.js'></script>
+</head>
+<body>
+<div class='d'>
+    <div class='moonAge'>
+        <canvas id='a0'></canvas>
+        <canvas id='a1'></canvas>
+        <canvas id='a2'></canvas>
+    </div>
+    <div id='disp'>
+    </div>
+</div>
+<input type='date' id='c' onchange='chg(this.value)'>
+</body>
+</html>

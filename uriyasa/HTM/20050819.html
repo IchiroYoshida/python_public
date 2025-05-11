@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f9e4334fe0f40ab3d9ea1003f29f62ea {
+                    position: relative;
+                    width: 2048.0px;
+                    height: 1600.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f9e4334fe0f40ab3d9ea1003f29f62ea" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f9e4334fe0f40ab3d9ea1003f29f62ea = L.map(
+                "map_f9e4334fe0f40ab3d9ea1003f29f62ea",
+                {
+                    center: [24.59, 124.356],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_75ae7f685394accc7029402933287506 = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u5730\u7406\u9662\u5730\u56f3",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_75ae7f685394accc7029402933287506.addTo(map_f9e4334fe0f40ab3d9ea1003f29f62ea);
+        
+    
+            var marker_b7f7f3092c1c984c0da4a21030d3c14e = L.marker(
+                [24.6164, 124.3404],
+                {
+}
+            ).addTo(map_f9e4334fe0f40ab3d9ea1003f29f62ea);
+        
+    
+            var icon_07427b1f2fb817415ee53f253b208e18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7385218a67be4205d0a263642a321950 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d36381a1110812651f76f05edd7ab3d = $(`<div id="html_5d36381a1110812651f76f05edd7ab3d" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="../png/20050819N1.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20050819 No.1 </center></table></td></tr></table</div>`)[0];
+                popup_7385218a67be4205d0a263642a321950.setContent(html_5d36381a1110812651f76f05edd7ab3d);
+            
+        
+
+        marker_b7f7f3092c1c984c0da4a21030d3c14e.bindPopup(popup_7385218a67be4205d0a263642a321950)
+        ;
+
+        
+    
+    
+                marker_b7f7f3092c1c984c0da4a21030d3c14e.setIcon(icon_07427b1f2fb817415ee53f253b208e18);
+            
+    
+            var marker_6ec2f10d70abb8b94403735a221d6252 = L.marker(
+                [24.5878, 124.3562],
+                {
+}
+            ).addTo(map_f9e4334fe0f40ab3d9ea1003f29f62ea);
+        
+    
+            var icon_1758df92ea11ade044ca192a5668fd75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_26b07fc55b5d00f048daaa53c4222adf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7206e064350245a23e46c4bbf00f2e11 = $(`<div id="html_7206e064350245a23e46c4bbf00f2e11" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="../png/20050819N2.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20050819 No.2 </center></table></td></tr></table</div>`)[0];
+                popup_26b07fc55b5d00f048daaa53c4222adf.setContent(html_7206e064350245a23e46c4bbf00f2e11);
+            
+        
+
+        marker_6ec2f10d70abb8b94403735a221d6252.bindPopup(popup_26b07fc55b5d00f048daaa53c4222adf)
+        ;
+
+        
+    
+    
+                marker_6ec2f10d70abb8b94403735a221d6252.setIcon(icon_1758df92ea11ade044ca192a5668fd75);
+            
+    
+            var poly_line_dc46c63b77622968f2a5be62e5b7df92 = L.polyline(
+                [[24.5878, 124.3562], [24.593, 124.3563]],
+                {"bubblingMouseEvents": true, "color": "#FF00FF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF00FF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f9e4334fe0f40ab3d9ea1003f29f62ea);
+        
+</script>
+</html>

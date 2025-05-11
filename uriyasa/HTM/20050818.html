@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8cb84f7ce695ba969f56ec5f4154829c {
+                    position: relative;
+                    width: 2048.0px;
+                    height: 1600.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8cb84f7ce695ba969f56ec5f4154829c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8cb84f7ce695ba969f56ec5f4154829c = L.map(
+                "map_8cb84f7ce695ba969f56ec5f4154829c",
+                {
+                    center: [24.473, 123.834],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5bb8aff949da761074aedfca637c96c6 = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u5730\u7406\u9662\u5730\u56f3",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5bb8aff949da761074aedfca637c96c6.addTo(map_8cb84f7ce695ba969f56ec5f4154829c);
+        
+    
+            var marker_2a4ed3d0cf3a42433289ec09798e366e = L.marker(
+                [24.4733, 123.8343],
+                {
+}
+            ).addTo(map_8cb84f7ce695ba969f56ec5f4154829c);
+        
+    
+            var icon_661e8c8b59456835a4ff4e2ab0d307c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0684f28a00252be2d75af230f73bec1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_211d4ccb7a8ec839cf9ed01e3aa6a41a = $(`<div id="html_211d4ccb7a8ec839cf9ed01e3aa6a41a" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="../png/20050818N1.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20050818 No.1 </center></table></td></tr></table</div>`)[0];
+                popup_d0684f28a00252be2d75af230f73bec1.setContent(html_211d4ccb7a8ec839cf9ed01e3aa6a41a);
+            
+        
+
+        marker_2a4ed3d0cf3a42433289ec09798e366e.bindPopup(popup_d0684f28a00252be2d75af230f73bec1)
+        ;
+
+        
+    
+    
+                marker_2a4ed3d0cf3a42433289ec09798e366e.setIcon(icon_661e8c8b59456835a4ff4e2ab0d307c4);
+            
+</script>
+</html>
