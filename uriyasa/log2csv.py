@@ -1,6 +1,6 @@
 '''
 .log -> .csv
-2024/09/19
+2024/05/13
 '''
 import os
 import csv
@@ -14,7 +14,7 @@ import pandas as pd
 
 LOG = './log/'
 col =['Date','Moon Age','Day No.','Start Time','Start Lat.','Start Lng.','End Time','End Lat.','End Lng.','Type']
-csvFile= './AllLogs.csv'
+csvFile= './csv/AllLogs.csv'
 
 log_files = os.listdir(LOG)
 log_files.sort()
@@ -39,7 +39,7 @@ for logs in log_files:
             tide3 = td.TD3('2011')
         elif (Year == 2023):
             tide3 = td.TD3('2023')
-        elif (Year == 2024):
+        elif (Year >= 2024):
             tide3 = td.TD3('2024')
         else :
             print('TD3 Year ERROR!')

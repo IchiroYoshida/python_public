@@ -1,28 +1,29 @@
 '''
 ./csv/AllLogs.csv and *.png ---> ALL.html (folium)
-2024/09/26
+2025/05/13
 '''
 import folium
 import csv
 import os
 
 CSV = './csv/AllLogs.csv'
-PNG = './png/'
+PNG = '../png/'
 HTML = './html/'
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
-githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
+#githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
-Title ="Diving Logs of Uriyasa 2024."
+Title ="Diving Logs of Uriyasa 2003-2025."
 
 center = [24.301, 123.986]
 
 with open(CSV, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader]
+    del data[:1] #Remove CSV header. 
 
     fmap1 = folium.Map(
         location = center,
@@ -32,7 +33,8 @@ with open(CSV, encoding='utf8', newline='') as f:
         width = 2048, height = 1600
     )
 
-    for dat in data[1:]:
+    for dat in data: #[:10]: debug 10 
+        del dat[:1] #Remove Serial Number.
         Date   = dat[0] #Date
         DayNo  = dat[2] #Tanks of the day
         EntT   = dat[3] #Entry Time
@@ -49,7 +51,8 @@ with open(CSV, encoding='utf8', newline='') as f:
         Name = Date+' No.'+DayNo
         NamePNG = date0+'N'+DayNo+'.png'
         str3 = '</table></td>/</tr></table'
-        desstr = str1+githuburl+NamePNG+'\"'+str2+str3
+        #desstr = str1+githuburl+NamePNG+'\"'+str2+str3
+        desstr =str1+PNG+NamePNG+'\"'+str2+str3
 
         if(Style == 'D'):   
             Entry = [EntLat, EntLng]

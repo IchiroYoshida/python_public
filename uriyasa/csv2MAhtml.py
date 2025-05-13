@@ -1,6 +1,6 @@
 '''
 ./csv/AllLogs.csv and *.png ---> MoonAge*.html (folium)
-2024/09/24
+2025/05/13
 '''
 import folium
 import csv
@@ -16,14 +16,14 @@ githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/maste
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
-Title ="Diving Logs of Uriyasa 2024."
+Title ="Diving Logs of Uriyasa 2003 - 2025."
 
 center = [24.301, 123.986]
-
 
 with open(CSV, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader]
+    del data[:1]  #Remove CSV header
 
 for MA in range(30):
     MoonAgeName = 'MoonAge'+str(MA)
@@ -36,18 +36,19 @@ for MA in range(30):
         width = 2048, height = 1600
     )
 
-    for dat in data[1:]:
-        MoonAge = float(dat[1]) #MoonAge
+    for dat in data:
+        print(dat)
+        MoonAge = float(dat[2]) #MoonAge
         if (MA <= MoonAge < (MA+1)):
-            Date   = dat[0] #Date
-            DayNo  = dat[2] #Tanks of the day
-            EntT   = dat[3] #Entry Time
-            EntLat = float(dat[4]) #Entry Latitude
-            EntLng = float(dat[5]) #Entry Longitude
-            ExtT   = dat[6] #Exit Time
+            Date   = dat[1] #Date
+            DayNo  = dat[3] #Tanks of the day
+            EntT   = dat[4] #Entry Time
+            EntLat = float(dat[5]) #Entry Latitude
+            EntLng = float(dat[6]) #Entry Longitude
+            ExtT   = dat[7] #Exit Time
             try:
-                ExtLat =float(dat[7]) #Exit Latitude
-                ExtLng = float(dat[8]) #Exit Longitude
+                ExtLat =float(dat[8]) #Exit Latitude
+                ExtLng = float(dat[9]) #Exit Longitude
                 Style = 'D'
             except:
                 Style = 'A'

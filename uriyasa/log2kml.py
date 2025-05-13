@@ -1,30 +1,31 @@
 '''
 *.log and *.png ---> *.kml
-2024/09/18
+2025/05/13
 '''
 import simplekml
 import csv
 import os
 
-YEAR = '2023'
-FileName = YEAR+'.kml'
-LOG = './log2/'
+#YEAR = '2023'
+#FileName = YEAR+'.kml'
+FileName = './kml/all.kml'
+LOG = './log/'
 PNG = './png/'
-#KML = ''
+KML = './kml/'
 
 githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
 kml = simplekml.Kml()
-kml.document.name ="Diving Logs "+YEAR
+kml.document.name ="Diving Logs (2003-2025)"
 
 log_files = os.listdir(LOG)
 log_files.sort()
 
-log_year = [ y for y in log_files if y.startswith(YEAR) ]
-
-for date in log_year: 
+#log_year = [ y for y in log_files if y.startswith(YEAR) ]
+#for date in log_year:
+for date in log_files: 
     with open(LOG+date, encoding='utf8', newline='') as l:
         csvreader =csv.reader(l)
         data = [row for row in csvreader][0]

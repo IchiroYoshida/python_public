@@ -1,6 +1,6 @@
 '''
 .log -> .csv
-2024/09/19
+2024/05/13
 '''
 import os
 import csv
@@ -21,6 +21,7 @@ log_files.sort()
 
 list=[]
 for logs in log_files:  #[:50]:
+    print(logs)
     with open(LOG+logs, encoding='utf8', newline='') as l:
         csvreader =csv.reader(l)
         data = [row for row in csvreader][0]
@@ -39,7 +40,7 @@ for logs in log_files:  #[:50]:
             tide3 = td.TD3('2011')
         elif (Year == 2023):
             tide3 = td.TD3('2023')
-        elif (Year == 2024):
+        elif (Year >= 2024):
             tide3 = td.TD3('2024')
         else :
             print('TD3 Year ERROR!')
