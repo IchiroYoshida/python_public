@@ -1,6 +1,6 @@
 '''
 ./csv/AllLogs.csv and *.png ---> UriyasaMA.kml
-2024/09/20
+2024/05/13
 '''
 import simplekml
 import csv
@@ -8,33 +8,34 @@ import os
 
 CSV = './csv/AllLogs.csv'
 PNG = './png/'
-KML = './kml/Uriyasa2024.kml'
+KML = './kml/Uriyasa2025.kml'
 
 githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
 kml = simplekml.Kml()
-kml.document.name ="Diving Logs of Uriyasa 2024."
+kml.document.name ="Diving Logs of Uriyasa 2003 - 2025."
 
 with open(CSV, encoding='utf8', newline='') as f:
     csvreader = csv.reader(f)
     data = [row for row in csvreader]
-
+    del data[:1] #Remove CSV header
+    
 for MA in range(30):
     fol = kml.newfolder(name='月齢 '+str(MA))
-    for dat in data[1:]:
-        MoonAge = float(dat[1]) #MoonAge
+    for dat in data:
+        MoonAge = float(dat[2]) #MoonAge
         if (MA <= MoonAge < (MA+1)):
-            Date   = dat[0] #Date
-            DayNo  = dat[2] #Tanks of the day
-            EntT   = dat[3] #Entry Time
-            EntLat = float(dat[4]) #Entry Latitude
-            EntLng = float(dat[5]) #Entry Longitude
-            ExtT   = dat[6] #Exit Time
+            Date   = dat[1] #Date
+            DayNo  = dat[3] #Tanks of the day
+            EntT   = dat[4] #Entry Time
+            EntLat = float(dat[5]) #Entry Latitude
+            EntLng = float(dat[6]) #Entry Longitude
+            ExtT   = dat[7] #Exit Time
             try:
-                ExtLat =float(dat[7]) #Exit Latitude
-                ExtLng = float(dat[8]) #Exit Longitude
+                ExtLat =float(dat[8]) #Exit Latitude
+                ExtLng = float(dat[9]) #Exit Longitude
                 Style = 'D'
             except:
                 Style = 'A'

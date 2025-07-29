@@ -21,6 +21,7 @@ log_files.sort()
 
 list=[]
 for logs in log_files:
+    print(logs)
     with open(LOG+logs, encoding='utf8', newline='') as l:
         csvreader =csv.reader(l)
         data = [row for row in csvreader][0]
