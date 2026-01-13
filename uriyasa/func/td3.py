@@ -14,8 +14,9 @@ CompSymb  = ['Sa','Ssa','Mm','MSf','Mf','2Q1','Sig1','Q1','Rho1','O1','MP1','M1'
 
 class TD3(object):
     def __init__(self,pname):
-        file_td3 = DIR+pname+'.TD3'
-        
+        #file_td3 = DIR+pname+'.TD3'
+        file_td3 = './td/2024.TD3'
+
         self.harms = pd.DataFrame(np.zeros(60*2,np.float64).reshape(60,2),columns=['pl','hr'],index=CompSymb)
         
         with open(file_td3, encoding='utf8', newline='') as f:

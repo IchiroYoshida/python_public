@@ -8,9 +8,12 @@ import os
 
 #YEAR = '2023'
 #FileName = YEAR+'.kml'
-FileName = './kml/all.kml'
-LOG = './log/'
-PNG = './png/'
+#FileName = './kml/all.kml'
+FileName = './kml/Jul2025.kml'
+#LOG = './log/'
+LOG = './log2/'
+#PNG = './png/
+PNG = './png2/'
 KML = './kml/'
 
 githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'

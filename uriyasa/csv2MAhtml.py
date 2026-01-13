@@ -7,12 +7,12 @@ import csv
 import os
 
 CSV = './csv/AllLogs.csv'
-PNG = './png/'
+PNG = '../png/'
 HTML = './html/'
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
-githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
+#githuburl = 'https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/'
 str1 = '<table><tr><td><img src=\"'
 str2 = 'width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>'
 
@@ -56,7 +56,9 @@ for MA in range(30):
             Name = Date+' No.'+DayNo
             NamePNG = date0+'N'+DayNo+'.png'
             str3 = '</table></td>/</tr></table'
-            desstr = str1+githuburl+NamePNG+'\"'+str2+str3
+            #desstr = str1+githuburl+NamePNG+'\"'+str2+str3
+            desstr = str1+PNG+NamePNG+'\"'+str2+str3
+
 
             if(Style == 'D'):   
                 Entry = [EntLat, EntLng]

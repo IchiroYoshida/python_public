@@ -8,14 +8,11 @@ import csv
 import os
 
 LOG = './log2/'
-#PNG = './png/'
+PNG = '../png/'
 HTM = './htm2/'
-#HTM = ''
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
-#githuburl = "https://raw.githubusercontent.com/IchiroYoshida/python_public/master/uriyasa/png/"
-#githuburl = ''
 str1 = "<table><tr><td><img src=\""
 str2 = "width=\"640\" height=\"480\" align=\"left\"/></td></tr><tr><td>"
 
@@ -59,10 +56,9 @@ for date in log_files:  #[:3]:
             Style = 'A'
 
         Name = date+' No.'+DayNo
-#       File_png = PNG+date+'N'+DayNo+'.png'
+        File_png = PNG+date+'N'+DayNo+'.png'
         str3 = '<center>'+Name+' </center></table></td></tr></table'
-#        desstr = str1+githuburl+File_png+'\"'+str2+str3
-        desstr = str1+'\"'+str2+str3
+        desstr = str1+File_png+'\"'+str2+str3
 
         if(Style == 'D'):   
             print(YY,MM,DD,DayNo)
@@ -78,7 +74,7 @@ for date in log_files:  #[:3]:
             print(Name,Entry,Mid,Exit)
 
             #Entry point
-#            folium.Marker(location=Entry,popup=desstr,icon=folium.Icon("orange")).add_to(fmap1)
+            folium.Marker(location=Entry,popup=desstr,icon=folium.Icon("orange")).add_to(fmap1)
                 
             if (EntLat < ExtLat) : #Go North!
                 folium.PolyLine([Entry, Exit], color='#FF00FF', weight=3).add_to(fmap1)

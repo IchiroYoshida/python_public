@@ -15,11 +15,11 @@ import seaborn as sns
 import os
 import csv
 
-LOG = './log2507/'
-PNG = './png2507/'
+LOG = './log2/'
+PNG = './png2/'
 
 name = '石垣'
-year = '2023'
+year = '2024'
 tide3 = td.TD3(year)
 
 log_files = os.listdir(LOG)
