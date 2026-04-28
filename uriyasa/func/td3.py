@@ -29,11 +29,12 @@ class TD3(object):
             for n in range(len(elements)):
                 element = elements[n]
                 key1 = str(element[0]).replace(' ','')
-                self.harms['hr'][key1]  = float(element[1])
-                self.harms['pl'][key1]  = float(element[2])
+                #self.harms['hr'][key1]  = float(element[1])
+                self.harms.loc[key1,'hr'] = float(element[1])
+                self.harms.loc[key1,'pl']  = float(element[2])
                 key2 = str(element[3]).replace(' ','')
-                self.harms['hr'][key2]  = float(element[4])
-                self.harms['pl'][key2]  = float(element[5])
+                self.harms.loc[key2,'hr']  = float(element[4])
+                self.harms.loc[key2,'pl']  = float(element[5])
 
 if __name__ == '__main__':
     name = '石垣'
