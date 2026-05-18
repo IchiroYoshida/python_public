@@ -8,7 +8,7 @@ import csv
 import os
 
 LOG = './log2/'
-PNG = '../png/'
+PNG = './png2/'
 HTM = './htm2/'
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
