@@ -18,7 +18,7 @@ matplotlib.rcParams['font.family'] = 'IPAexGothic'
 
 name = '石垣'
 #date = datetime.date.today().strftime('%Y/%m/%d')
-date = '2026/05/06'
+date = '2026/06/28'
 
 td3 = td.TD3(name)
 pt = h6.Tide(td3,date)
