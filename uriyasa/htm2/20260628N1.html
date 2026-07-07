@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a43f9471f92db5bdfa77ebf32258e9a4 {
+                    position: relative;
+                    width: 2048.0px;
+                    height: 1600.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a43f9471f92db5bdfa77ebf32258e9a4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a43f9471f92db5bdfa77ebf32258e9a4 = L.map(
+                "map_a43f9471f92db5bdfa77ebf32258e9a4",
+                {
+                    center: [24.301, 123.986],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fb79f2d9bcd94517eed05902ac2d2d15 = L.tileLayer(
+                "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u5730\u7406\u9662\u5730\u56f3",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fb79f2d9bcd94517eed05902ac2d2d15.addTo(map_a43f9471f92db5bdfa77ebf32258e9a4);
+        
+    
+            var marker_82d503620ccded46053f7384d5632493 = L.marker(
+                [24.4755, 123.8018],
+                {
+}
+            ).addTo(map_a43f9471f92db5bdfa77ebf32258e9a4);
+        
+    
+            var icon_a21b52ef417859d0cdedd3c3697430df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aef1af65de26729414cd9e8798e69ff8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26137bc012af15aab3c03a768ea989c4 = $(`<div id="html_26137bc012af15aab3c03a768ea989c4" style="width: 100.0%; height: 100.0%;"><table><tr><td><img src="./png2/20260628N1.png"width="640" height="480" align="left"/></td></tr><tr><td><center>20260628 No.1 </center></table></td></tr></table</div>`)[0];
+                popup_aef1af65de26729414cd9e8798e69ff8.setContent(html_26137bc012af15aab3c03a768ea989c4);
+            
+        
+
+        marker_82d503620ccded46053f7384d5632493.bindPopup(popup_aef1af65de26729414cd9e8798e69ff8)
+        ;
+
+        
+    
+    
+                marker_82d503620ccded46053f7384d5632493.setIcon(icon_a21b52ef417859d0cdedd3c3697430df);
+            
+    
+            var poly_line_80373de3cfc4c90dff9c418797881ad5 = L.polyline(
+                [[24.4755, 123.8018], [24.4843, 123.807]],
+                {"bubblingMouseEvents": true, "color": "#FF00FF", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF00FF", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a43f9471f92db5bdfa77ebf32258e9a4);
+        
+</script>
+</html>
