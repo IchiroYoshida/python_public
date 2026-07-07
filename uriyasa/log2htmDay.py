@@ -8,9 +8,9 @@ import csv
 import os
 import numpy as np
 
-LOG = './log/'
-PNG = '../png/'
-HTM = './htm/'
+LOG = './log2/'
+PNG = '../png2/'
+HTM = './htm2/'
 
 Tile ="https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg"
 
